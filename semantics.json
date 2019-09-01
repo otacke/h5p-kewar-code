@@ -1,0 +1,10 @@
+[
+  {
+    "name": "textToEncode",
+    "type": "text",
+    "label": "Text",
+    "description": "Text to encode to QR Code",
+    "importance": "high",
+    "default": "https://h5p.org"
+  }
+]

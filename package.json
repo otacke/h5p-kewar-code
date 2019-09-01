@@ -1,0 +1,37 @@
+{
+  "name": "h5p-kewar-code",
+  "version": "0.1.0",
+  "description": "H5P Content Type for displaying QR codes",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production ./node_modules/.bin/webpack -p",
+    "watch": "./node_modules/.bin/webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otacke/h5p-kewar-code.git"
+  },
+  "keywords": [
+    "h5p",
+    "library",
+    "QR code"
+  ],
+  "author": "Oliver Tacke",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "resolve-url-loader": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "title": "KewAr Code",
+  "description": "H5P content type for displaying QR codes",
+  "majorVersion": 0,
+  "minorVersion": 1,
+  "patchVersion": 0,
+  "runnable": 1,
+  "author": "Oliver Tacke",
+  "license": "MIT",
+  "machineName": "H5P.KewArCode",
+  "embedTypes": [
+    "iframe"
+  ],
+  "preloadedJs": [
+    {
+      "path": "dist/h5p-kewar-code.js"
+    }
+  ],
+  "preloadedCss": [
+    {
+      "path": "dist/h5p-kewar-code.css"
+    }
+  ]
+}
