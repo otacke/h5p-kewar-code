@@ -20,5 +20,12 @@
     {
       "path": "dist/h5p-kewar-code.css"
     }
+  ],
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.ColorSelector",
+      "majorVersion": 1,
+      "minorVersion": 2
+    }
   ]
 }

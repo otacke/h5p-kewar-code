@@ -6,5 +6,30 @@
     "description": "Text to encode to QR Code",
     "importance": "high",
     "default": "https://h5p.org"
+  },
+  {
+    "name": "codeColor",
+    "type": "text",
+    "label": "Code color",
+    "importance": "medium",
+    "optional": true,
+    "default": "#000000",
+    "widget": "colorSelector",
+    "spectrum": {
+      "showInput": true
+    }
+  },
+  {
+    "name": "backgroundColor",
+    "type": "text",
+    "label": "Background color",
+    "importance": "medium",
+    "optional": true,
+    "default": "#ffffff",
+    "widget": "colorSelector",
+    "spectrum": {
+      "showInput": true,
+      "showAlpha": true
+    }
   }
 ]

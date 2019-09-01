@@ -14,7 +14,9 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     this.params = Util.extend(
       {
-        textToEncode: 'https://h5p.org'
+        textToEncode: 'https://h5p.org',
+        codeColor: '#000000',
+        backgroundColor: '#ffffff'
       },
       params
     );
@@ -35,8 +37,16 @@ export default class KewArCode extends H5P.EventDispatcher {
       const qrcodeContainer = document.createElement('div');
       qrcodeContainer.classList.add('h5p-kewar-code-container');
       qrcodeContainer.innerHTML = code.createSvgTag();
-      qrcodeContainer.children[0].removeAttribute('width');
-      qrcodeContainer.children[0].removeAttribute('height');
+
+      const codeSVG = qrcodeContainer.querySelector('svg');
+      codeSVG.removeAttribute('width');
+      codeSVG.removeAttribute('height');
+
+      const codePath = qrcodeContainer.querySelector('path');
+      codePath.setAttribute('fill', this.params.codeColor);
+
+      const codeRect = qrcodeContainer.querySelector('rect');
+      codeRect.setAttribute('fill', this.params.backgroundColor);
 
       $wrapper.get(0).classList.add('h5p-kewar-code');
       $wrapper.get(0).appendChild(qrcodeContainer);
