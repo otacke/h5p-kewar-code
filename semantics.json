@@ -50,6 +50,27 @@
             "pattern": "^(([1-9]+.[0-9]+)|[0-9]+)[ ]*(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)?$",
             "modifiers": "i"
           }
+      },
+      {
+        "name": "alignment",
+        "type": "select",
+        "label": "Horizontal alignment",
+        "description": "Set horizontal alignment if you set a maximum size",
+        "options": [
+          {
+            "value": "left",
+            "label": "left"
+          },
+          {
+            "value": "center",
+            "label": "center"
+          },
+          {
+            "value": "right",
+            "label": "right"
+          }
+        ],
+        "default": "center"
       }
     ]
   }

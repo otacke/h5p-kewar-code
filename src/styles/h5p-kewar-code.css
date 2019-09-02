@@ -1,2 +1,6 @@
 .h5p-kewar-code {
 }
+
+.h5p-kewar-code .h5p-kewar-code-container {
+  width: 100%;
+}
