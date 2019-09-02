@@ -8,29 +8,49 @@
     "default": "https://h5p.org"
   },
   {
-    "name": "codeColor",
-    "type": "text",
-    "label": "Code color",
-    "importance": "medium",
-    "optional": true,
-    "default": "#000000",
-    "widget": "colorSelector",
-    "spectrum": {
-      "showInput": true
-    }
-  },
-  {
-    "name": "backgroundColor",
-    "type": "text",
-    "label": "Background color",
-    "importance": "medium",
-    "optional": true,
-    "default": "#ffffff",
-    "widget": "colorSelector",
-    "spectrum": {
-      "showInput": true,
-      "showAlpha": true,
-      "preferredFormat": "rgb"
-    }
+    "name": "behaviour",
+    "type": "group",
+    "label": "Behavioural settings",
+    "importance": "high",
+    "fields": [
+      {
+        "name": "codeColor",
+        "type": "text",
+        "label": "Code color",
+        "importance": "medium",
+        "optional": true,
+        "default": "#000000",
+        "widget": "colorSelector",
+        "spectrum": {
+          "showInput": true
+        }
+      },
+      {
+        "name": "backgroundColor",
+        "type": "text",
+        "label": "Background color",
+        "importance": "medium",
+        "optional": true,
+        "default": "#ffffff",
+        "widget": "colorSelector",
+        "spectrum": {
+          "showInput": true,
+          "showAlpha": true,
+          "preferredFormat": "rgb"
+        }
+      },
+      {
+        "name": "maxSize",
+        "type": "text",
+        "label": "Maximum size",
+        "description": "Maximum size for the codes given in CSS notation (pixels by default if only a number is given)",
+        "importance": "medium",
+        "optional": true,
+        "regexp": {
+            "pattern": "^(([1-9]+.[0-9]+)|[0-9])[ ]*(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)?$",
+            "modifiers": "i"
+          }
+      }
+    ]
   }
 ]
