@@ -6,10 +6,8 @@ export default class KewArCode extends H5P.EventDispatcher {
    * @constructor
    *
    * @param {object} params Parameters passed by the editor.
-   * @param {number} contentId Content's id.
-   * @param {object} [extras] Saved state, metadata, etc.
    */
-  constructor(params, contentId, extras = {}) {
+  constructor(params) {
     super();
 
     this.params = Util.extend(
