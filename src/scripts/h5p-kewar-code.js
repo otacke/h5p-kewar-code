@@ -13,7 +13,11 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.params = Util.extend(
       {
         codeType: 'url',
-        text: 'H5P',
+        sms: {
+          number: '+123456789',
+          message: 'Please fetch milk and bread!'
+        },
+        text: 'Please fetch\n* milk\n* bread',
         url: 'https://h5p.org',
         behaviour: {
           codeColor: '#000000',
@@ -34,19 +38,16 @@ export default class KewArCode extends H5P.EventDispatcher {
       // Create codeObject
       const code = qrcode(4, 'L');
 
-      let payload = '';
-      switch (this.params.codeType) {
-
-        case 'text':
-          payload = this.params.text;
-          break;
-
-        case 'url':
-          payload = this.params.url;
-          break;
-
-        default:
-          payload = 'Something went wrong';
+      let payload = 'Something went wrong';
+      if (this.params.codeType === 'sms') {
+        const number = this.params.sms.number.replace(/[^+0-9]/gi, '');
+        payload = `smsto:${number}:${this.params.sms.message}`;
+      }
+      else if (this.params.codeType === 'text') {
+        payload = this.params.text;
+      }
+      else if (this.params.codeType === 'url') {
+        payload = this.params.url;
       }
       code.addData(payload);
 

@@ -6,6 +6,10 @@
     "description": "Select what kind of code you want to generate",
     "options": [
       {
+        "value": "sms",
+        "label": "SMS"
+      },
+      {
         "value": "text",
         "label": "Text"
       },
@@ -15,6 +19,38 @@
       }
     ],
     "default": "url"
+  },
+  {
+    "name": "sms",
+    "type": "group",
+    "label": "SMS",
+    "importance": "high",
+    "expanded": true,
+    "fields": [
+      {
+        "name": "number",
+        "type": "text",
+        "label": "Phone number",
+        "description": "Phone number to send to (please use the format +12 345 67890)",
+        "placeholder": "+12 345 67890"
+      },
+      {
+        "name": "message",
+        "type": "text",
+        "label": "Message",
+        "description": "Message to send",
+        "placeholder": "Please fetch milk and bread!"
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "sms"
+        }
+      ]
+    }
   },
   {
     "name": "text",
