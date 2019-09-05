@@ -1,11 +1,45 @@
 [
   {
-    "name": "textToEncode",
-    "type": "text",
-    "label": "Text",
-    "description": "Text to encode to QR Code",
+    "name": "codeType",
+    "type": "select",
+    "label": "Code type",
+    "description": "Select what kind of code you want to generate",
+    "options": [
+      {
+        "value": "url",
+        "label": "URL"
+      }
+    ],
+    "default": "url"
+  },
+  {
+    "name": "url",
+    "type": "group",
+    "label": "URL",
     "importance": "high",
-    "default": "https://h5p.org"
+    "expanded": true,
+    "fields": [
+      {
+        "name": "url",
+        "type": "text",
+        "label": "URL",
+        "description": "URL to link to (must start with https:// or http://)",
+        "placeholder": "https://h5p.org",
+        "regexp": {
+          "pattern": "https?://([0-9a-z.-]+).[a-z.]{2,}([0-9a-z.-_]*)*/?",
+          "modifiers": "gi"
+        }
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "url"
+        }
+      ]
+    }
   },
   {
     "name": "behaviour",

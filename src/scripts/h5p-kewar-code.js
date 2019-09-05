@@ -14,7 +14,10 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     this.params = Util.extend(
       {
-        textToEncode: 'https://h5p.org',
+        codeType: 'url',
+        url: {
+          url: 'https://h5p.org'
+        },
         behaviour: {
           codeColor: '#000000',
           backgroundColor: '#ffffff',
@@ -33,7 +36,17 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       // Create codeObject
       const code = qrcode(4, 'L');
-      code.addData(this.params.textToEncode);
+
+      let payload = '';
+      switch (this.params.codeType) {
+        case 'url':
+          payload = this.params.url;
+          break;
+        default:
+          payload = 'Something went wrong';
+      }
+      code.addData(payload);
+
       code.make();
 
       // Create DOM element
