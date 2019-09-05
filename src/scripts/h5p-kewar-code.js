@@ -13,9 +13,8 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.params = Util.extend(
       {
         codeType: 'url',
-        url: {
-          url: 'https://h5p.org'
-        },
+        text: 'H5P',
+        url: 'https://h5p.org',
         behaviour: {
           codeColor: '#000000',
           backgroundColor: '#ffffff',
@@ -37,9 +36,15 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       let payload = '';
       switch (this.params.codeType) {
+
+        case 'text':
+          payload = this.params.text;
+          break;
+
         case 'url':
           payload = this.params.url;
           break;
+
         default:
           payload = 'Something went wrong';
       }

@@ -6,11 +6,41 @@
     "description": "Select what kind of code you want to generate",
     "options": [
       {
+        "value": "text",
+        "label": "Text"
+      },
+      {
         "value": "url",
         "label": "URL"
       }
     ],
     "default": "url"
+  },
+  {
+    "name": "text",
+    "type": "group",
+    "label": "Text",
+    "importance": "high",
+    "expanded": true,
+    "fields": [
+      {
+        "name": "text",
+        "type": "text",
+        "label": "Text",
+        "description": "Text to encode",
+        "placeholder": "Please fetch\n* milk\n* bread",
+        "widget": "textarea"
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "text"
+        }
+      ]
+    }
   },
   {
     "name": "url",
