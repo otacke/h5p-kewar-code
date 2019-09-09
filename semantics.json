@@ -6,6 +6,10 @@
     "description": "Select what kind of code you want to generate",
     "options": [
       {
+        "value": "location",
+        "label": "Location"
+      },
+      {
         "value": "phone",
         "label": "Phone number"
       },
@@ -23,6 +27,38 @@
       }
     ],
     "default": "url"
+  },
+  {
+    "name": "location",
+    "type": "group",
+    "label": "Location",
+    "importance": "high",
+    "expanded": true,
+    "fields": [
+      {
+        "name": "latitude",
+        "type": "text",
+        "label": "Latitude",
+        "description": "Latitude (please use the format 53.864462)",
+        "placeholder": "69.646007"
+      },
+      {
+        "name": "longitude",
+        "type": "text",
+        "label": "Longitude",
+        "description": "Longitude (please use the format 10.663792)",
+        "placeholder": "18.954036"
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "location"
+        }
+      ]
+    }
   },
   {
     "name": "phone",
