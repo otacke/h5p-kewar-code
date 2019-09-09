@@ -13,6 +13,7 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.params = Util.extend(
       {
         codeType: 'url',
+        phone: '+123456789',
         sms: {
           number: '+123456789',
           message: 'Please fetch milk and bread!'
@@ -39,7 +40,10 @@ export default class KewArCode extends H5P.EventDispatcher {
       const code = qrcode(4, 'L');
 
       let payload = 'Something went wrong';
-      if (this.params.codeType === 'sms') {
+      if (this.params.codeType === 'phone') {
+        payload = `tel:${this.params.phone}`;
+      }
+      else if (this.params.codeType === 'sms') {
         const number = this.params.sms.number.replace(/[^+0-9]/gi, '');
         payload = `smsto:${number}:${this.params.sms.message}`;
       }

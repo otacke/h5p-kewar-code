@@ -6,6 +6,10 @@
     "description": "Select what kind of code you want to generate",
     "options": [
       {
+        "value": "phone",
+        "label": "Phone number"
+      },
+      {
         "value": "sms",
         "label": "SMS"
       },
@@ -19,6 +23,31 @@
       }
     ],
     "default": "url"
+  },
+  {
+    "name": "phone",
+    "type": "group",
+    "label": "Phone",
+    "importance": "high",
+    "expanded": true,
+    "fields": [
+      {
+        "name": "number",
+        "type": "text",
+        "label": "Phone number",
+        "description": "Phone number to call",
+        "placeholder": "+12 345 67890"
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "phone"
+        }
+      ]
+    }
   },
   {
     "name": "sms",
