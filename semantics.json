@@ -100,7 +100,7 @@
         "name": "number",
         "type": "text",
         "label": "Phone number",
-        "description": "Phone number to call",
+        "description": "Phone number to call (please use the format +12 345 67890)",
         "placeholder": "+12 345 67890"
       }
     ],
