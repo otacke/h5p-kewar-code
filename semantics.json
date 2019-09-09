@@ -6,6 +6,10 @@
     "description": "Select what kind of code you want to generate",
     "options": [
       {
+        "value": "email",
+        "label": "Email address"
+      },
+      {
         "value": "location",
         "label": "Location"
       },
@@ -27,6 +31,31 @@
       }
     ],
     "default": "url"
+  },
+  {
+    "name": "email",
+    "type": "group",
+    "label": "Email address",
+    "importance": "high",
+    "expanded": true,
+    "fields": [
+      {
+        "name": "email",
+        "type": "text",
+        "label": "Email address",
+        "description": "Email address to write message to",
+        "placeholder": "add_your@email.here"
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "email"
+        }
+      ]
+    }
   },
   {
     "name": "location",

@@ -13,6 +13,7 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.params = Util.extend(
       {
         codeType: 'url',
+        email: 'add_your@email.here',
         location: {
           latitude: '69.646007',
           longitude: '18.954036'
@@ -44,7 +45,10 @@ export default class KewArCode extends H5P.EventDispatcher {
       const code = qrcode(4, 'L');
 
       let payload = 'Something went wrong';
-      if (this.params.codeType === 'location') {
+      if (this.params.codeType === 'email') {
+        payload = `mailto:${this.params.email}`;
+      }
+      else if (this.params.codeType === 'location') {
         payload = `geo:${this.params.location.latitude},${this.params.location.longitude}`;
       }
       else if (this.params.codeType === 'phone') {
