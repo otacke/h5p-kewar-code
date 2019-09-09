@@ -42,7 +42,7 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.attach = function ($wrapper) {
 
       // Create codeObject
-      const code = qrcode(4, 'L');
+      const code = qrcode(KewArCode.typeNumber, KewArCode.errorCorrection);
 
       let payload = 'Something went wrong';
       if (this.params.codeType === 'contact') {
@@ -109,3 +109,9 @@ export default class KewArCode extends H5P.EventDispatcher {
     };
   }
 }
+
+/** @constant {number} */
+KewArCode.typeNumber = 0; // 0 = auto sizing; otherwise 1-40, cmp. https://kazuhikoarase.github.io/qrcode-generator/js/demo/
+
+/** @constant {string} */
+KewArCode.errorCorrection = 'L'; // L (7 %), M (15 %), Q (25 %), H (30 %).
