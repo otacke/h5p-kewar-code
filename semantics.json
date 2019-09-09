@@ -6,6 +6,10 @@
     "description": "Select what kind of code you want to generate",
     "options": [
       {
+        "value": "contact",
+        "label": "Contact"
+      },
+      {
         "value": "email",
         "label": "Email address"
       },
@@ -31,6 +35,137 @@
       }
     ],
     "default": "url"
+  },
+  {
+    "name": "contact",
+    "type": "group",
+    "label": "Contact",
+    "importance": "high",
+    "expanded": true,
+    "fields": [
+      {
+        "name": "name",
+        "type": "text",
+        "label": "Name",
+        "placeholder": "John Smith"
+      },
+      {
+        "name": "organization",
+        "type": "text",
+        "label": "Organization",
+        "placeholder": "Acme Inc.",
+        "optional": true
+      },
+      {
+        "name": "title",
+        "type": "text",
+        "label": "Title",
+        "placeholder": "Master of None",
+        "optional": true
+      },
+      {
+        "name": "number",
+        "type": "text",
+        "label": "Phone number",
+        "description": "Phone number (please use the format +12 345 67890)",
+        "placeholder": "+12 345 67890",
+        "optional": true
+      },
+      {
+        "name": "email",
+        "type": "text",
+        "label": "Email address",
+        "description": "Email address to write message to",
+        "placeholder": "add_your@email.here",
+        "optional": true
+      },
+      {
+        "name": "address",
+        "type": "group",
+        "label": "Address",
+        "importance": "medium",
+        "expanded": true,
+        "fields": [
+          {
+            "name": "extended",
+            "type": "text",
+            "label": "Extended address",
+            "description": "c/o information, etc.",
+            "placeholder": "c/o Peter Parker",
+            "optional": true
+          },
+          {
+            "name": "street",
+            "type": "text",
+            "label": "Street",
+            "description": "Street including number",
+            "placeholder": "4 Privet Drive",
+            "optional": true
+          },
+          {
+            "name": "locality",
+            "type": "text",
+            "label": "Locality",
+            "description": "City name, etc.",
+            "placeholder": "Minneapolis",
+            "optional": true
+          },
+          {
+            "name": "region",
+            "type": "text",
+            "label": "Region",
+            "description": "Federal state, county, etc.",
+            "placeholder": "MN",
+            "optional": true
+          },
+          {
+            "name": "zip",
+            "type": "text",
+            "label": "ZIP code",
+            "description": "ZIP code",
+            "placeholder": "55416",
+            "optional": true
+          },
+          {
+            "name": "country",
+            "type": "text",
+            "label": "Country",
+            "description": "Country",
+            "placeholder": "USA",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "name": "url",
+        "type": "text",
+        "label": "Website",
+        "description": "Website to link to (must start with https:// or http://)",
+        "placeholder": "https://h5p.org",
+        "regexp": {
+          "pattern": "https?://([0-9a-z.-]+).[a-z.]{2,}([0-9a-z.-_]*)*/?",
+          "modifiers": "i"
+        },
+        "optional": true
+      },
+      {
+        "name": "note",
+        "type": "text",
+        "label": "Note",
+        "description": "Note",
+        "placeholder": "Something you want to note",
+        "optional": true
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "contact"
+        }
+      ]
+    }
   },
   {
     "name": "email",

@@ -45,7 +45,22 @@ export default class KewArCode extends H5P.EventDispatcher {
       const code = qrcode(4, 'L');
 
       let payload = 'Something went wrong';
-      if (this.params.codeType === 'email') {
+      if (this.params.codeType === 'contact') {
+        const address = this.params.contact.address;
+
+        payload  = `BEGIN:VCARD\n`;
+        payload += `VERSION:3.0\n`;
+        payload += `N:${this.params.contact.name}\n`;
+        payload += `ORG:${this.params.contact.organization}\n`;
+        payload += `TITLE:${this.params.contact.title}\n`;
+        payload += `TEL:${this.params.contact.number}\n`;
+        payload += `EMAIL:${this.params.contact.email}\n`;
+        payload += `URL:${this.params.contact.url}\n`;
+        payload += `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n`;
+        payload += `NOTE:${this.params.contact.note}\n`;
+        payload += `END:VCARD`;
+      }
+      else if (this.params.codeType === 'email') {
         payload = `mailto:${this.params.email}`;
       }
       else if (this.params.codeType === 'location') {
