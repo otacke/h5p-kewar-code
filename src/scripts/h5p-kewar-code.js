@@ -13,6 +13,16 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.params = Util.extend(
       {
         codeType: 'url',
+        event: {
+          title: 'Unnamed event',
+          allDay: false,
+          dateStart: '1970/1/1',
+          timeStart: '00:00',
+          dateEnd: '1970/1/1',
+          timeEnd: '01:00',
+          timezone: '0:00',
+          daylightSavings: false
+        },
         email: 'add_your@email.here',
         location: {
           latitude: '69.646007',
@@ -60,6 +70,45 @@ export default class KewArCode extends H5P.EventDispatcher {
         payload += `NOTE:${this.params.contact.note}\n`;
         payload += `END:VCARD`;
       }
+      else if (this.params.codeType === 'event') {
+        const event = this.params.event;
+
+        if (this.params.event.allDay) {
+          event.timeStart = '00:00';
+          event.timeEnd = '00:00';
+        }
+
+        event.dateStart = event.dateStart.split('/');
+        event.dateEnd = event.dateEnd.split('/');
+        event.timeStart = event.timeStart.split(':');
+        event.timeEnd = event.timeEnd.split(':');
+
+        event.timezone = event.timezone.split(':');
+
+        const dateStart = new Date(Date.UTC(
+          event.dateStart[0],
+          event.dateStart[1] - 1,
+          event.dateStart[2],
+          event.timeStart[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
+          event.timeStart[1] - event.timezone[1]
+        )).toISOString().split('.')[0].replace(/-|\.|:/g, '');
+
+        const dateEnd = new Date(Date.UTC(
+          event.dateEnd[0],
+          event.dateEnd[1] - 1,
+          event.dateEnd[2],
+          event.timeEnd[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
+          event.timeEnd[1] - event.timezone[1]
+        )).toISOString().split('.')[0].replace(/-|\.|:/g, '');
+
+        payload  = `BEGIN:VEVENT\n`;
+        payload += `SUMMARY:${event.title}\n`;
+        payload += `DTSTART:${dateStart}\n`;
+        payload += `DTEND:${dateEnd}\n`;
+        payload += (event.location) ? `LOCATION:${event.location}\n` : ``;
+        payload += (event.description) ? `DESCRIPTION:${event.description}\n` : ``;
+        payload += `END:VEVENT`;
+      }
       else if (this.params.codeType === 'email') {
         payload = `mailto:${this.params.email}`;
       }
@@ -79,6 +128,7 @@ export default class KewArCode extends H5P.EventDispatcher {
       else if (this.params.codeType === 'url') {
         payload = this.params.url;
       }
+
       code.addData(payload);
 
       code.make();

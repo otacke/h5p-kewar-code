@@ -10,6 +10,10 @@
         "label": "Contact"
       },
       {
+        "value": "event",
+        "label": "Event"
+      },
+      {
         "value": "email",
         "label": "Email address"
       },
@@ -163,6 +167,280 @@
         {
           "field": "codeType",
           "equals": "contact"
+        }
+      ]
+    }
+  },
+  {
+    "name": "event",
+    "type": "group",
+    "label": "Event",
+    "importance": "high",
+    "expanded": true,
+    "fields": [
+      {
+        "name": "title",
+        "type": "text",
+        "label": "Title",
+        "description": "Title for the calendar event",
+        "placeholder": "Go shopping"
+      },
+      {
+        "name": "allDay",
+        "type": "boolean",
+        "label": "All day event",
+        "description": "Check if event will be valid all day long"
+      },
+      {
+        "name": "dateStart",
+        "type": "text",
+        "label": "Start date",
+        "description": "Start date of the event (please use the format yyyy/mm/dd)",
+        "placeholder": "2019/12/27"
+      },
+      {
+        "name": "timeStart",
+        "type": "text",
+        "label": "Start time",
+        "description": "Start time of the event (please use the format hh:mm)",
+        "placeholder": "23:58",
+        "widget": "showWhen",
+        "showWhen": {
+          "rules": [
+            {
+              "field": "allDay",
+              "equals": false
+            }
+          ]
+        }
+      },
+      {
+        "name": "dateEnd",
+        "type": "text",
+        "label": "End date",
+        "description": "End date of the event (please use the format yyyy/mm/dd)",
+        "placeholder": "2019/12/30"
+      },
+      {
+        "name": "timeEnd",
+        "type": "text",
+        "label": "End time",
+        "description": "End time of the event (please use the format hh:mm)",
+        "placeholder": "15:12",
+        "widget": "showWhen",
+        "showWhen": {
+          "rules": [
+            {
+              "field": "allDay",
+              "equals": false
+            }
+          ]
+        }
+      },
+      {
+        "name": "timezone",
+        "type": "select",
+        "label": "Timezone",
+        "description": "Select the time zone the event is supposed to take place in",
+        "options": [
+          {
+            "value": "-12:00",
+            "label": "UTC-12:00"
+          },
+          {
+            "value": "-11:00",
+            "label": "UTC-11:00"
+          },
+          {
+            "value": "-10:00",
+            "label": "UTC-10:00"
+          },
+          {
+            "value": "-9:30",
+            "label": "UTC-9:30"
+          },
+          {
+            "value": "-9:00",
+            "label": "UTC-9:00"
+          },
+          {
+            "value": "-8:00",
+            "label": "UTC-8:00"
+          },
+          {
+            "value": "-7:00",
+            "label": "UTC-7:00"
+          },
+          {
+            "value": "-6:00",
+            "label": "UTC-6:00"
+          },
+          {
+            "value": "-5:00",
+            "label": "UTC-5:00"
+          },
+          {
+            "value": "-4:00",
+            "label": "UTC-4:00"
+          },
+          {
+            "value": "-3:30",
+            "label": "UTC-3:30"
+          },
+          {
+            "value": "-3:00",
+            "label": "UTC-3:00"
+          },
+          {
+            "value": "-2:00",
+            "label": "UTC-2:00"
+          },
+          {
+            "value": "-1:00",
+            "label": "UTC-1:00"
+          },
+          {
+            "value": "0:00",
+            "label": "UTC"
+          },
+          {
+            "value": "1:00",
+            "label": "UTC+1:00"
+          },
+          {
+            "value": "2:00",
+            "label": "UTC+2:00"
+          },
+          {
+            "value": "3:00",
+            "label": "UTC+3:00"
+          },
+          {
+            "value": "3:30",
+            "label": "UTC+3:30"
+          },
+          {
+            "value": "4:00",
+            "label": "UTC+4:00"
+          },
+          {
+            "value": "4:00",
+            "label": "UTC+4:30"
+          },
+          {
+            "value": "5:00",
+            "label": "UTC+5:00"
+          },
+          {
+            "value": "5:30",
+            "label": "UTC+5:30"
+          },
+          {
+            "value": "5:45",
+            "label": "UTC+5:45"
+          },
+          {
+            "value": "6:00",
+            "label": "UTC+6:00"
+          },
+          {
+            "value": "6:30",
+            "label": "UTC+6:30"
+          },
+          {
+            "value": "7:00",
+            "label": "UTC+7:00"
+          },
+          {
+            "value": "8:00",
+            "label": "UTC+8:00"
+          },
+          {
+            "value": "9:00",
+            "label": "UTC+9:00"
+          },
+          {
+            "value": "9:30",
+            "label": "UTC+9:30"
+          },
+          {
+            "value": "10:00",
+            "label": "UTC+10:00"
+          },
+          {
+            "value": "10:30",
+            "label": "UTC+10:30"
+          },
+          {
+            "value": "11:00",
+            "label": "UTC+11:00"
+          },
+          {
+            "value": "12:00",
+            "label": "UTC+12:00"
+          },
+          {
+            "value": "12:45",
+            "label": "UTC+12:45"
+          },
+          {
+            "value": "13:00",
+            "label": "UTC+13:00"
+          },
+          {
+            "value": "14:00",
+            "label": "UTC+14:00"
+          }
+        ],
+        "default": "0",
+        "widget": "showWhen",
+        "showWhen": {
+          "rules": [
+            {
+              "field": "allDay",
+              "equals": false
+            }
+          ]
+        }
+      },
+      {
+        "name": "daylightSavings",
+        "type": "boolean",
+        "label": "Daylight savings",
+        "description": "Check if location that the event is taking place in uses daylight savings time",
+        "widget": "showWhen",
+        "showWhen": {
+          "rules": [
+            {
+              "field": "allDay",
+              "equals": false
+            }
+          ]
+        }
+      },
+      {
+        "name": "location",
+        "type": "text",
+        "label": "Location",
+        "description": "Name the location",
+        "placeholder": "Earth",
+        "optional": true
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "label": "Description",
+        "description": "Add a description for the event",
+        "placeholder": "I am going shopping!",
+        "optional": true
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "event"
         }
       ]
     }
