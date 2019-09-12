@@ -57,7 +57,7 @@
         "name": "organization",
         "type": "text",
         "label": "Organization",
-        "placeholder": "Acme Inc.",
+        "placeholder": "H5P fan club",
         "optional": true
       },
       {
@@ -84,7 +84,7 @@
         "type": "text",
         "label": "Email address",
         "description": "Email address to write message to",
-        "placeholder": "add_your@email.here",
+        "placeholder": "john@fictional-h5p-fan-club.org",
         "optional": true,
         "regexp": {
           "pattern": "^[A-Z0-9\\._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$",
@@ -103,7 +103,7 @@
             "type": "text",
             "label": "Extended address",
             "description": "c/o information, etc.",
-            "placeholder": "c/o Peter Parker",
+            "placeholder": "c/o H5P Fan Club",
             "optional": true
           },
           {
@@ -111,7 +111,7 @@
             "type": "text",
             "label": "Street",
             "description": "Street including number",
-            "placeholder": "4 Privet Drive",
+            "placeholder": "1308 W. Dayton Street",
             "optional": true
           },
           {
@@ -119,7 +119,7 @@
             "type": "text",
             "label": "Locality",
             "description": "City name, etc.",
-            "placeholder": "Minneapolis",
+            "placeholder": "Madison",
             "optional": true
           },
           {
@@ -127,7 +127,7 @@
             "type": "text",
             "label": "Region",
             "description": "Federal state, county, etc.",
-            "placeholder": "MN",
+            "placeholder": "WI",
             "optional": true
           },
           {
@@ -135,7 +135,7 @@
             "type": "text",
             "label": "ZIP code",
             "description": "ZIP code",
-            "placeholder": "55416",
+            "placeholder": "53715",
             "optional": true
           },
           {
@@ -153,7 +153,7 @@
         "type": "text",
         "label": "Website",
         "description": "Website to link to (must start with https:// or http://)",
-        "placeholder": "https://h5p.org",
+        "placeholder": "https://fictional-h5p-fan-club.org",
         "regexp": {
           "pattern": "https?://([0-9a-z.-]+).[a-z.]{2,}([0-9a-z.-_]*)*/?",
           "modifiers": "i"
@@ -165,7 +165,7 @@
         "type": "text",
         "label": "Note",
         "description": "Note",
-        "placeholder": "Something you want to note",
+        "placeholder": "John loves H5P.",
         "optional": true
       }
     ],
@@ -191,7 +191,7 @@
         "type": "text",
         "label": "Title",
         "description": "Title for the calendar event",
-        "placeholder": "Go shopping"
+        "placeholder": "H5P Conference 2020"
       },
       {
         "name": "allDay",
@@ -204,7 +204,7 @@
         "type": "text",
         "label": "Start date",
         "description": "Start date of the event (please use the format yyyy/mm/dd)",
-        "placeholder": "2019/12/27",
+        "placeholder": "2020/05/18",
         "regexp": {
           "pattern": "^[0-9]{4,}/0*([1-9]|1[0-2])/0*([1-9]|[12][0-9]|3[01])$",
           "modifiers": ""
@@ -215,7 +215,7 @@
         "type": "text",
         "label": "Start time",
         "description": "Start time of the event (please use the format hh:mm)",
-        "placeholder": "23:58",
+        "placeholder": "09:00",
         "regexp": {
           "pattern": "^0*([1-9]|1[0-9]|2[0-3]):0*([0-9]|[1-4][0-9]|5[0-9])$",
           "modifiers": ""
@@ -235,7 +235,7 @@
         "type": "text",
         "label": "End date",
         "description": "End date of the event (please use the format yyyy/mm/dd)",
-        "placeholder": "2019/12/30",
+        "placeholder": "2020/05/20",
         "regexp": {
           "pattern": "^[0-9]{4,}/0*([1-9]|1[0-2])/0*([1-9]|[12][0-9]|3[01])$",
           "modifiers": ""
@@ -246,7 +246,7 @@
         "type": "text",
         "label": "End time",
         "description": "End time of the event (please use the format hh:mm)",
-        "placeholder": "15:12",
+        "placeholder": "16:00",
         "regexp": {
           "pattern": "^0*([1-9]|1[0-9]|2[0-3]):0*([0-9]|[1-4][0-9]|5[0-9])$",
           "modifiers": ""
@@ -447,7 +447,7 @@
         "type": "text",
         "label": "Location",
         "description": "Name the location",
-        "placeholder": "Earth",
+        "placeholder": "Madison, USA",
         "optional": true
       },
       {
@@ -455,7 +455,7 @@
         "type": "text",
         "label": "Description",
         "description": "Add a description for the event",
-        "placeholder": "I am going shopping!",
+        "placeholder": "3rd H5P conference",
         "optional": true
       }
     ],
@@ -481,7 +481,7 @@
         "type": "text",
         "label": "Email address",
         "description": "Email address to write message to",
-        "placeholder": "add_your@email.here",
+        "placeholder": "john@fictional-h5p-fan-club.org",
         "regexp": {
           "pattern": "^[A-Z0-9\\._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$",
           "modifiers": "i"
@@ -641,7 +641,7 @@
         "type": "text",
         "label": "URL",
         "description": "URL to link to (must start with https:// or http://)",
-        "placeholder": "https://h5p.org",
+        "placeholder": "https://fictional-h5p-fan-club.org",
         "regexp": {
           "pattern": "https?://([0-9a-z.-]+).[a-z.]{2,}([0-9a-z.-_]*)*/?",
           "modifiers": "i"
@@ -694,7 +694,7 @@
         "name": "maxSize",
         "type": "text",
         "label": "Maximum size",
-        "description": "Maximum size for the codes given in CSS notation (pixels by default if only a number is given)",
+        "description": "Maximum size for the code given in CSS notation (pixels by default if only a number is given)",
         "importance": "medium",
         "optional": true,
         "regexp": {
