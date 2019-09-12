@@ -78,27 +78,27 @@ export default class KewArCode extends H5P.EventDispatcher {
           event.timeEnd = '00:00';
         }
 
-        event.dateStart = event.dateStart.split('/');
-        event.dateEnd = event.dateEnd.split('/');
-        event.timeStart = event.timeStart.split(':');
-        event.timeEnd = event.timeEnd.split(':');
+        event.dateStart = event.dateStart.split('/').map(value => parseInt(value, 10));
+        event.dateEnd = event.dateEnd.split('/').map(value => parseInt(value, 10));
+        event.timeStart = event.timeStart.split(':').map(value => parseInt(value, 10));
+        event.timeEnd = event.timeEnd.split(':').map(value => parseInt(value, 10));
 
         event.timezone = event.timezone.split(':');
 
         let dateStart = new Date(Date.UTC(
-          parseInt(event.dateStart[0], 10),
-          parseInt(event.dateStart[1], 10) - 1,
-          parseInt(event.dateStart[2], 10),
-          parseInt(event.timeStart[0], 10) - parseInt(event.timezone[0], 10) + ((event.daylightSavings) ? 1 : 0),
-          parseInt(event.timeStart[1], 10) - parseInt(event.timezone[1], 10)
+          event.dateStart[0],
+          event.dateStart[1] - 1,
+          event.dateStart[2],
+          event.timeStart[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
+          event.timeStart[1] - event.timezone[1]
         ));
 
         let dateEnd = new Date(Date.UTC(
-          parseInt(event.dateEnd[0], 10),
-          parseInt(event.dateEnd[1], 10) - 1,
-          parseInt(event.dateEnd[2], 10),
-          parseInt(event.timeEnd[0], 10) - parseInt(event.timezone[0], 10) + ((event.daylightSavings) ? 1 : 0),
-          parseInt(event.timeEnd[1], 10) - parseInt(event.timezone[1], 10)
+          event.dateEnd[0],
+          event.dateEnd[1] - 1,
+          event.dateEnd[2],
+          event.timeEnd[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
+          event.timeEnd[1] - event.timezone[1]
         ));
 
         if (dateEnd < dateStart) {
