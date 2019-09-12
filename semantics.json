@@ -541,7 +541,7 @@
   {
     "name": "phone",
     "type": "group",
-    "label": "Phone",
+    "label": "Phone number",
     "importance": "high",
     "expanded": true,
     "fields": [
@@ -662,6 +662,7 @@
     "name": "behaviour",
     "type": "group",
     "label": "Behavioural settings",
+    "description": "These options will let you control how the task behaves.",
     "importance": "high",
     "fields": [
       {
