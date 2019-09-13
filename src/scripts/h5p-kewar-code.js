@@ -73,117 +73,17 @@ export default class KewArCode extends H5P.EventDispatcher {
       const code = qrcode(KewArCode.typeNumber, KewArCode.errorCorrection);
 
       let payload = 'Something went wrong';
-      let display;
+      let display = document.createElement('div').innerHTML = payload;
 
       if (this.params.codeType === 'contact') {
-        const address = this.params.contact.address;
-
-        payload  = `BEGIN:VCARD\n`;
-        payload += `VERSION:3.0\n`;
-        payload += `N:${this.params.contact.name}\n`;
-        payload += (this.params.contact.organization !== '') ? `ORG:${this.params.contact.organization}\n` : '';
-        payload += (this.params.contact.title !== '') ? `TITLE:${this.params.contact.title}\n` : '';
-        payload += (this.params.contact.number !== '') ? `TEL:${this.params.contact.number}\n` : '';
-        payload += (this.params.contact.email !== '') ? `EMAIL:${this.params.contact.email}\n` : '';
-        payload += (this.params.contact.url !== '') ? `URL:${this.params.contact.url}\n` : '';
-        payload += (
-          address.extended !== '' ||
-          address.street !== '' ||
-          address.locality !== '' ||
-          address.region ||
-          address.zip !== '' ||
-          address.country !== ''
-        ) ? `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n` : '';
-        payload += (this.params.contact.note !== '') ? `NOTE:${this.params.contact.note}\n` : '';
-        payload += `END:VCARD`;
-
-        const displayContent = [
-          {name: 'Name', content: this.params.contact.name}
-        ];
-        if (this.params.contact.organization !== '') {
-          displayContent.push({name: 'Organization', content: this.params.contact.organization});
-        }
-        if (this.params.contact.title !== '') {
-          displayContent.push({name: 'Title', content: this.params.contact.title});
-        }
-        if (this.params.contact.number !== '') {
-          displayContent.push({name: 'Phone number', content: this.params.contact.number});
-        }
-        if (this.params.contact.email !== '') {
-          displayContent.push({name: 'Email', content: `<a href="mailto:${this.params.contact.email}">${this.params.contact.email}</a>`});
-        }
-        if (this.params.contact.url !== '') {
-          displayContent.push({name: 'URL', content: `<a href="${this.params.contact.url}" target="blank">${this.params.contact.url}</a>`});
-        }
-        const addressChunks = [address.extended, address.street, address.locality, address.region, address.zip, address.country]
-          .filter(chunk => chunk !== '')
-          .join(', ');
-        if (addressChunks !== '') {
-          displayContent.push({name: 'Address', content: addressChunks});
-        }
-        if (this.params.contact.note !== '') {
-          displayContent.push({name: 'Note', content: this.params.contact.note});
-        }
-        display = this.buildDisplay('Contact', displayContent);
+        const contact = this.buildContact(this.params.contact);
+        payload = contact.payload;
+        display = contact.display;
       }
       else if (this.params.codeType === 'event') {
-        const event = this.params.event;
-
-        if (this.params.event.allDay) {
-          event.timeStart = '00:00';
-          event.timeEnd = '00:00';
-        }
-
-        event.dateStart = event.dateStart.split('/').map(value => parseInt(value, 10));
-        event.dateEnd = event.dateEnd.split('/').map(value => parseInt(value, 10));
-        event.timeStart = event.timeStart.split(':').map(value => parseInt(value, 10));
-        event.timeEnd = event.timeEnd.split(':').map(value => parseInt(value, 10));
-
-        event.timezone = event.timezone.split(':');
-
-        let dateStart = new Date(Date.UTC(
-          event.dateStart[0],
-          event.dateStart[1] - 1,
-          event.dateStart[2],
-          event.timeStart[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
-          event.timeStart[1] - event.timezone[1]
-        ));
-
-        let dateEnd = new Date(Date.UTC(
-          event.dateEnd[0],
-          event.dateEnd[1] - 1,
-          event.dateEnd[2],
-          event.timeEnd[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
-          event.timeEnd[1] - event.timezone[1]
-        ));
-
-        if (dateEnd < dateStart) {
-          dateEnd = dateStart;
-        }
-
-        const dateStartCode = dateStart.toISOString().split('.')[0].replace(/-|\.|:/g, '');
-        const dateEndCode = dateEnd.toISOString().split('.')[0].replace(/-|\.|:/g, '');
-
-        payload  = `BEGIN:VEVENT\n`;
-        payload += `SUMMARY:${event.title}\n`;
-        payload += `DTSTART:${dateStartCode}\n`;
-        payload += `DTEND:${dateEndCode}\n`;
-        payload += (event.location) ? `LOCATION:${event.location}\n` : ``;
-        payload += (event.description) ? `DESCRIPTION:${event.description}\n` : ``;
-        payload += `END:VEVENT`;
-
-        const displayContent = [
-          {name: 'Title', content: event.title},
-          {name: 'Start', content: dateStart.toString()},
-          {name: 'End', content: dateEnd.toString()}
-        ];
-        if (event.location) {
-          displayContent.push({name: 'Location', content: event.location});
-        }
-        if (event.description) {
-          displayContent.push({name: 'Description', content: event.description});
-        }
-        display = this.buildDisplay('Event', displayContent);
+        const contact = this.buildEvent(this.params.event);
+        payload = contact.payload;
+        display = contact.display;
       }
       else if (this.params.codeType === 'email') {
         payload = `mailto:${this.params.email}`;
@@ -218,8 +118,6 @@ export default class KewArCode extends H5P.EventDispatcher {
       }
 
       code.addData(payload);
-      console.log(payload);
-
       code.make();
 
       this.overlay = new Overlay(display);
@@ -254,6 +152,165 @@ export default class KewArCode extends H5P.EventDispatcher {
     };
 
     /**
+     * Build contact.
+     * @param {object} contact Contact object.
+     * @param {string} contact.name Name.
+     * @param {string} [contact.organization] Organization.
+     * @param {string} [contact.title] Title.
+     * @param {string} [contact.number] Phone number.
+     * @param {string} [contact.email] Email address.
+     * @param {string} [contact.url] URL.
+     * @param {object} [contact.address] Address.
+     * @param {object} [contact.address.extended] Address extended info.
+     * @param {object} [contact.address.street] Address street.
+     * @param {object} [contact.address.locality] Address locality.
+     * @param {object} [contact.address.region] Address region.
+     * @param {object} [contact.address.zip] Address zip.
+     * @param {object} [contact.address.country] Address country.
+     * @param {string} [contact.note] Note.
+     * @return {object} Payload and display.
+     */
+    this.buildContact = function (contact) {
+      const address = contact.address;
+
+      // Payload
+      let payload = `BEGIN:VCARD\n`;
+      payload += `VERSION:3.0\n`;
+      payload += `N:${params.name}\n`;
+      payload += (contact.organization !== '') ? `ORG:${contact.organization}\n` : '';
+      payload += (contact.title !== '') ? `TITLE:${contact.title}\n` : '';
+      payload += (contact.number !== '') ? `TEL:${contact.number}\n` : '';
+      payload += (contact.email !== '') ? `EMAIL:${contact.email}\n` : '';
+      payload += (contact.url !== '') ? `URL:${contact.url}\n` : '';
+      payload += (
+        address.extended !== '' ||
+        address.street !== '' ||
+        address.locality !== '' ||
+        address.region ||
+        address.zip !== '' ||
+        address.country !== ''
+      ) ? `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n` : '';
+      payload += (this.params.contact.note !== '') ? `NOTE:${this.params.contact.note}\n` : '';
+      payload += `END:VCARD`;
+
+      // Display
+      const displayContent = [
+        {name: 'Name', content: contact.name}
+      ];
+      if (contact.organization !== '') {
+        displayContent.push({name: 'Organization', content: contact.organization});
+      }
+      if (contact.title !== '') {
+        displayContent.push({name: 'Title', content: contact.title});
+      }
+      if (contact.number !== '') {
+        displayContent.push({name: 'Phone number', content: contact.number});
+      }
+      if (contact.email !== '') {
+        displayContent.push({name: 'Email', content: `<a href="mailto:${contact.email}">${contact.email}</a>`});
+      }
+      if (contact.url !== '') {
+        displayContent.push({name: 'URL', content: `<a href="${contact.url}" target="blank">${contact.url}</a>`});
+      }
+      const addressChunks = [address.extended, address.street, address.locality, address.region, address.zip, address.country]
+        .filter(chunk => chunk !== '')
+        .join(', ');
+      if (addressChunks !== '') {
+        displayContent.push({name: 'Address', content: addressChunks});
+      }
+      if (contact.note !== '') {
+        displayContent.push({name: 'Note', content: contact.note});
+      }
+      let display = this.buildDisplay('Contact', displayContent);
+
+      return {
+        payload: payload,
+        display: display
+      };
+    };
+
+    /**
+     * Build event.
+     * @param {object} event Event data.
+     * @param {string} event.title Title.
+     * @param {boolean} event.allDay If true, event will take all day.
+     * @param {string} event.dateStart Start date as yyyy/mm/dd.
+     * @param {string} event.timeStart Start time as hh:mm.
+     * @param {string} event.dateEnd End date as yyyy/mm/dd.
+     * @param {string} event.timeEnd End time as hh:mm.
+     * @param {string} event.timezone Timezone offset.
+     * @param {boolean} event.daylightSavings If true, consider daylight savings time.
+     * @param {string} [event.location] Location.
+     * @param {string} [event.description] Description.
+     * @return {object} Payload and display.
+     */
+    this.buildEvent = function (event) {
+      if (event.allDay) {
+        event.timeStart = '00:00';
+        event.timeEnd = '00:00';
+      }
+
+      // Date formatting
+      event.dateStart = event.dateStart.split('/').map(value => parseInt(value, 10));
+      event.dateEnd = event.dateEnd.split('/').map(value => parseInt(value, 10));
+      event.timeStart = event.timeStart.split(':').map(value => parseInt(value, 10));
+      event.timeEnd = event.timeEnd.split(':').map(value => parseInt(value, 10));
+
+      event.timezone = event.timezone.split(':');
+
+      let dateStart = new Date(Date.UTC(
+        event.dateStart[0],
+        event.dateStart[1] - 1,
+        event.dateStart[2],
+        event.timeStart[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
+        event.timeStart[1] - event.timezone[1]
+      ));
+
+      let dateEnd = new Date(Date.UTC(
+        event.dateEnd[0],
+        event.dateEnd[1] - 1,
+        event.dateEnd[2],
+        event.timeEnd[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
+        event.timeEnd[1] - event.timezone[1]
+      ));
+
+      if (dateEnd < dateStart) {
+        dateEnd = dateStart;
+      }
+
+      const dateStartCode = dateStart.toISOString().split('.')[0].replace(/-|\.|:/g, '');
+      const dateEndCode = dateEnd.toISOString().split('.')[0].replace(/-|\.|:/g, '');
+
+      // Payload
+      let payload  = `BEGIN:VEVENT\n`;
+      payload += `SUMMARY:${event.title}\n`;
+      payload += `DTSTART:${dateStartCode}\n`;
+      payload += `DTEND:${dateEndCode}\n`;
+      payload += (event.location) ? `LOCATION:${event.location}\n` : ``;
+      payload += (event.description) ? `DESCRIPTION:${event.description}\n` : ``;
+      payload += `END:VEVENT`;
+
+      // Display
+      const displayContent = [
+        {name: 'Title', content: event.title},
+        {name: 'Start', content: dateStart.toString()},
+        {name: 'End', content: dateEnd.toString()}
+      ];
+      if (event.location) {
+        displayContent.push({name: 'Location', content: event.location});
+      }
+      if (event.description) {
+        displayContent.push({name: 'Description', content: event.description});
+      }
+      let display = this.buildDisplay('Event', displayContent);
+
+      return {
+        payload: payload,
+        display: display
+      };
+    };
+
+    /**
      * Build display for overlay.
      * @param {string} [titleText=''] Text for the title, can be empty.
      * @param {object|string} [rows=''] Content rows.
@@ -265,14 +322,17 @@ export default class KewArCode extends H5P.EventDispatcher {
         rows = [{name: '', content: rows}];
       }
 
+      // Display
       const display = document.createElement('div');
       display.classList.add('h5p-kewar-code-display');
 
+      // Title
       const title = document.createElement('div');
       title.classList.add('h5p-kewar-code-display-title');
       title.innerHTML = titleText;
       display.appendChild(title);
 
+      // Rows
       rows.forEach( rowContent => {
         const row = document.createElement('div');
         row.classList.add('h5p-kewar-code-display-row');

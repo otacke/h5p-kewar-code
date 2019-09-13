@@ -8,20 +8,22 @@ export default class Overlay {
   constructor(content, callbackClosed) {
     callbackClosed = callbackClosed || (() => {});
 
+    // Overlay
     this.overlay = document.createElement('div');
     this.overlay.classList.add('h5p-kewar-code-overlay');
     this.overlay.classList.add('h5p-kewar-code-no-display');
-
     this.overlay.addEventListener('transitionend', () => {
       if (this.isTransparent === true) {
         this.overlay.classList.add('h5p-kewar-code-no-display');
       }
     });
 
+    // Box containing content and close button
     const box = document.createElement('div');
     box.classList.add('h5p-kewar-code-overlay-box');
     this.overlay.appendChild(box);
 
+    // Content
     this.content = document.createElement('div');
     this.content.classList.add('h5p-kewar-code-overlay-box-content');
     if (content) {
@@ -29,6 +31,7 @@ export default class Overlay {
     }
     box.appendChild(this.content);
 
+    // Close button
     const buttonClose = document.createElement('div');
     buttonClose.classList.add('h5p-kewar-code-overlay-box-button-close');
     buttonClose.addEventListener('click', () => {
