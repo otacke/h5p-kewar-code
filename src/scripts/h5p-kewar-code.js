@@ -14,6 +14,23 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.params = Util.extend(
       {
         codeType: 'url',
+        contact: {
+          name: 'Unknown',
+          title: '',
+          organization: '',
+          url: '',
+          number: '',
+          email: '',
+          address: {
+            extended: '',
+            street: '',
+            locality: '',
+            region: '',
+            zip: '',
+            country: ''
+          },
+          note: ''
+        },
         event: {
           title: 'Unnamed event',
           allDay: false,
@@ -56,20 +73,58 @@ export default class KewArCode extends H5P.EventDispatcher {
       const code = qrcode(KewArCode.typeNumber, KewArCode.errorCorrection);
 
       let payload = 'Something went wrong';
+      let display;
+
       if (this.params.codeType === 'contact') {
         const address = this.params.contact.address;
 
         payload  = `BEGIN:VCARD\n`;
         payload += `VERSION:3.0\n`;
         payload += `N:${this.params.contact.name}\n`;
-        payload += `ORG:${this.params.contact.organization}\n`;
-        payload += `TITLE:${this.params.contact.title}\n`;
-        payload += `TEL:${this.params.contact.number}\n`;
-        payload += `EMAIL:${this.params.contact.email}\n`;
-        payload += `URL:${this.params.contact.url}\n`;
-        payload += `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n`;
-        payload += `NOTE:${this.params.contact.note}\n`;
+        payload += (this.params.contact.organization !== '') ? `ORG:${this.params.contact.organization}\n` : '';
+        payload += (this.params.contact.title !== '') ? `TITLE:${this.params.contact.title}\n` : '';
+        payload += (this.params.contact.number !== '') ? `TEL:${this.params.contact.number}\n` : '';
+        payload += (this.params.contact.email !== '') ? `EMAIL:${this.params.contact.email}\n` : '';
+        payload += (this.params.contact.url !== '') ? `URL:${this.params.contact.url}\n` : '';
+        payload += (
+          address.extended !== '' ||
+          address.street !== '' ||
+          address.locality !== '' ||
+          address.region ||
+          address.zip !== '' ||
+          address.country !== ''
+        ) ? `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n` : '';
+        payload += (this.params.contact.note !== '') ? `NOTE:${this.params.contact.note}\n` : '';
         payload += `END:VCARD`;
+
+        const displayContent = [
+          {name: 'Name', content: this.params.contact.name}
+        ];
+        if (this.params.contact.organization !== '') {
+          displayContent.push({name: 'Organization', content: this.params.contact.organization});
+        }
+        if (this.params.contact.title !== '') {
+          displayContent.push({name: 'Title', content: this.params.contact.title});
+        }
+        if (this.params.contact.number !== '') {
+          displayContent.push({name: 'Phone number', content: this.params.contact.number});
+        }
+        if (this.params.contact.email !== '') {
+          displayContent.push({name: 'Email', content: `<a href="mailto:${this.params.contact.email}">${this.params.contact.email}</a>`});
+        }
+        if (this.params.contact.url !== '') {
+          displayContent.push({name: 'URL', content: `<a href="${this.params.contact.url}" target="blank">${this.params.contact.url}</a>`});
+        }
+        const addressChunks = [address.extended, address.street, address.locality, address.region, address.zip, address.country]
+          .filter(chunk => chunk !== '')
+          .join(', ');
+        if (addressChunks !== '') {
+          displayContent.push({name: 'Address', content: addressChunks});
+        }
+        if (this.params.contact.note !== '') {
+          displayContent.push({name: 'Note', content: this.params.contact.note});
+        }
+        display = this.buildDisplay('Contact', displayContent);
       }
       else if (this.params.codeType === 'event') {
         const event = this.params.event;
@@ -106,42 +161,68 @@ export default class KewArCode extends H5P.EventDispatcher {
           dateEnd = dateStart;
         }
 
-        dateStart = dateStart.toISOString().split('.')[0].replace(/-|\.|:/g, '');
-        dateEnd = dateEnd.toISOString().split('.')[0].replace(/-|\.|:/g, '');
+        const dateStartCode = dateStart.toISOString().split('.')[0].replace(/-|\.|:/g, '');
+        const dateEndCode = dateEnd.toISOString().split('.')[0].replace(/-|\.|:/g, '');
 
         payload  = `BEGIN:VEVENT\n`;
         payload += `SUMMARY:${event.title}\n`;
-        payload += `DTSTART:${dateStart}\n`;
-        payload += `DTEND:${dateEnd}\n`;
+        payload += `DTSTART:${dateStartCode}\n`;
+        payload += `DTEND:${dateEndCode}\n`;
         payload += (event.location) ? `LOCATION:${event.location}\n` : ``;
         payload += (event.description) ? `DESCRIPTION:${event.description}\n` : ``;
         payload += `END:VEVENT`;
+
+        const displayContent = [
+          {name: 'Title', content: event.title},
+          {name: 'Start', content: dateStart.toString()},
+          {name: 'End', content: dateEnd.toString()}
+        ];
+        if (event.location) {
+          displayContent.push({name: 'Location', content: event.location});
+        }
+        if (event.description) {
+          displayContent.push({name: 'Description', content: event.description});
+        }
+        display = this.buildDisplay('Event', displayContent);
       }
       else if (this.params.codeType === 'email') {
         payload = `mailto:${this.params.email}`;
+        display = this.buildDisplay('Email', `<a href="mailto:${this.params.email}">${this.params.email}</a>`);
       }
       else if (this.params.codeType === 'location') {
         payload = `geo:${this.params.location.latitude},${this.params.location.longitude}`;
+        display = this.buildDisplay('Location', [
+          {name: 'latitude', content: this.params.location.latitude},
+          {name: 'longitude', content: this.params.location.longitude}
+        ]);
       }
       else if (this.params.codeType === 'phone') {
         payload = `tel:${this.params.phone}`;
+        display = this.buildDisplay('Phone number', this.params.phone);
       }
       else if (this.params.codeType === 'sms') {
         const number = this.params.sms.number.replace(/[^+0-9]/gi, '');
         payload = `smsto:${number}:${this.params.sms.message}`;
+        display = this.buildDisplay('SMS', [
+          {name: 'Phone number', content: number},
+          {name: 'Message', content: this.params.sms.message}
+        ]);
       }
       else if (this.params.codeType === 'text') {
         payload = this.params.text;
+        display = this.buildDisplay('Text', this.params.text.replace(/\n/g, '<br />'));
       }
       else if (this.params.codeType === 'url') {
         payload = this.params.url;
+        display = this.buildDisplay('URL', `<a href="${this.params.url}" target="blank">${this.params.url}</a>`);
       }
 
       code.addData(payload);
+      console.log(payload);
 
       code.make();
 
-      this.overlay = new Overlay(payload);
+      this.overlay = new Overlay(display);
 
       // Create DOM element
       const qrcodeContainer = document.createElement('div');
@@ -170,7 +251,48 @@ export default class KewArCode extends H5P.EventDispatcher {
       $wrapper.get(0).classList.add('h5p-kewar-code');
       $wrapper.get(0).appendChild(qrcodeContainer);
       $wrapper.get(0).appendChild(this.overlay.getDOM());
+    };
 
+    /**
+     * Build display for overlay.
+     * @param {string} [titleText=''] Text for the title, can be empty.
+     * @param {object|string} [rows=''] Content rows.
+     * @param {string} rows.name Name of the row.
+     * @param {string} rows.content Content of the row.
+     */
+    this.buildDisplay = function (titleText = '', rows = '') {
+      if (typeof rows === 'string') {
+        rows = [{name: '', content: rows}];
+      }
+
+      const display = document.createElement('div');
+      display.classList.add('h5p-kewar-code-display');
+
+      const title = document.createElement('div');
+      title.classList.add('h5p-kewar-code-display-title');
+      title.innerHTML = titleText;
+      display.appendChild(title);
+
+      rows.forEach( rowContent => {
+        const row = document.createElement('div');
+        row.classList.add('h5p-kewar-code-display-row');
+
+        if (rowContent.name !== '') {
+          const name = document.createElement('div');
+          name.classList.add('h5p-kewar-code-display-row-name');
+          name.innerHTML = `${rowContent.name}: `;
+          row.appendChild(name);
+        }
+
+        const content = document.createElement('div');
+        content.classList.add('h5p-kewar-code-display-row-content');
+        content.innerHTML = rowContent.content;
+        row.appendChild(content);
+
+        display.appendChild(row);
+      });
+
+      return display;
     };
   }
 }

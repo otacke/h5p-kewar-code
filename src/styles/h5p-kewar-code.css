@@ -38,7 +38,8 @@
   width: 80%;
 }
 
-.h5p-kewar-code .h5p-kewar-code-overlay-box-text {
+.h5p-kewar-code .h5p-kewar-code-overlay-box-content {
+  flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -59,6 +60,36 @@
   -ms-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.h5p-kewar-code .h5p-kewar-code-display {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+
+.h5p-kewar-code .h5p-kewar-code-display-title {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.h5p-kewar-code .h5p-kewar-code-display-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.h5p-kewar-code .h5p-kewar-code-display-row-name {
+  flex-grow: 0;
+  font-weight: bold;
+  margin-right: 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.h5p-kewar-code .h5p-kewar-code-display-row-content {
+  flex-grow: 1;
 }
 
 .h5p-kewar-code .h5p-kewar-code-no-display {

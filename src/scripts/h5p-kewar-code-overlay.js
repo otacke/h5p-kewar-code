@@ -2,10 +2,10 @@
 export default class Overlay {
   /**
    * @constructor
-   * @param {string} text Text.
+   * @param {HTMLElement} content Content.
    * @param {function} callback Callback when closed
    */
-  constructor(text, callbackClosed) {
+  constructor(content, callbackClosed) {
     callbackClosed = callbackClosed || (() => {});
 
     this.overlay = document.createElement('div');
@@ -22,10 +22,12 @@ export default class Overlay {
     box.classList.add('h5p-kewar-code-overlay-box');
     this.overlay.appendChild(box);
 
-    this.text = document.createElement('div');
-    this.text.classList.add('h5p-kewar-code-overlay-box-text');
-    this.text.innerHTML = text;
-    box.appendChild(this.text);
+    this.content = document.createElement('div');
+    this.content.classList.add('h5p-kewar-code-overlay-box-content');
+    if (content) {
+      this.content.appendChild(content);
+    }
+    box.appendChild(this.content);
 
     const buttonClose = document.createElement('div');
     buttonClose.classList.add('h5p-kewar-code-overlay-box-button-close');
@@ -47,22 +49,26 @@ export default class Overlay {
   }
 
   /**
-   * Set text for the overlay.
+   * Set content for the overlay.
    * @param {string} text Text for overlay.
    */
-  setText(text = '') {
-    this.text.innerHTML = text;
+  setContent(content) {
+    if (!content) {
+      return;
+    }
+    this.content.innerHTML = '';
+    this.content.appendChild(content);
   }
 
   /**
    * Show overlay.
-   * @param {string} text Text for overlay.
+   * @param {HTMLElement} content Element for overlay.
    */
-  show(text) {
+  show(content) {
     this.isTransparent = false;
 
     if (typeof text !== 'undefined') {
-      this.setText(text);
+      this.setContent(content);
     }
 
     this.overlay.classList.remove('h5p-kewar-code-no-display');
