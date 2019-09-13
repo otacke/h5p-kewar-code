@@ -16,8 +16,8 @@ export default class KewArCode extends H5P.EventDispatcher {
         codeType: 'url',
         contact: {
           name: 'Unknown',
-          title: '',
           organization: '',
+          title: '',
           url: '',
           number: '',
           email: '',
@@ -57,6 +57,33 @@ export default class KewArCode extends H5P.EventDispatcher {
           codeColor: '#000000',
           backgroundColor: '#ffffff',
           alignment: 'center'
+        },
+        l10n: {
+          address: 'Address',
+          contact: 'Contact',
+          country: 'Country',
+          dateEnd: 'End date',
+          dateStart: 'Start date',
+          description: 'Description',
+          email: 'Email',
+          event: 'Event',
+          extended: 'Extended address',
+          latitude: 'Latitude',
+          locality: 'Locality',
+          location: 'Location',
+          longitude: 'Longitude',
+          message: 'Message',
+          name: 'Name',
+          note: 'Note',
+          organization: 'Organization',
+          phone: 'Phone number',
+          region: 'Region',
+          sms: 'SMS',
+          street: 'Street',
+          text: 'Text',
+          title: 'Title',
+          url: 'URL',
+          zip: 'ZIP code'
         }
       },
       params
@@ -81,40 +108,40 @@ export default class KewArCode extends H5P.EventDispatcher {
         display = contact.display;
       }
       else if (this.params.codeType === 'event') {
-        const contact = this.buildEvent(this.params.event);
-        payload = contact.payload;
-        display = contact.display;
+        const event = this.buildEvent(this.params.event);
+        payload = event.payload;
+        display = event.display;
       }
       else if (this.params.codeType === 'email') {
         payload = `mailto:${this.params.email}`;
-        display = this.buildDisplay('Email', `<a href="mailto:${this.params.email}">${this.params.email}</a>`);
+        display = this.buildDisplay(this.params.l10n.email, `<a href="mailto:${this.params.email}">${this.params.email}</a>`);
       }
       else if (this.params.codeType === 'location') {
         payload = `geo:${this.params.location.latitude},${this.params.location.longitude}`;
-        display = this.buildDisplay('Location', [
-          {name: 'latitude', content: this.params.location.latitude},
-          {name: 'longitude', content: this.params.location.longitude}
+        display = this.buildDisplay(this.params.l10n.location, [
+          {name: this.params.l10n.latitude, content: this.params.location.latitude},
+          {name: this.params.l10n.longitude, content: this.params.location.longitude}
         ]);
       }
       else if (this.params.codeType === 'phone') {
         payload = `tel:${this.params.phone}`;
-        display = this.buildDisplay('Phone number', this.params.phone);
+        display = this.buildDisplay(this.params.l10n.phone, this.params.phone);
       }
       else if (this.params.codeType === 'sms') {
         const number = this.params.sms.number.replace(/[^+0-9]/gi, '');
         payload = `smsto:${number}:${this.params.sms.message}`;
-        display = this.buildDisplay('SMS', [
-          {name: 'Phone number', content: number},
-          {name: 'Message', content: this.params.sms.message}
+        display = this.buildDisplay(this.params.l10n.sms, [
+          {name: this.params.l10n.phone, content: number},
+          {name: this.params.l10n.message, content: this.params.sms.message}
         ]);
       }
       else if (this.params.codeType === 'text') {
         payload = this.params.text;
-        display = this.buildDisplay('Text', this.params.text.replace(/\n/g, '<br />'));
+        display = this.buildDisplay(this.params.l10n.text, this.params.text.replace(/\n/g, '<br />'));
       }
       else if (this.params.codeType === 'url') {
         payload = this.params.url;
-        display = this.buildDisplay('URL', `<a href="${this.params.url}" target="blank">${this.params.url}</a>`);
+        display = this.buildDisplay(this.params.l10n.url, `<a href="${this.params.url}" target="blank">${this.params.url}</a>`);
       }
 
       code.addData(payload);
@@ -195,33 +222,33 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       // Display
       const displayContent = [
-        {name: 'Name', content: contact.name}
+        {name: this.params.l10n.name, content: contact.name}
       ];
       if (contact.organization !== '') {
-        displayContent.push({name: 'Organization', content: contact.organization});
+        displayContent.push({name: this.params.l10n.organization, content: contact.organization});
       }
       if (contact.title !== '') {
-        displayContent.push({name: 'Title', content: contact.title});
+        displayContent.push({name: this.params.l10n.title, content: contact.title});
       }
       if (contact.number !== '') {
-        displayContent.push({name: 'Phone number', content: contact.number});
+        displayContent.push({name: this.params.l10n.phone, content: contact.number});
       }
       if (contact.email !== '') {
-        displayContent.push({name: 'Email', content: `<a href="mailto:${contact.email}">${contact.email}</a>`});
+        displayContent.push({name: this.params.l10n.email, content: `<a href="mailto:${contact.email}">${contact.email}</a>`});
       }
       if (contact.url !== '') {
-        displayContent.push({name: 'URL', content: `<a href="${contact.url}" target="blank">${contact.url}</a>`});
+        displayContent.push({name: this.params.l10n.url, content: `<a href="${contact.url}" target="blank">${contact.url}</a>`});
       }
       const addressChunks = [address.extended, address.street, address.locality, address.region, address.zip, address.country]
         .filter(chunk => chunk !== '')
         .join(', ');
       if (addressChunks !== '') {
-        displayContent.push({name: 'Address', content: addressChunks});
+        displayContent.push({name: this.params.l10n.address, content: addressChunks});
       }
       if (contact.note !== '') {
-        displayContent.push({name: 'Note', content: contact.note});
+        displayContent.push({name: this.params.l10n.note, content: contact.note});
       }
-      let display = this.buildDisplay('Contact', displayContent);
+      let display = this.buildDisplay(this.params.l10n.contact, displayContent);
 
       return {
         payload: payload,
@@ -292,17 +319,17 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       // Display
       const displayContent = [
-        {name: 'Title', content: event.title},
-        {name: 'Start', content: dateStart.toString()},
-        {name: 'End', content: dateEnd.toString()}
+        {name: this.params.l10n.title, content: event.title},
+        {name: this.params.l10n.dateStart, content: dateStart.toString()},
+        {name: this.params.l10n.dateEnd, content: dateEnd.toString()}
       ];
       if (event.location) {
-        displayContent.push({name: 'Location', content: event.location});
+        displayContent.push({name: this.params.l10n.location, content: event.location});
       }
       if (event.description) {
-        displayContent.push({name: 'Description', content: event.description});
+        displayContent.push({name: this.params.l10n.description, content: event.description});
       }
-      let display = this.buildDisplay('Event', displayContent);
+      let display = this.buildDisplay(this.params.l10n.event, displayContent);
 
       return {
         payload: payload,

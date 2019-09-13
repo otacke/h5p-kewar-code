@@ -725,5 +725,189 @@
         "default": "center"
       }
     ]
+  },
+  {
+    "name": "l10n",
+    "type": "group",
+    "common": true,
+    "label": "User interface",
+    "importance": "low",
+    "fields": [
+      {
+        "name": "address",
+        "type": "text",
+        "label": "Address",
+        "importance": "low",
+        "default": "Address"
+      },
+      {
+        "name": "contact",
+        "type": "text",
+        "label": "Contact",
+        "importance": "low",
+        "default": "Contact"
+      },
+      {
+        "name": "country",
+        "type": "text",
+        "label": "Country",
+        "importance": "low",
+        "default": "Country"
+      },
+      {
+        "name": "dateEnd",
+        "type": "text",
+        "label": "End date",
+        "importance": "low",
+        "default": "End date"
+      },
+      {
+        "name": "dateStart",
+        "type": "text",
+        "label": "Start date",
+        "importance": "low",
+        "default": "Start date"
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "label": "Description",
+        "importance": "low",
+        "default": "Description"
+      },
+      {
+        "name": "email",
+        "type": "text",
+        "label": "Email",
+        "importance": "low",
+        "default": "Email"
+      },
+      {
+        "name": "event",
+        "type": "text",
+        "label": "Event",
+        "importance": "low",
+        "default": "Event"
+      },
+      {
+        "name": "extended",
+        "type": "text",
+        "label": "Extended address",
+        "importance": "low",
+        "default": "Extended address"
+      },
+      {
+        "name": "latitude",
+        "type": "text",
+        "label": "Latitude",
+        "importance": "low",
+        "default": "Latitude"
+      },
+      {
+        "name": "locality",
+        "type": "text",
+        "label": "Locality",
+        "importance": "low",
+        "default": "Locality"
+      },
+      {
+        "name": "location",
+        "type": "text",
+        "label": "Location",
+        "importance": "low",
+        "default": "Location"
+      },
+      {
+        "name": "longitude",
+        "type": "text",
+        "label": "Longitude",
+        "importance": "low",
+        "default": "Longitude"
+      },
+      {
+        "name": "message",
+        "type": "text",
+        "label": "Message",
+        "importance": "low",
+        "default": "Message"
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "label": "Name",
+        "importance": "low",
+        "default": "Name"
+      },
+      {
+        "name": "note",
+        "type": "text",
+        "label": "Note",
+        "importance": "low",
+        "default": "Note"
+      },
+      {
+        "name": "organization",
+        "type": "text",
+        "label": "Organization",
+        "importance": "low",
+        "default": "Organization"
+      },
+      {
+        "name": "phone",
+        "type": "text",
+        "label": "Phone",
+        "importance": "low",
+        "default": "Phone"
+      },
+      {
+        "name": "region",
+        "type": "text",
+        "label": "Region",
+        "importance": "low",
+        "default": "Region"
+      },
+      {
+        "name": "sms",
+        "type": "text",
+        "label": "SMS",
+        "importance": "low",
+        "default": "SMS"
+      },
+      {
+        "name": "street",
+        "type": "text",
+        "label": "Street",
+        "importance": "low",
+        "default": "Street"
+      },
+      {
+        "name": "text",
+        "type": "text",
+        "label": "Text",
+        "importance": "low",
+        "default": "Text"
+      },
+      {
+        "name": "title",
+        "type": "text",
+        "label": "Title",
+        "importance": "low",
+        "default": "Title"
+      },
+      {
+        "name": "url",
+        "type": "text",
+        "label": "URL",
+        "importance": "low",
+        "default": "URL"
+      },
+      {
+        "name": "zip",
+        "type": "text",
+        "label": "ZIP code",
+        "importance": "low",
+        "default": "ZIP code"
+      }
+    ]
   }
 ]

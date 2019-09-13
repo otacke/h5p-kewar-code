@@ -14,7 +14,7 @@
           "label": "E-Mail-Adresse"
         },
         {
-          "label": "Ort"
+          "label": "Standort"
         },
         {
           "label": "Telefonnummer"
@@ -278,16 +278,16 @@
       ]
     },
     {
-      "label": "Ort",
+      "label": "Standort",
       "fields": [
         {
-          "label": "Längengrad",
-          "description": "Längengrad (bitte nutze das Format 53.864462)",
+          "label": "Breitengrad",
+          "description": "Breitengrad (bitte nutze das Format 53.864462)",
           "placeholder": "69.646007"
         },
         {
-          "label": "Breitengrad",
-          "description": "Breitengrad (bitte nutze das Format 10.663792)",
+          "label": "Längengrad",
+          "description": "Längengrad (bitte nutze das Format 10.663792)",
           "placeholder": "18.954036"
         }
       ]
@@ -365,6 +365,111 @@
               "label": "Rechts"
             }
           ]
+        }
+      ]
+    },
+    {
+      "label": "Bedienoberfläche",
+      "fields": [
+        {
+          "label": "Adresse",
+          "default": "Adresse"
+        },
+        {
+          "label": "Kontakt",
+          "default": "Kontakt"
+        },
+        {
+          "label": "Land",
+          "default": "Land"
+        },
+        {
+          "label": "Enddatum",
+          "default": "Enddatum"
+        },
+        {
+          "label": "Startdatum",
+          "default": "Startdatum"
+        },
+        {
+          "label": "Beschreibung",
+          "default": "Beschreibung"
+        },
+        {
+          "label": "E-Mail",
+          "default": "E-Mail"
+        },
+        {
+          "label": "Ereignis",
+          "default": "Ereignis"
+        },
+        {
+          "label": "Erweiterte Adresse",
+          "default": "Erweiterte Adresse"
+        },
+        {
+          "label": "Breitengrad",
+          "default": "Breitengrad"
+        },
+        {
+          "label": "Ort",
+          "default": "Ort"
+        },
+        {
+          "label": "Standort",
+          "default": "Standort"
+        },
+        {
+          "label": "Längengrad",
+          "default": "Längengrad"
+        },
+        {
+          "label": "Nachricht",
+          "default": "Nachricht"
+        },
+        {
+          "label": "Name",
+          "default": "Name"
+        },
+        {
+          "label": "Notiz",
+          "default": "Notiz"
+        },
+        {
+          "label": "Organisation",
+          "default": "Organisation"
+        },
+        {
+          "label": "Telefonnummer",
+          "default": "Telefonnummer"
+        },
+        {
+          "label": "Region",
+          "default": "Region"
+        },
+        {
+          "label": "SMS",
+          "default": "SMS"
+        },
+        {
+          "label": "Straße",
+          "default": "Straße"
+        },
+        {
+          "label": "Text",
+          "default": "Text"
+        },
+        {
+          "label": "Titel",
+          "default": "Titel"
+        },
+        {
+          "label": "URL",
+          "default": "URL"
+        },
+        {
+          "label": "Postleitzahl",
+          "default": "Postleitzahl"
         }
       ]
     }

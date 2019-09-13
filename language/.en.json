@@ -367,6 +367,111 @@
           ]
         }
       ]
+    },
+    {
+      "label": "User interface",
+      "fields": [
+        {
+          "label": "Address",
+          "default": "Address"
+        },
+        {
+          "label": "Contact",
+          "default": "Contact"
+        },
+        {
+          "label": "Country",
+          "default": "Country"
+        },
+        {
+          "label": "End date",
+          "default": "End date"
+        },
+        {
+          "label": "Start date",
+          "default": "Start date"
+        },
+        {
+          "label": "Description",
+          "default": "Description"
+        },
+        {
+          "label": "Email",
+          "default": "Email"
+        },
+        {
+          "label": "Event",
+          "default": "Event"
+        },
+        {
+          "label": "Extended address",
+          "default": "Extended address"
+        },
+        {
+          "label": "Latitude",
+          "default": "Latitude"
+        },
+        {
+          "label": "Locality",
+          "default": "Locality"
+        },
+        {
+          "label": "Location",
+          "default": "Location"
+        },
+        {
+          "label": "Longitude",
+          "default": "Longitude"
+        },
+        {
+          "label": "Message",
+          "default": "Message"
+        },
+        {
+          "label": "Name",
+          "default": "Name"
+        },
+        {
+          "label": "Note",
+          "default": "Note"
+        },
+        {
+          "label": "Organization",
+          "default": "Organization"
+        },
+        {
+          "label": "Phone",
+          "default": "Phone"
+        },
+        {
+          "label": "Region",
+          "default": "Region"
+        },
+        {
+          "label": "SMS",
+          "default": "SMS"
+        },
+        {
+          "label": "Street",
+          "default": "Street"
+        },
+        {
+          "label": "Text",
+          "default": "Text"
+        },
+        {
+          "label": "Title",
+          "default": "Title"
+        },
+        {
+          "label": "URL",
+          "default": "URL"
+        },
+        {
+          "label": "ZIP code",
+          "default": "ZIP code"
+        }
+      ]
     }
   ]
 }
