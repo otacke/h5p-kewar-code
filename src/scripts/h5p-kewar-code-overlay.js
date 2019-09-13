@@ -18,15 +18,22 @@ export default class Overlay {
       }
     });
 
-    this.box = document.createElement('div');
-    this.box.classList.add('h5p-kewar-code-overlay-box');
-    this.box.innerHTML = text;
-    this.overlay.appendChild(this.box);
+    const box = document.createElement('div');
+    box.classList.add('h5p-kewar-code-overlay-box');
+    this.overlay.appendChild(box);
 
-    this.box.addEventListener('click', () => {
+    this.text = document.createElement('div');
+    this.text.classList.add('h5p-kewar-code-overlay-box-text');
+    this.text.innerHTML = text;
+    box.appendChild(this.text);
+
+    const buttonClose = document.createElement('div');
+    buttonClose.classList.add('h5p-kewar-code-overlay-box-button-close');
+    buttonClose.addEventListener('click', () => {
       this.hide();
       callbackClosed();
     });
+    box.appendChild(buttonClose);
 
     this.hide();
   }
@@ -44,7 +51,7 @@ export default class Overlay {
    * @param {string} text Text for overlay.
    */
   setText(text = '') {
-    this.box.innerHTML = text;
+    this.text.innerHTML = text;
   }
 
   /**

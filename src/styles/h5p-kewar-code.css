@@ -1,4 +1,5 @@
 .h5p-kewar-code {
+  overflow: scroll;
 }
 
 .h5p-kewar-code .h5p-kewar-code-container {
@@ -31,8 +32,33 @@
 .h5p-kewar-code .h5p-kewar-code-overlay-box {
   background-color: #ffffff;
   border-radius: 1em;
+  display: flex;
+  flex-direction: row;
   padding: 1em;
   width: 80%;
+}
+
+.h5p-kewar-code .h5p-kewar-code-overlay-box-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.h5p-kewar-code .h5p-kewar-code-overlay-box-button-close {
+  background: url('../images/close.svg') no-repeat;
+  cursor: pointer;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 1.5em;
+  margin-left: 0.5em;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  width: 1.5em;
+}
+
+.h5p-kewar-code .h5p-kewar-code-overlay-box-button-close:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .h5p-kewar-code .h5p-kewar-code-no-display {
