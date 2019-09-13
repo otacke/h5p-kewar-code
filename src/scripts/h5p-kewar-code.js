@@ -1,3 +1,4 @@
+import Overlay from './h5p-kewar-code-overlay';
 import Util from "../scripts/h5p-kewar-code-util";
 import qrcode from "../scripts/h5p-kewar-code-qrcode";
 
@@ -140,11 +141,16 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       code.make();
 
+      this.overlay = new Overlay(payload);
+
       // Create DOM element
       const qrcodeContainer = document.createElement('div');
       qrcodeContainer.classList.add('h5p-kewar-code-container');
       qrcodeContainer.innerHTML = code.createSvgTag();
       qrcodeContainer.style.textAlign = this.params.behaviour.alignment;
+      qrcodeContainer.addEventListener('click', () => {
+        this.overlay.show();
+      });
 
       const codeSVG = qrcodeContainer.querySelector('svg');
       codeSVG.removeAttribute('width');
@@ -163,6 +169,8 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       $wrapper.get(0).classList.add('h5p-kewar-code');
       $wrapper.get(0).appendChild(qrcodeContainer);
+      $wrapper.get(0).appendChild(this.overlay.getDOM());
+
     };
   }
 }
