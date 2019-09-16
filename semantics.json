@@ -909,5 +909,28 @@
         "default": "ZIP code"
       }
     ]
+  },
+  {
+    "name": "a11y",
+    "type": "group",
+    "common": true,
+    "label": "Readspeaker",
+    "importance": "low",
+    "fields": [
+      {
+        "name": "openCodeInformation",
+        "type": "text",
+        "label": "QRCode. Display information (Text for Readspeakers)",
+        "importance": "low",
+        "default": "QRCode. Display information."
+      },
+      {
+        "name": "closeCodeInformation",
+        "type": "text",
+        "label": "Hide information (Text for Readspeakers)",
+        "importance": "low",
+        "default": "Hide information."
+      }
+    ]
   }
 ]

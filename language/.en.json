@@ -472,6 +472,19 @@
           "default": "ZIP code"
         }
       ]
+    },
+    {
+      "label": "Readspeaker",
+      "fields": [
+        {
+          "label": "QRCode. Display information (Text for Readspeakers)",
+          "default": "QRCode. Display information."
+        },
+        {
+          "label": "Hide information (Text for Readspeakers)",
+          "default": "Hide information."
+        }
+      ]
     }
   ]
 }

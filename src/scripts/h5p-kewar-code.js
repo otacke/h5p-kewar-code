@@ -8,7 +8,7 @@ export default class KewArCode extends H5P.EventDispatcher {
    *
    * @param {object} params Parameters passed by the editor.
    */
-  constructor(params) {
+  constructor(params, contentId) {
     super();
 
     this.params = Util.extend(
@@ -84,10 +84,16 @@ export default class KewArCode extends H5P.EventDispatcher {
           title: 'Title',
           url: 'URL',
           zip: 'ZIP code'
+        },
+        a11y: {
+          openCodeInformation: 'QRCode. Display information.',
+          closeCodeInformation: 'Hide information.',
         }
       },
       params
     );
+
+    this.contentId = contentId;
 
     /**
      * Attach library to wrapper.
@@ -147,18 +153,35 @@ export default class KewArCode extends H5P.EventDispatcher {
       code.addData(payload);
       code.make();
 
-      this.overlay = new Overlay(display);
-
-      // Create DOM element
-      const qrcodeContainer = document.createElement('div');
-      qrcodeContainer.classList.add('h5p-kewar-code-container');
-      qrcodeContainer.innerHTML = code.createSvgTag();
-      qrcodeContainer.style.textAlign = this.params.behaviour.alignment;
-      qrcodeContainer.addEventListener('click', () => {
-        this.overlay.show();
+      this.overlay = new Overlay({
+        content: display,
+        callbackClosed: () => this.handleClosedOverlay(focus),
+        a11y: {
+          closeCodeInformation: this.params.a11y.closeCodeInformation
+        }
       });
 
-      const codeSVG = qrcodeContainer.querySelector('svg');
+      // Create DOM element
+      this.qrcodeContainer = document.createElement('div');
+      this.qrcodeContainer.classList.add('h5p-kewar-code-container');
+      this.qrcodeContainer.innerHTML = code.createSvgTag();
+      this.qrcodeContainer.setAttribute('role', 'button');
+      this.qrcodeContainer.setAttribute('tabindex', 0);
+      this.qrcodeContainer.setAttribute('aria-label', this.params.a11y.openCodeInformation);
+      this.qrcodeContainer.style.textAlign = this.params.behaviour.alignment;
+      this.qrcodeContainer.addEventListener('click', () => {
+        this.overlay.show();
+      });
+      this.qrcodeContainer.addEventListener('keydown', (event) => {
+        event = event || window.event;
+        const key = event.which || event.keyCode;
+        if (key === 13 || key === 32) {
+          this.overlay.show(undefined, true);
+          this.qrcodeContainer.removeAttribute('tabindex');
+        }
+      });
+
+      const codeSVG = this.qrcodeContainer.querySelector('svg');
       codeSVG.removeAttribute('width');
       codeSVG.removeAttribute('height');
 
@@ -167,14 +190,14 @@ export default class KewArCode extends H5P.EventDispatcher {
         codeSVG.style.maxHeight = this.params.behaviour.maxSize;
       }
 
-      const codePath = qrcodeContainer.querySelector('path');
+      const codePath = codeSVG.querySelector('path');
       codePath.setAttribute('fill', this.params.behaviour.codeColor);
 
-      const codeRect = qrcodeContainer.querySelector('rect');
+      const codeRect = codeSVG.querySelector('rect');
       codeRect.setAttribute('fill', this.params.behaviour.backgroundColor);
 
       $wrapper.get(0).classList.add('h5p-kewar-code');
-      $wrapper.get(0).appendChild(qrcodeContainer);
+      $wrapper.get(0).appendChild(this.qrcodeContainer);
       $wrapper.get(0).appendChild(this.overlay.getDOM());
     };
 
@@ -335,6 +358,17 @@ export default class KewArCode extends H5P.EventDispatcher {
         payload: payload,
         display: display
       };
+    };
+
+    /**
+     * Handle close callback from overlay.
+     * @param {boolean} focus If true, container will get focus.
+     */
+    this.handleClosedOverlay = function (focus) {
+      if (focus) {
+        this.qrcodeContainer.setAttribute('tabindex', 0);
+        this.qrcodeContainer.focus();
+      }
     };
 
     /**

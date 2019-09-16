@@ -1,12 +1,24 @@
+import Util from "../scripts/h5p-kewar-code-util";
+
 /** Class representing the overlay */
 export default class Overlay {
   /**
    * @constructor
-   * @param {HTMLElement} content Content.
-   * @param {function} callback Callback when closed
+   * @param {object} params Parameters.
+   * @param {HTMLElement} params.content Content.
+   * @param {function} params.callback Callback when closed
+   * @param {object} params.a11y Accessibility texts.
+   * @param {string} params.a11y.closeCodeInformation Close information text.
    */
-  constructor(content, callbackClosed) {
-    callbackClosed = callbackClosed || (() => {});
+  constructor(params) {
+    this.params = Util.extend({
+      callbackClosed: () => {},
+      a11y: {
+        closeCodeInformation: 'Close information.'
+      }
+    }, params);
+
+    this.hasFocus = false;
 
     // Overlay
     this.overlay = document.createElement('div');
@@ -23,22 +35,31 @@ export default class Overlay {
     box.classList.add('h5p-kewar-code-overlay-box');
     this.overlay.appendChild(box);
 
-    // Content
+    // Close button (made 2nd element by flex-direction for a11y)
+    this.buttonClose = document.createElement('div');
+    this.buttonClose.classList.add('h5p-kewar-code-overlay-box-button-close');
+    this.buttonClose.setAttribute('role', 'button');
+    this.buttonClose.setAttribute('tabindex', 0);
+    this.buttonClose.setAttribute('aria-label', this.params.a11y.closeCodeInformation);
+    this.buttonClose.addEventListener('click', () => {
+      this.handleClosed();
+    });
+    this.buttonClose.addEventListener('keydown', (event) => {
+      event = event || window.event;
+      const key = event.which || event.keyCode;
+      if (key === 13 || key === 32) {
+        this.handleClosed();
+      }
+    });
+    box.appendChild(this.buttonClose);
+
+    // Content (made 1st element by flex-direction for a11y)
     this.content = document.createElement('div');
     this.content.classList.add('h5p-kewar-code-overlay-box-content');
-    if (content) {
-      this.content.appendChild(content);
+    if (this.params.content) {
+      this.content.appendChild(this.params.content);
     }
     box.appendChild(this.content);
-
-    // Close button
-    const buttonClose = document.createElement('div');
-    buttonClose.classList.add('h5p-kewar-code-overlay-box-button-close');
-    buttonClose.addEventListener('click', () => {
-      this.hide();
-      callbackClosed();
-    });
-    box.appendChild(buttonClose);
 
     this.hide();
   }
@@ -66,11 +87,12 @@ export default class Overlay {
   /**
    * Show overlay.
    * @param {HTMLElement} content Element for overlay.
+   * @param {boolean} focus If true, closeButton will get focus.
    */
-  show(content) {
+  show(content, focus) {
     this.isTransparent = false;
 
-    if (typeof text !== 'undefined') {
+    if (typeof content !== 'undefined') {
       this.setContent(content);
     }
 
@@ -78,6 +100,11 @@ export default class Overlay {
     setTimeout( () => {
       this.overlay.classList.remove('h5p-kewar-code-no-opacity');
     }, 0);
+
+    if (focus) {
+      this.hasFocus = true;
+      this.buttonClose.focus();
+    }
   }
 
   /**
@@ -86,5 +113,14 @@ export default class Overlay {
   hide() {
     this.isTransparent = true;
     this.overlay.classList.add('h5p-kewar-code-no-opacity');
+  }
+
+  /**
+   * Handle closing the overlay.
+   */
+  handleClosed() {
+    this.hide();
+    this.params.callbackClosed(this.hasFocus);
+    this.hasFocus = false;
   }
 }

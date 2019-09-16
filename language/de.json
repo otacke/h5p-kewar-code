@@ -472,6 +472,19 @@
           "default": "Postleitzahl"
         }
       ]
+    },
+    {
+      "label": "Vorlesewerkzeug (Barrierefreiheit)",
+      "fields": [
+        {
+          "label": "QRCode. Informationen einblenden (Text für Vorlesewerkzeug/Barrierefreiheit)",
+          "default": "QRCode. Informationen einblenden."
+        },
+        {
+          "label": "Informationen ausblenden (Text für Vorlesewerkzeug/Barrierefreiheit)",
+          "default": "Informationen ausblenden."
+        }
+      ]
     }
   ]
 }
