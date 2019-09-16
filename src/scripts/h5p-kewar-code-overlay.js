@@ -133,10 +133,11 @@ export default class Overlay {
    * Set width of content columns.
    */
   setColumnWidths() {
-    if (this.rowMaxWidth) {
-      return;
-    }
-
+    /*
+     * CSS gives prority to let name fields have full witdh initially and uses
+     * the longest name field for future reference, so all fields keep the same
+     * width.
+     */
     const rowWidest = [...this.content.querySelectorAll('.h5p-kewar-code-display-row-name')].reduce((accu, field) => {
       return Math.max(accu, field.offsetWidth || 0);
     }, 0);
@@ -145,21 +146,21 @@ export default class Overlay {
       return;
     }
 
-    this.rowMaxWidth = rowWidest + 5;
-    this.rowWidth = 100 * this.rowMaxWidth / this.content.offsetWidth;
+    const rowMaxWidth = rowWidest + 5;
+    const rowWidth = 100 * rowMaxWidth / this.content.offsetWidth;
 
     this.content.querySelectorAll('.h5p-kewar-code-display-row-name').forEach((name) => {
       name.style.flexGrow = 1;
       name.style.flexShrink = 1;
-      name.style.maxWidth = `${this.rowMaxWidth}px`;
+      name.style.maxWidth = `${rowMaxWidth}px`;
       name.style.overflow = 'hidden';
       name.style.textOverflow = 'ellipsis';
-      name.style.width = `${this.rowWidth}%`;
+      name.style.width = `${rowWidth}%`;
     });
 
     this.content.querySelectorAll('.h5p-kewar-code-display-row-content').forEach((name) => {
       name.style.flexGrow = 1;
-      name.style.width = `${100 - this.rowWidth}%`;
+      name.style.width = `${100 - rowWidth}%`;
     });
   }
 }

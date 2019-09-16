@@ -79,6 +79,8 @@
 .h5p-kewar-code .h5p-kewar-code-display-title {
   font-size: 1.5em;
   margin-bottom: 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .h5p-kewar-code .h5p-kewar-code-display-row {
