@@ -18,7 +18,7 @@ export default class Overlay {
       }
     }, params);
 
-    this.hasFocus = false;
+    this.closeButtonHasFocus = false;
 
     // Overlay
     this.overlay = document.createElement('div');
@@ -102,7 +102,7 @@ export default class Overlay {
     }, 0);
 
     if (focus) {
-      this.hasFocus = true;
+      this.closeButtonHasFocus = true;
       this.buttonClose.focus();
     }
   }
@@ -120,7 +120,7 @@ export default class Overlay {
    */
   handleClosed() {
     this.hide();
-    this.params.callbackClosed(this.hasFocus);
-    this.hasFocus = false;
+    this.params.callbackClosed(this.closeButtonHasFocus);
+    this.closeButtonHasFocus = false;
   }
 }
