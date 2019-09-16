@@ -101,10 +101,14 @@
   opacity: 0;
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .h5p-kewar-code .h5p-kewar-code-overlay-box {
     border-radius: 0;
     flex-grow: 1;
     width: calc(100% - 2em);
+  }
+
+  .h5p-kewar-code .h5p-kewar-code-display-row {
+    font-size: 0.8em;
   }
 }
