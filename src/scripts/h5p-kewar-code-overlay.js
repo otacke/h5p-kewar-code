@@ -99,6 +99,7 @@ export default class Overlay {
     this.overlay.classList.remove('h5p-kewar-code-no-display');
     setTimeout( () => {
       this.overlay.classList.remove('h5p-kewar-code-no-opacity');
+      this.setColumnWidths();
     }, 0);
 
     if (focus) {
@@ -122,5 +123,39 @@ export default class Overlay {
     this.hide();
     this.params.callbackClosed(this.closeButtonHasFocus);
     this.closeButtonHasFocus = false;
+  }
+
+  /**
+   * Set width of content columns.
+   */
+  setColumnWidths() {
+    if (this.rowMaxWidth) {
+      return;
+    }
+
+    const rowWidest = [...this.content.querySelectorAll('.h5p-kewar-code-display-row-name')].reduce((accu, field) => {
+      return Math.max(accu, field.offsetWidth || 0);
+    }, 0);
+
+    if (rowWidest === 0) {
+      return;
+    }
+
+    this.rowMaxWidth = rowWidest + 5;
+    this.rowWidth = 100 * this.rowMaxWidth / this.content.offsetWidth;
+
+    this.content.querySelectorAll('.h5p-kewar-code-display-row-name').forEach((name) => {
+      name.style.flexGrow = 1;
+      name.style.flexShrink = 1;
+      name.style.maxWidth = `${this.rowMaxWidth}px`;
+      name.style.overflow = 'hidden';
+      name.style.textOverflow = 'ellipsis';
+      name.style.width = `${this.rowWidth}%`;
+    });
+
+    this.content.querySelectorAll('.h5p-kewar-code-display-row-content').forEach((name) => {
+      name.style.flexGrow = 1;
+      name.style.width = `${100 - this.rowWidth}%`;
+    });
   }
 }

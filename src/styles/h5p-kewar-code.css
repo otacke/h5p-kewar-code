@@ -83,14 +83,14 @@
 
 .h5p-kewar-code .h5p-kewar-code-display-row-name {
   flex-grow: 0;
+  flex-shrink: 0;
   font-weight: bold;
   margin-right: 0.5em;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .h5p-kewar-code .h5p-kewar-code-display-row-content {
-  flex-grow: 1;
+  flex-grow: 0;
+  flex-shrink: 1;
 }
 
 .h5p-kewar-code .h5p-kewar-code-no-display {
@@ -99,4 +99,12 @@
 
 .h5p-kewar-code .h5p-kewar-code-no-opacity {
   opacity: 0;
+}
+
+@media only screen and (max-width: 480px) {
+  .h5p-kewar-code .h5p-kewar-code-overlay-box {
+    border-radius: 0;
+    flex-grow: 1;
+    width: calc(100% - 2em);
+  }
 }
