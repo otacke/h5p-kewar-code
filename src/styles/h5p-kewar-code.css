@@ -17,6 +17,7 @@
   flex-direction: column;
   justify-content: center;
   left: 0;
+  max-height: 100%;
   min-height: 100%;
   opacity: 1;
   position: absolute;
@@ -29,14 +30,18 @@
   z-index: 100;
 }
 
-.h5p-kewar-code .h5p-kewar-code-overlay-box {
+.h5p-kewar-code .h5p-kewar-code-overlay-box-outer {
   background-color: #ffffff;
   border-radius: 0.25em;
   box-shadow: 0 0 0.625em 0 rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: row-reverse;
+  overflow-y: auto;
   padding: 1em;
   width: 80%;
+}
+
+.h5p-kewar-code .h5p-kewar-code-overlay-box-inner {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .h5p-kewar-code .h5p-kewar-code-overlay-box-content {
@@ -102,13 +107,13 @@
 }
 
 @media (max-width: 480px) {
-  .h5p-kewar-code .h5p-kewar-code-overlay-box {
+  .h5p-kewar-code .h5p-kewar-code-overlay-box-outer {
     border-radius: 0;
     flex-grow: 1;
     width: calc(100% - 2em);
   }
 
-  .h5p-kewar-code .h5p-kewar-code-display-row {
-    font-size: 0.8em;
+  .h5p-kewar-code .h5p-kewar-code-overlay-box-inner {
+    flex-grow: 1;
   }
 }

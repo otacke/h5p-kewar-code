@@ -31,9 +31,13 @@ export default class Overlay {
     });
 
     // Box containing content and close button
-    const box = document.createElement('div');
-    box.classList.add('h5p-kewar-code-overlay-box');
-    this.overlay.appendChild(box);
+    const boxOuter = document.createElement('div');
+    boxOuter.classList.add('h5p-kewar-code-overlay-box-outer');
+    this.overlay.appendChild(boxOuter);
+
+    const boxInner = document.createElement('div');
+    boxInner.classList.add('h5p-kewar-code-overlay-box-inner');
+    boxOuter.appendChild(boxInner);
 
     // Close button (made 2nd element by flex-direction for a11y)
     this.buttonClose = document.createElement('div');
@@ -51,7 +55,7 @@ export default class Overlay {
         this.handleClosed();
       }
     });
-    box.appendChild(this.buttonClose);
+    boxInner.appendChild(this.buttonClose);
 
     // Content (made 1st element by flex-direction for a11y)
     this.content = document.createElement('div');
@@ -59,7 +63,7 @@ export default class Overlay {
     if (this.params.content) {
       this.content.appendChild(this.params.content);
     }
-    box.appendChild(this.content);
+    boxInner.appendChild(this.content);
 
     this.hide();
   }
