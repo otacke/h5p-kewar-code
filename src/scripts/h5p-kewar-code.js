@@ -223,7 +223,7 @@ export default class KewArCode extends H5P.EventDispatcher {
       // Payload
       let payload = `BEGIN:VCARD\n`;
       payload += `VERSION:3.0\n`;
-      payload += `N:${params.name}\n`;
+      payload += `N:${contact.name}\n`;
       payload += (contact.organization !== '') ? `ORG:${contact.organization}\n` : '';
       payload += (contact.title !== '') ? `TITLE:${contact.title}\n` : '';
       payload += (contact.number !== '') ? `TEL:${contact.number}\n` : '';
