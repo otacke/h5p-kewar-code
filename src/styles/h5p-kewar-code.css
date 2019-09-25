@@ -4,6 +4,7 @@
 
 .h5p-kewar-code .h5p-kewar-code-container {
   cursor: pointer;
+  line-height: 0;
   width: 100%;
 }
 
