@@ -51,21 +51,24 @@
         "name": "name",
         "type": "text",
         "label": "Name",
-        "placeholder": "John Smith"
+        "placeholder": "John Smith",
+        "maxLength": 150
       },
       {
         "name": "organization",
         "type": "text",
         "label": "Organization",
         "placeholder": "H5P fan club",
-        "optional": true
+        "optional": true,
+        "maxLength": 150
       },
       {
         "name": "title",
         "type": "text",
         "label": "Title",
         "placeholder": "Master of None",
-        "optional": true
+        "optional": true,
+        "maxLength": 100
       },
       {
         "name": "number",
@@ -86,6 +89,7 @@
         "description": "Email address to write message to",
         "placeholder": "john@fictional-h5p-fan-club.org",
         "optional": true,
+        "maxLength": 150,
         "regexp": {
           "pattern": "^[A-Z0-9\\._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$",
           "modifiers": "i"
@@ -104,7 +108,8 @@
             "label": "Extended address",
             "description": "c/o information, etc.",
             "placeholder": "c/o H5P Fan Club",
-            "optional": true
+            "optional": true,
+            "maxLength": 150
           },
           {
             "name": "street",
@@ -112,7 +117,8 @@
             "label": "Street",
             "description": "Street including number",
             "placeholder": "1308 W. Dayton Street",
-            "optional": true
+            "optional": true,
+            "maxLength": 150
           },
           {
             "name": "locality",
@@ -120,7 +126,8 @@
             "label": "Locality",
             "description": "City name, etc.",
             "placeholder": "Madison",
-            "optional": true
+            "optional": true,
+            "maxLength": 100
           },
           {
             "name": "region",
@@ -128,7 +135,8 @@
             "label": "Region",
             "description": "Federal state, county, etc.",
             "placeholder": "WI",
-            "optional": true
+            "optional": true,
+            "maxLength": 100
           },
           {
             "name": "zip",
@@ -136,7 +144,8 @@
             "label": "ZIP code",
             "description": "ZIP code",
             "placeholder": "53715",
-            "optional": true
+            "optional": true,
+            "maxLength": 50
           },
           {
             "name": "country",
@@ -144,7 +153,8 @@
             "label": "Country",
             "description": "Country",
             "placeholder": "USA",
-            "optional": true
+            "optional": true,
+            "maxLength": 100
           }
         ]
       },
@@ -158,7 +168,8 @@
           "pattern": "https?://([0-9a-z.-]+).[a-z.]{2,}([0-9a-z.-_]*)*/?",
           "modifiers": "i"
         },
-        "optional": true
+        "optional": true,
+        "maxLength": 300
       },
       {
         "name": "note",
@@ -166,7 +177,8 @@
         "label": "Note",
         "description": "Note",
         "placeholder": "John loves H5P.",
-        "optional": true
+        "optional": true,
+        "maxLength": 500
       }
     ],
     "widget": "showWhen",
@@ -191,7 +203,8 @@
         "type": "text",
         "label": "Title",
         "description": "Title for the calendar event",
-        "placeholder": "H5P Conference 2020"
+        "placeholder": "H5P Conference 2020",
+        "maxLength": 200
       },
       {
         "name": "allDay",
@@ -448,7 +461,8 @@
         "label": "Location",
         "description": "Name the location",
         "placeholder": "Madison, USA",
-        "optional": true
+        "optional": true,
+        "maxLength": 200
       },
       {
         "name": "description",
@@ -456,7 +470,8 @@
         "label": "Description",
         "description": "Add a description for the event",
         "placeholder": "3rd H5P conference",
-        "optional": true
+        "optional": true,
+        "maxLength": 1500
       }
     ],
     "widget": "showWhen",
@@ -482,6 +497,7 @@
         "label": "Email address",
         "description": "Email address to write message to",
         "placeholder": "john@fictional-h5p-fan-club.org",
+        "maxLength": 2000,
         "regexp": {
           "pattern": "^[A-Z0-9\\._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$",
           "modifiers": "i"
@@ -590,7 +606,8 @@
         "type": "text",
         "label": "Message",
         "description": "Message to send",
-        "placeholder": "Please fetch milk and bread!"
+        "placeholder": "Please fetch milk and bread!",
+        "maxLength": 2000
       }
     ],
     "widget": "showWhen",
@@ -616,7 +633,8 @@
         "label": "Text",
         "description": "Text to encode",
         "placeholder": "Please fetch\n* milk\n* bread",
-        "widget": "textarea"
+        "widget": "textarea",
+        "maxLength": 2000
       }
     ],
     "widget": "showWhen",
@@ -642,6 +660,7 @@
         "label": "URL",
         "description": "URL to link to (must start with https:// or http://)",
         "placeholder": "https://fictional-h5p-fan-club.org",
+        "maxLength": 2000,
         "regexp": {
           "pattern": "https?://([0-9a-z.-]+).[a-z.]{2,}([0-9a-z.-_]*)*/?",
           "modifiers": "i"
