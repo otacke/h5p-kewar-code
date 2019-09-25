@@ -334,9 +334,12 @@ export default class KewArCode extends H5P.EventDispatcher {
      * @return {object} Payload and display.
      */
     this.buildEvent = function (event) {
+      // QR Code readers don't interpret dates without time as full day events.
       if (event.allDay) {
         event.timeStart = '00:00';
-        event.timeEnd = '00:00';
+        event.timeEnd = '23:59';
+        event.timezone = '0:00';
+        event.daylightSavings = false;
       }
 
       // Date formatting
@@ -367,8 +370,16 @@ export default class KewArCode extends H5P.EventDispatcher {
         dateEnd = dateStart;
       }
 
-      const dateStartCode = dateStart.toISOString().split('.')[0].replace(/-|\.|:/g, '');
-      const dateEndCode = dateEnd.toISOString().split('.')[0].replace(/-|\.|:/g, '');
+      const dateStartCode = dateStart
+        .toISOString()
+        .split('.')[0]
+        .replace(/-|\.|:/g, '')
+        .concat(event.allDay ? '' : 'Z'); // Z indicates UTC, not floating time
+      const dateEndCode = dateEnd
+        .toISOString()
+        .split('.')[0]
+        .replace(/-|\.|:/g, '')
+        .concat(event.allDay ? '' : 'Z');  // Z indicates UTC, not floating time
 
       // Payload
       let payload  = `BEGIN:VEVENT\n`;
