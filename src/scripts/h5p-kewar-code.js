@@ -183,7 +183,9 @@ export default class KewArCode extends H5P.EventDispatcher {
       this.qrcodeContainer.style.textAlign = this.params.behaviour.alignment;
       this.qrcodeContainer.addEventListener('click', () => {
         this.overlay.show();
-        this.trigger('resize');
+        setTimeout(() => {
+          this.trigger('resize');
+        }, 0);
       });
       this.qrcodeContainer.addEventListener('keydown', (event) => {
         event = event || window.event;
@@ -191,7 +193,9 @@ export default class KewArCode extends H5P.EventDispatcher {
         if (key === 13 || key === 32) {
           this.overlay.show(undefined, true);
           this.qrcodeContainer.removeAttribute('tabindex');
-          this.trigger('resize');
+          setTimeout(() => {
+            this.trigger('resize');
+          }, 0);
         }
       });
 
