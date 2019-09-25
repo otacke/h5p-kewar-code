@@ -41,9 +41,9 @@ export default class Overlay {
     this.boxOuter.classList.add('h5p-kewar-code-overlay-box-outer');
     this.overlay.appendChild(this.boxOuter);
 
-    const boxInner = document.createElement('div');
-    boxInner.classList.add('h5p-kewar-code-overlay-box-inner');
-    this.boxOuter.appendChild(boxInner);
+    this.boxInner = document.createElement('div');
+    this.boxInner.classList.add('h5p-kewar-code-overlay-box-inner');
+    this.boxOuter.appendChild(this.boxInner);
 
     // Close button (made 2nd element by flex-direction for a11y)
     this.buttonClose = document.createElement('div');
@@ -61,7 +61,7 @@ export default class Overlay {
         this.handleClosed();
       }
     });
-    boxInner.appendChild(this.buttonClose);
+    this.boxInner.appendChild(this.buttonClose);
 
     // Content (made 1st element by flex-direction for a11y)
     this.content = document.createElement('div');
@@ -69,7 +69,7 @@ export default class Overlay {
     if (this.params.content) {
       this.content.appendChild(this.params.content);
     }
-    boxInner.appendChild(this.content);
+    this.boxInner.appendChild(this.content);
 
     this.hide();
   }
@@ -87,7 +87,11 @@ export default class Overlay {
    * @return {number} Height of the overlay box.
    */
   getBoxHeight() {
-    return this.boxOuter.offsetHeight;
+    const styles = window.getComputedStyle(this.boxOuter);
+    const paddingTop = parseInt(styles.getPropertyValue('padding-top'), 10);
+    const paddingBottom = parseInt(styles.getPropertyValue('padding-bottom'), 10);
+
+    return this.boxInner.offsetHeight + paddingTop + paddingBottom;
   }
 
   /**
