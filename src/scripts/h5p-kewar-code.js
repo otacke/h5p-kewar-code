@@ -7,8 +7,10 @@ export default class KewArCode extends H5P.EventDispatcher {
    * @constructor
    *
    * @param {object} params Parameters passed by the editor.
+   * @param {number} contentId Content id.
+   * @param {object} extras Extras like previous state, metadata, ...
    */
-  constructor(params) {
+  constructor(params, contentId, extras) {
     super();
 
     this.params = Util.extend(
@@ -93,13 +95,35 @@ export default class KewArCode extends H5P.EventDispatcher {
       params
     );
 
+    this.contentId = contentId;
+    this.extras = extras;
+
     /**
      * Attach library to wrapper.
      *
      * @param {jQuery} $wrapper Content's container.
      */
     this.attach = function ($wrapper) {
-      // Create codeObject
+      // Display content type instead of QR code if called from self.
+      if (this.calledFromKewAr()) {
+        const instance = H5P.newRunnable(this.params.h5p, this.contentId, $wrapper, false, this.extras);
+
+        this.bubbleUp(instance, 'resize', this);
+        this.bubbleDown(this, 'resize', instance);
+
+        const library = !this.params.h5p.library ? null : this.params.h5p.library.split(' ')[0];
+        if (library === 'H5P.Image' || this.params.h5p.library === 'H5P.TwitterUserFeed') {
+          // Resize when images are loaded
+
+          instance.on('loaded', function () {
+            this.trigger('resize');
+          });
+        }
+
+        return;
+      }
+
+      // Create code object
       const code = qrcode(KewArCode.typeNumber, KewArCode.errorCorrection);
 
       let payload = 'Something went wrong';
@@ -141,6 +165,18 @@ export default class KewArCode extends H5P.EventDispatcher {
       else if (this.params.codeType === 'url') {
         payload = this.params.url;
         display = this.buildDisplay(this.params.l10n.url, `<a href="${this.params.url}" target="blank">${this.params.url}</a>`);
+      }
+      else if (this.params.codeType === 'h5p') {
+        const url = window.location.href;
+
+        payload = url.indexOf('?') === -1 ?
+          window.location.href + `?kewar=${this.contentId}` :
+          this.calledFromKewAr() ? url : url + `&kewar=${this.contentId}`;
+
+        display = this.buildDisplay(
+          this.params.l10n.url,
+          `<a href="${payload}" target="blank">${payload}</a>`
+        );
       }
 
       code.addData(payload);
@@ -412,6 +448,60 @@ export default class KewArCode extends H5P.EventDispatcher {
         this.qrcodeContainer.focus();
       }
     };
+
+    /**
+     * Check if KewAr called itself.
+     * Uses GET parameter kewar=true.
+     * @return {boolean} True, if KewAr called itself.
+     */
+    this.calledFromKewAr = function () {
+      return new RegExp(`[?&]kewar=${this.contentId}`).test(window.location.href);
+    };
+
+    /**
+     * Make it easy to bubble events from child to parent.
+     * @private
+     * @param {Object} origin Origin of event.
+     * @param {string} eventName Name of event.
+     * @param {Object} target Target to trigger event on.
+     */
+    this.bubbleUp = function (origin, eventName, target) {
+      origin.on(eventName, function (event) {
+        // Prevent target from sending event back down
+        target.bubblingUpwards = true;
+
+        // Trigger event
+        target.trigger(eventName, event);
+
+        // Reset
+        target.bubblingUpwards = false;
+      });
+    };
+
+    /**
+     * Makes it easy to bubble events from parent to children
+     *
+     * @private
+     * @param {Object} origin Origin of the Event
+     * @param {string} eventName Name of the Event
+     * @param {Array} targets Targets to trigger event on
+     */
+    this.bubbleDown = function (origin, eventName, targets) {
+      if (!Array.isArray(targets)) {
+        targets = [targets];
+      }
+
+      origin.on(eventName, function (event) {
+        if (origin.bubblingUpwards) {
+          return; // Prevent send event back down.
+        }
+
+        targets.forEach(target => {
+          target.trigger(eventName, event);
+        });
+      });
+    };
+
   }
 }
 

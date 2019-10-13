@@ -17,6 +17,9 @@
           "label": "Standort"
         },
         {
+          "label": "H5P"
+        },
+        {
           "label": "Telefonnummer"
         },
         {
@@ -289,6 +292,15 @@
           "label": "Längengrad",
           "description": "Längengrad (bitte nutze das Format 10.663792)",
           "placeholder": "18.954036"
+        }
+      ]
+    },
+    {
+      "label": "H5P-Inhalt",
+      "fields": [
+        {
+          "label": "H5P-Inhalt",
+          "description": "H5P-Inhalt, der angezeigt werden soll"
         }
       ]
     },

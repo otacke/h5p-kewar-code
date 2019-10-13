@@ -14,6 +14,9 @@
           "label": "Email address"
         },
         {
+          "label": "H5P"
+        },
+        {
           "label": "Location"
         },
         {
@@ -289,6 +292,15 @@
           "label": "Longitude",
           "description": "Longitude (please use the format 10.663792)",
           "placeholder": "18.954036"
+        }
+      ]
+    },
+    {
+      "label": "H5P content",
+      "fields": [
+        {
+          "label": "H5P content",
+          "description": "H5P content to display"
         }
       ]
     },
