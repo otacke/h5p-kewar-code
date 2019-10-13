@@ -99,6 +99,10 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.extras = extras;
 
     this.on('resize', () => {
+      if (!this.qrcodeContainer) {
+        return;
+      }
+
       // IE can't resize inline SVGs automatically
       if (Util.isIE()) {
         this.scaleSVG();
