@@ -24,20 +24,26 @@ export default class Overlay {
     this.overlay = document.createElement('div');
     this.overlay.classList.add('h5p-kewar-code-overlay');
     this.overlay.classList.add('h5p-kewar-code-no-display');
+
+    // Will be triggered when the overlay has fully disappeared
     this.overlay.addEventListener('transitionend', () => {
       if (this.isTransparent === true) {
         this.overlay.classList.add('h5p-kewar-code-no-display');
+
+        setTimeout(() => {
+          this.params.callbackClosed(this.closeButtonHasFocus);
+        }, 0);
       }
     });
 
     // Box containing content and close button
-    const boxOuter = document.createElement('div');
-    boxOuter.classList.add('h5p-kewar-code-overlay-box-outer');
-    this.overlay.appendChild(boxOuter);
+    this.boxOuter = document.createElement('div');
+    this.boxOuter.classList.add('h5p-kewar-code-overlay-box-outer');
+    this.overlay.appendChild(this.boxOuter);
 
-    const boxInner = document.createElement('div');
-    boxInner.classList.add('h5p-kewar-code-overlay-box-inner');
-    boxOuter.appendChild(boxInner);
+    this.boxInner = document.createElement('div');
+    this.boxInner.classList.add('h5p-kewar-code-overlay-box-inner');
+    this.boxOuter.appendChild(this.boxInner);
 
     // Close button (made 2nd element by flex-direction for a11y)
     this.buttonClose = document.createElement('div');
@@ -55,7 +61,7 @@ export default class Overlay {
         this.handleClosed();
       }
     });
-    boxInner.appendChild(this.buttonClose);
+    this.boxInner.appendChild(this.buttonClose);
 
     // Content (made 1st element by flex-direction for a11y)
     this.content = document.createElement('div');
@@ -63,7 +69,7 @@ export default class Overlay {
     if (this.params.content) {
       this.content.appendChild(this.params.content);
     }
-    boxInner.appendChild(this.content);
+    this.boxInner.appendChild(this.content);
 
     this.hide();
   }
@@ -74,6 +80,18 @@ export default class Overlay {
    */
   getDOM() {
     return this.overlay;
+  }
+
+  /**
+   * Get height of the overlay box.
+   * @return {number} Height of the overlay box.
+   */
+  getBoxHeight() {
+    const styles = window.getComputedStyle(this.boxOuter);
+    const paddingTop = parseInt(styles.getPropertyValue('padding-top'), 10);
+    const paddingBottom = parseInt(styles.getPropertyValue('padding-bottom'), 10);
+
+    return this.boxInner.offsetHeight + paddingTop + paddingBottom;
   }
 
   /**
@@ -125,8 +143,9 @@ export default class Overlay {
    */
   handleClosed() {
     this.hide();
-    this.params.callbackClosed(this.closeButtonHasFocus);
     this.closeButtonHasFocus = false;
+
+    // Close-Callback will be triggered by event listener after animation ended
   }
 
   /**
