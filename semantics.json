@@ -519,46 +519,6 @@
     }
   },
   {
-    "name": "location",
-    "type": "group",
-    "label": "Location",
-    "importance": "high",
-    "expanded": true,
-    "fields": [
-      {
-        "name": "latitude",
-        "type": "text",
-        "label": "Latitude",
-        "description": "Latitude (please use the format 53.864462)",
-        "placeholder": "69.646007",
-        "regexp": {
-          "pattern": "^((-?0*([0-9]|[1-7][0-9]|8[0-9])(\\.[0-9]{1,6})?)|(-?90))$",
-          "modifiers": ""
-        }
-      },
-      {
-        "name": "longitude",
-        "type": "text",
-        "label": "Longitude",
-        "description": "Longitude (please use the format 10.663792)",
-        "placeholder": "18.954036",
-        "regexp": {
-          "pattern": "^((-?0*([0-9]|[1-8][0-9]|9[0-9]|1[0-6][0-9]|17[0-9])(\\.[0-9]{1,6})?)|-?180)$",
-          "modifiers": ""
-        }
-      }
-    ],
-    "widget": "showWhen",
-    "showWhen": {
-      "rules": [
-        {
-          "field": "codeType",
-          "equals": "location"
-        }
-      ]
-    }
-  },
-  {
     "name": "h5p",
     "type": "group",
     "label": "H5P content",
@@ -614,6 +574,46 @@
         {
           "field": "codeType",
           "equals": "h5p"
+        }
+      ]
+    }
+  },
+  {
+    "name": "location",
+    "type": "group",
+    "label": "Location",
+    "importance": "high",
+    "expanded": true,
+    "fields": [
+      {
+        "name": "latitude",
+        "type": "text",
+        "label": "Latitude",
+        "description": "Latitude (please use the format 53.864462)",
+        "placeholder": "69.646007",
+        "regexp": {
+          "pattern": "^((-?0*([0-9]|[1-7][0-9]|8[0-9])(\\.[0-9]{1,6})?)|(-?90))$",
+          "modifiers": ""
+        }
+      },
+      {
+        "name": "longitude",
+        "type": "text",
+        "label": "Longitude",
+        "description": "Longitude (please use the format 10.663792)",
+        "placeholder": "18.954036",
+        "regexp": {
+          "pattern": "^((-?0*([0-9]|[1-8][0-9]|9[0-9]|1[0-6][0-9]|17[0-9])(\\.[0-9]{1,6})?)|-?180)$",
+          "modifiers": ""
+        }
+      }
+    ],
+    "widget": "showWhen",
+    "showWhen": {
+      "rules": [
+        {
+          "field": "codeType",
+          "equals": "location"
         }
       ]
     }

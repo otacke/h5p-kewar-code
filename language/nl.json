@@ -14,10 +14,10 @@
           "label": "E-mailadres"
         },
         {
-          "label": "Locatie"
+          "label": "H5P"
         },
         {
-          "label": "H5P"
+          "label": "Locatie"
         },
         {
           "label": "Telefoonnummer"
@@ -271,6 +271,16 @@
       ]
     },
     {
+      "label": "H5P content",
+      "fields": [
+        {
+          "label": "H5P content",
+          "description": "H5P content to display"
+        }
+      ]
+    },
+
+    {
       "label": "E-mailadres",
       "fields": [
         {
@@ -292,15 +302,6 @@
           "label": "Lengtegraad",
           "description": "Lengtegraad (gebruik de volgende indeling 10.663792)",
           "placeholder": "18.954036"
-        }
-      ]
-    },
-    {
-      "label": "H5P content",
-      "fields": [
-        {
-          "label": "H5P content",
-          "description": "H5P content to display"
         }
       ]
     },
