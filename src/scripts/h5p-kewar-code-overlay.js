@@ -157,9 +157,10 @@ export default class Overlay {
      * the longest name field for future reference, so all fields keep the same
      * width.
      */
-    const rowWidest = [...this.content.querySelectorAll('.h5p-kewar-code-display-row-name')].reduce((accu, field) => {
-      return Math.max(accu, field.offsetWidth || 0);
-    }, 0);
+    const rowWidest = [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-name'))
+      .reduce((accu, field) => {
+        return Math.max(accu, field.offsetWidth || 0);
+      }, 0);
 
     if (rowWidest === 0) {
       return;
@@ -168,18 +169,20 @@ export default class Overlay {
     const rowMaxWidth = rowWidest + 5;
     const rowWidth = 100 * rowMaxWidth / this.content.offsetWidth;
 
-    this.content.querySelectorAll('.h5p-kewar-code-display-row-name').forEach((name) => {
-      name.style.flexGrow = 1;
-      name.style.flexShrink = 1;
-      name.style.maxWidth = `${rowMaxWidth}px`;
-      name.style.overflow = 'hidden';
-      name.style.textOverflow = 'ellipsis';
-      name.style.width = `${rowWidth}%`;
-    });
+    [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-name'))
+      .forEach((name) => {
+        name.style.flexGrow = 1;
+        name.style.flexShrink = 1;
+        name.style.maxWidth = `${rowMaxWidth}px`;
+        name.style.overflow = 'hidden';
+        name.style.textOverflow = 'ellipsis';
+        name.style.width = `${rowWidth}%`;
+      });
 
-    this.content.querySelectorAll('.h5p-kewar-code-display-row-content').forEach((name) => {
-      name.style.flexGrow = 1;
-      name.style.width = `${100 - rowWidth}%`;
-    });
+    [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-content'))
+      .forEach((name) => {
+        name.style.flexGrow = 1;
+        name.style.width = `${100 - rowWidth}%`;
+      });
   }
 }
