@@ -8,6 +8,11 @@
   width: 100%;
 }
 
+.h5p-kewar-code .h5p-kewar-code-container img {
+  width: 100%;
+  height: 100%;
+}
+
 .h5p-kewar-code .h5p-kewar-code-overlay {
   align-items: center;
   background: #000;
@@ -16,6 +21,7 @@
   -moz-box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: center;
   left: 0;
   max-height: 100%;
