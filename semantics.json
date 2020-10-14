@@ -42,7 +42,8 @@
         "label": "URL"
       }
     ],
-    "default": "url"
+    "default": "url",
+    "widget": "editorKewArCode"
   },
   {
     "name": "contact",
