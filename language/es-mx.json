@@ -100,7 +100,7 @@
         },
         {
           "label": "Nota",
-          "description": "Noae",
+          "description": "Nota",
           "placeholder": "John ama H5P."
         }
       ]
@@ -256,10 +256,10 @@
         },
         {
           "label": "Horario de verano",
-          "description": "Activar si el evento tiene lugar durante el período de horaio de verano"
+          "description": "Activar si el evento tiene lugar durante el período de horario de verano"
         },
         {
-          "label": "Localzación",
+          "label": "Localización",
           "description": "Escriba la localización",
           "placeholder": "Madison, USA"
         },
@@ -319,7 +319,7 @@
       "fields": [
         {
           "label": "Número telefónico",
-          "description": Número telefónico a donde envar mensaje de texto (por favor use el formato +12 345 67890)",
+          "description": "Número telefónico a donde enviar mensaje de texto (por favor use el formato +12 345 67890)",
           "placeholder": "+12 345 67890"
         },
         {
@@ -354,10 +354,10 @@
       "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
-          "label": "Color del códigor"
+          "label": "Color del código"
         },
         {
-          "label": "Color del fondor"
+          "label": "Color del fondo"
         },
         {
           "label": "Tamaño máximo",
@@ -384,104 +384,104 @@
       "label": "Interfaz del usuario",
       "fields": [
         {
-          "label": "Address",
-          "default": "Address"
+          "label": "Dirección",
+          "default": "Dirección"
         },
         {
-          "label": "Contact",
-          "default": "Contact"
+          "label": "Contacto",
+          "default": "Contacto"
         },
         {
-          "label": "Country",
-          "default": "Country"
+          "label": "País",
+          "default": "País"
         },
         {
-          "label": "End date",
-          "default": "End date"
+          "label": "Fecha de término",
+          "default": "Fecha de término"
         },
         {
-          "label": "Start date",
-          "default": "Start date"
+          "label": "Fecha de inicio",
+          "default": "Fecha de inicio"
         },
         {
-          "label": "Description",
-          "default": "Description"
+          "label": "Descripción",
+          "default": "Descripción"
         },
         {
           "label": "Email",
           "default": "Email"
         },
         {
-          "label": "Event",
-          "default": "Event"
+          "label": "Evento",
+          "default": "Evento"
         },
         {
-          "label": "Extended address",
-          "default": "Extended address"
+          "label": "Dirección completa",
+          "default": "Dirección completa"
         },
         {
-          "label": "Latitude",
-          "default": "Latitude"
+          "label": "Latitud",
+          "default": "Latitud"
         },
         {
-          "label": "Locality",
-          "default": "Locality"
+          "label": "Localidad",
+          "default": "Localidad"
         },
         {
-          "label": "Location",
-          "default": "Location"
+          "label": "Localización",
+          "default": "Localización"
         },
         {
-          "label": "Longitude",
-          "default": "Longitude"
+          "label": "Longitud",
+          "default": "Longitud"
         },
         {
-          "label": "Message",
-          "default": "Message"
+          "label": "Mensaje",
+          "default": "Mensaje"
         },
         {
-          "label": "Name",
-          "default": "Name"
+          "label": "Nombre",
+          "default": "Nombre"
         },
         {
-          "label": "Note",
-          "default": "Note"
+          "label": "Nota",
+          "default": "Nota"
         },
         {
-          "label": "Organization",
-          "default": "Organization"
+          "label": "Organización",
+          "default": "Organización"
         },
         {
-          "label": "Phone",
-          "default": "Phone"
+          "label": "Teléfono",
+          "default": "Teléfono"
         },
         {
-          "label": "Region",
-          "default": "Region"
+          "label": "Región",
+          "default": "Región"
         },
         {
           "label": "SMS",
           "default": "SMS"
         },
         {
-          "label": "Street",
-          "default": "Street"
+          "label": "Calle",
+          "default": "Calle"
         },
         {
-          "label": "Text",
-          "default": "Text"
+          "label": "Texto",
+          "default": "Texto"
         },
         {
-          "label": "Title",
-          "default": "Title"
+          "label": "Título",
+          "default": "Título"
         },
         {
           "label": "URL",
           "default": "URL"
         },
         {
-          "label": "ZIP code",
-          "default": "ZIP code"
+          "label": "Código Postal",
+          "default": "Código Postal"
         }
       ]
     },
