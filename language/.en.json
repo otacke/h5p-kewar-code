@@ -290,16 +290,6 @@
       ]
     },
     {
-      "label": "Phone number",
-      "fields": [
-        {
-          "label": "Phone number",
-          "description": "Phone number to call (please use the format +12 345 67890)",
-          "placeholder": "+12 345 67890"
-        }
-      ]
-    },
-    {
       "label": "Location",
       "fields": [
         {
@@ -311,6 +301,16 @@
           "label": "Longitude",
           "description": "Longitude (please use the format 10.663792)",
           "placeholder": "18.954036"
+        }
+      ]
+    },
+    {
+      "label": "Phone number",
+      "fields": [
+        {
+          "label": "Phone number",
+          "description": "Phone number to call (please use the format +12 345 67890)",
+          "placeholder": "+12 345 67890"
         }
       ]
     },

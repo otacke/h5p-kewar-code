@@ -271,22 +271,21 @@
       ]
     },
     {
-      "label": "H5P content",
-      "fields": [
-        {
-          "label": "H5P content",
-          "description": "H5P content to display"
-        }
-      ]
-    },
-
-    {
       "label": "E-mailadres",
       "fields": [
         {
           "label": "E-mailadres",
           "description": "E-mailadres om berichten naar te versturen",
           "placeholder": "jan@fictief-h5p-fanclub.org"
+        }
+      ]
+    },
+    {
+      "label": "H5P content",
+      "fields": [
+        {
+          "label": "H5P content",
+          "description": "H5P content to display"
         }
       ]
     },

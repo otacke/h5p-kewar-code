@@ -290,16 +290,6 @@
       ]
     },
     {
-      "label": "Número telefónico",
-      "fields": [
-        {
-          "label": "Número telefonico",
-          "description": "Número telefónico a llamar (por favor use el formato +12 345 67890)",
-          "placeholder": "+12 345 67890"
-        }
-      ]
-    },
-    {
       "label": "Localización",
       "fields": [
         {
@@ -311,6 +301,16 @@
           "label": "Longitud",
           "description": "Longitud (por favor use el formato 10.663792)",
           "placeholder": "18.954036"
+        }
+      ]
+    },
+    {
+      "label": "Número telefónico",
+      "fields": [
+        {
+          "label": "Número telefonico",
+          "description": "Número telefónico a llamar (por favor use el formato +12 345 67890)",
+          "placeholder": "+12 345 67890"
         }
       ]
     },

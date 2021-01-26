@@ -290,16 +290,6 @@
       ]
     },
     {
-      "label": "Telefonní číslo",
-      "fields": [
-        {
-          "label": "Telefonní číslo",
-          "description": "Telefonní číslo pro volání (použijte formát +42 602 678 123)",
-          "placeholder": "+42 602 678 123"
-        }
-      ]
-    },
-    {
       "label": "Umístění",
       "fields": [
         {
@@ -311,6 +301,16 @@
           "label": "Zeměpisná délka",
           "description": "Zeměpisná délka (použijte formát 10.663792)",
           "placeholder": "18.954036"
+        }
+      ]
+    },
+    {
+      "label": "Telefonní číslo",
+      "fields": [
+        {
+          "label": "Telefonní číslo",
+          "description": "Telefonní číslo pro volání (použijte formát +42 602 678 123)",
+          "placeholder": "+42 602 678 123"
         }
       ]
     },
