@@ -290,16 +290,6 @@
       ]
     },
     {
-      "label": "Número de teléfono",
-      "fields": [
-        {
-          "label": "Número de telono",
-          "description": "Teléfono ao que chamar (por favor, usa o formato +12 345 67890)",
-          "placeholder": "+12 345 67890"
-        }
-      ]
-    },
-    {
       "label": "Localización",
       "fields": [
         {
@@ -311,6 +301,16 @@
           "label": "Lonxitude",
           "description": "Lonxitude (por favor, usa o formato 10.663792)",
           "placeholder": "18.954036"
+        }
+      ]
+    },
+    {
+      "label": "Número de teléfono",
+      "fields": [
+        {
+          "label": "Número de telono",
+          "description": "Teléfono ao que chamar (por favor, usa o formato +12 345 67890)",
+          "placeholder": "+12 345 67890"
         }
       ]
     },
