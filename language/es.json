@@ -284,7 +284,7 @@
       "label": "Contenido H5P",
       "fields": [
         {
-          "label": "Contenido H5P ",
+          "label": "Contenido H5P",
           "description": "Contenido H5P a mostrar"
         }
       ]
@@ -303,7 +303,7 @@
           "placeholder": "18.954036"
         }
       ]
-    },    
+    },
     {
       "label": "Número telefónico",
       "fields": [
