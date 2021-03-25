@@ -17,7 +17,7 @@
           "label": "H5P"
         },
         {
-          "label": "Localización"
+          "label": "Lugar"
         },
         {
           "label": "Número telefónico"
@@ -38,14 +38,14 @@
       "fields": [
         {
           "label": "Nombre",
-          "placeholder": "John Smith"
+          "placeholder": "Juan Pérez"
         },
         {
           "label": "Organización",
           "placeholder": "club de fans de H5P"
         },
         {
-          "label": "Title",
+          "label": "Título",
           "placeholder": "Maestro de Nada"
         },
         {
@@ -55,21 +55,21 @@
         },
         {
           "label": "Dirección Email",
-          "description": "Dirección Email a la cual escribir",
-          "placeholder": "john@fictional-h5p-fan-club.org"
+          "description": "Dirección Email a la cual escribir mensaje",
+          "placeholder": "juanp@club-de-fan-ficticio-h5p.org"
         },
         {
           "label": "Dirección",
           "fields": [
             {
-              "label": "Dirección extendida",
+              "label": "Dirección completa",
               "description": "c/o información, etc.",
               "placeholder": "c/o Club de fans de H5P"
             },
             {
               "label": "Calle",
               "description": "Calle y número",
-              "placeholder": "1308 W. Dayton Street"
+              "placeholder": "Calle Daytona Oeste # 1308"
             },
             {
               "label": "Localidad",
@@ -89,19 +89,19 @@
             {
               "label": "País",
               "description": "País",
-              "placeholder": "USA"
+              "placeholder": "USA (Estados Unidos)"
             }
           ]
         },
         {
           "label": "Sitio web",
-          "description": "Sitio web al cual enlazar (debe comenzar con https:// r http://)",
-          "placeholder": "https://fictional-h5p-fan-club.org"
+          "description": "Sitio web al cual enlazar (debe comenzar con https:// o con http://)",
+          "placeholder": "https://club-de-fans-ficticio-h5p.org"
         },
         {
           "label": "Nota",
           "description": "Nota",
-          "placeholder": "John ama H5P."
+          "placeholder": "Juan ama H5P."
         }
       ]
     },
@@ -259,8 +259,8 @@
           "description": "Activar si el evento tiene lugar durante el período de horario de verano"
         },
         {
-          "label": "Localización",
-          "description": "Escriba la localización",
+          "label": "Lugar",
+          "description": "Escriba la localización del lugar",
           "placeholder": "Madison, USA"
         },
         {
@@ -276,7 +276,7 @@
         {
           "label": "Dirección Email",
           "description": "Dirección Email a donde escribir mensaje",
-          "placeholder": "john@fictional-h5p-fan-club.org"
+          "placeholder": "juanp@club-de-fan-ficticio-h5p.org"
         }
       ]
     },
@@ -284,13 +284,13 @@
       "label": "Contenido H5P",
       "fields": [
         {
-          "label": "Contenido H5P ",
+          "label": "Contenido H5P",
           "description": "Contenido H5P a mostrar"
         }
       ]
     },
     {
-      "label": "Localización",
+      "label": "Lugar",
       "fields": [
         {
           "label": "Latitud",
@@ -308,7 +308,7 @@
       "label": "Número telefónico",
       "fields": [
         {
-          "label": "Número telefonico",
+          "label": "Número telefónico",
           "description": "Número telefónico a llamar (por favor use el formato +12 345 67890)",
           "placeholder": "+12 345 67890"
         }
@@ -319,7 +319,7 @@
       "fields": [
         {
           "label": "Número telefónico",
-          "description": "Número telefónico a donde enviar mensaje de texto (por favor use el formato +12 345 67890)",
+          "description": "Número telefónico a donde enviar (por favor use el formato +12 345 67890)",
           "placeholder": "+12 345 67890"
         },
         {
@@ -344,13 +344,13 @@
       "fields": [
         {
           "label": "URL",
-          "description": "URL a donde enlazar (debe comenzar con https:// o http://)",
-          "placeholder": "https://fictional-h5p-fan-club.org"
+          "description": "URL a donde enlazar (debe comenzar con https:// o con http://)",
+          "placeholder": "https://club-de-fan-ficticio-h5p.org"
         }
       ]
     },
     {
-      "label": "Configuraciones del comportamientos",
+      "label": "Configuraciones del comportamiento",
       "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
@@ -365,7 +365,7 @@
         },
         {
           "label": "Alineación horizontal",
-          "description": "Configurar alineación horizontal si se configura un tamaño máximo",
+          "description": "Configurar alineación horizontal si usted configura un tamaño máximo",
           "options": [
             {
               "label": "izquierda"
@@ -428,8 +428,8 @@
           "default": "Localidad"
         },
         {
-          "label": "Localización",
-          "default": "Localización"
+          "label": "Lugar",
+          "default": "Lugar"
         },
         {
           "label": "Longitud",
@@ -486,14 +486,14 @@
       ]
     },
     {
-      "label": "Lector de pantalla",
+      "label": "Lector de texto en voz alta",
       "fields": [
         {
-          "label": "CódigoQR. Mostrar información (Texto para lector de pantallla)",
+          "label": "CódigoQR. Mostrar información (Texto para lector en voz alta)",
           "default": "CódigoQR. Mostrar información."
         },
         {
-          "label": "Ocultar información (Texto para lector de pantalla)",
+          "label": "Ocultar información (Texto para lector en voz alta)",
           "default": "Ocultar información."
         }
       ]
