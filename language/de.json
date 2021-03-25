@@ -311,11 +311,6 @@
           "label": "Telefonnummer",
           "description": "Telefonnummer, die angerufen werden soll (bitte nutze das Format +12 345 67890)",
           "placeholder": "+12 345 67890"
-        },
-        {
-          "placeholder": "18.954036",
-          "description": "Längengrad (bitte das Format 10.663792 verwenden)",
-          "label": "Längengrad"
         }
       ]
     },

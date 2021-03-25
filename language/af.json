@@ -311,11 +311,6 @@
           "label": "Tellefoonnommer",
           "description": "Tellefoonnommer om te skakel (gebruik asb. die formaat +12 345 67890)",
           "placeholder": "+12 345 67890"
-        },
-        {
-          "label": "",
-          "description": "",
-          "placeholder": ""
         }
       ]
     },
