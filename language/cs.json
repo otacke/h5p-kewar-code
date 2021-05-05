@@ -50,8 +50,8 @@
         },
         {
           "label": "Telefonní číslo",
-          "description": "Telefonní číslo (použijte formát +42 602 678 123)",
-          "placeholder": "+42 602 678 123"
+          "description": "Telefonní číslo (použijte formát +420 602 678 123)",
+          "placeholder": "+420 602 678 123"
         },
         {
           "label": "Emailová adresa",
@@ -309,8 +309,8 @@
       "fields": [
         {
           "label": "Telefonní číslo",
-          "description": "Telefonní číslo pro volání (použijte formát +42 602 678 123)",
-          "placeholder": "+42 602 678 123"
+          "description": "Telefonní číslo pro volání (použijte formát +420 602 678 123)",
+          "placeholder": "+420 602 678 123"
         }
       ]
     },
@@ -319,8 +319,8 @@
       "fields": [
         {
           "label": "Telefonní číslor",
-          "description": "Telefonní číslo pro odeslání (použijte formát +42 602 678 123)",
-          "placeholder": "+42 602 678 123"
+          "description": "Telefonní číslo pro odeslání (použijte formát +420 602 678 123)",
+          "placeholder": "+420 602 678 123"
         },
         {
           "label": "Zpráva",
@@ -335,7 +335,7 @@
         {
           "label": "Text",
           "description": "Text ke kódování",
-          "placeholder": "Přines prosím mléko\n* a chléb\n*"
+          "placeholder": "Přines prosím\n* mléko\n* chléb"
         }
       ]
     },
