@@ -266,7 +266,7 @@
         {
           "label": "Beschreibung",
           "description": "Beschreibung des Ereignisses",
-          "placeholder": "3rd H5P conference"
+          "placeholder": "3. H5P-Konferenz"
         }
       ]
     },
@@ -334,8 +334,8 @@
       "fields": [
         {
           "label": "Text",
-          "description": "Text to encode",
-          "placeholder": "Please fetch\n* milk\n* bread"
+          "description": "Zu codierender Text",
+          "placeholder": "Bitte hole\n* Milch\n* Brot"
         }
       ]
     },
