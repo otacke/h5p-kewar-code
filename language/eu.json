@@ -1,0 +1,502 @@
+{
+  "semantics": [
+    {
+      "label": "Kode-mota",
+      "description": "Aukeratu ezazu zer motako kodea sortu nahi duzun",
+      "options": [
+        {
+          "label": "Kontaktua"
+        },
+        {
+          "label": "Ekitaldia"
+        },
+        {
+          "label": "Helbide elektronikoa"
+        },
+        {
+          "label": "H5P"
+        },
+        {
+          "label": "Kokapena"
+        },
+        {
+          "label": "Telefono zenbakia"
+        },
+        {
+          "label": "SMS"
+        },
+        {
+          "label": "Testua"
+        },
+        {
+          "label": "URLa"
+        }
+      ]
+    },
+    {
+      "label": "Kontaktua",
+      "fields": [
+        {
+          "label": "Izena",
+          "placeholder": "Jon Agirre"
+        },
+        {
+          "label": "Erakundea",
+          "placeholder": "H5P zaleen kluba"
+        },
+        {
+          "label": "Izenburua",
+          "placeholder": "Ezeren Maisua"
+        },
+        {
+          "label": "Telefono zenbakia",
+          "description": "",
+          "placeholder": "+12 345 67890"
+        },
+        {
+          "label": "Helbide elektronikoa",
+          "description": "Mezua idazteko helbide elektronikoa",
+          "placeholder": "jon@gezurrezko-h5p-zaleen-kluba.org"
+        },
+        {
+          "label": "Helbidea",
+          "fields": [
+            {
+              "label": "Helbide osoa",
+              "description": "",
+              "placeholder": ""
+            },
+            {
+              "label": "Kalea",
+              "description": "Kalea eta zenbakia",
+              "placeholder": "Goiko Kalea 12"
+            },
+            {
+              "label": "Hiria/Herria",
+              "description": "Hiri edo herriaren izena, etab.",
+              "placeholder": "Madison"
+            },
+            {
+              "label": "Lurraldea",
+              "description": "Herrialdea, udalerria, etab.",
+              "placeholder": "WI"
+            },
+            {
+              "label": "Posta-kodea",
+              "description": "Posta-kodea",
+              "placeholder": "53715"
+            },
+            {
+              "label": "Herrialdea",
+              "description": "Herrialdea",
+              "placeholder": "AEB"
+            }
+          ]
+        },
+        {
+          "label": "Webgunea",
+          "description": "",
+          "placeholder": "https://gezurrezko-h5p-zaleen-kluba.org"
+        },
+        {
+          "label": "Oharra",
+          "description": "Oharra",
+          "placeholder": "Jonek H5P maite du."
+        }
+      ]
+    },
+    {
+      "label": "Ekitaldia",
+      "fields": [
+        {
+          "label": "Izenburua",
+          "description": "",
+          "placeholder": "H5P Konferentzia 2020"
+        },
+        {
+          "label": "Egun osoko ekitaldia",
+          "description": ""
+        },
+        {
+          "label": "Hasiera-data",
+          "description": "",
+          "placeholder": "2020/05/18"
+        },
+        {
+          "label": "Hasiera-ordua",
+          "description": "",
+          "placeholder": "09:00"
+        },
+        {
+          "label": "Amaiera-data",
+          "description": "",
+          "placeholder": "2020/05/20"
+        },
+        {
+          "label": "Amaiera-ordua",
+          "description": "",
+          "placeholder": "16:00"
+        },
+        {
+          "label": "",
+          "description": "",
+          "options": [
+            {
+              "label": "UTC-12:00"
+            },
+            {
+              "label": "UTC-11:00"
+            },
+            {
+              "label": "UTC-10:00"
+            },
+            {
+              "label": "UTC-9:30"
+            },
+            {
+              "label": "UTC-9:00"
+            },
+            {
+              "label": "UTC-8:00"
+            },
+            {
+              "label": "UTC-7:00"
+            },
+            {
+              "label": "UTC-6:00"
+            },
+            {
+              "label": "UTC-5:00"
+            },
+            {
+              "label": "UTC-4:00"
+            },
+            {
+              "label": "UTC-3:30"
+            },
+            {
+              "label": "UTC-3:00"
+            },
+            {
+              "label": "UTC-2:00"
+            },
+            {
+              "label": "UTC-1:00"
+            },
+            {
+              "label": "UTC"
+            },
+            {
+              "label": "UTC+1:00"
+            },
+            {
+              "label": "UTC+2:00"
+            },
+            {
+              "label": "UTC+3:00"
+            },
+            {
+              "label": "UTC+3:30"
+            },
+            {
+              "label": "UTC+4:00"
+            },
+            {
+              "label": "UTC+4:30"
+            },
+            {
+              "label": "UTC+5:00"
+            },
+            {
+              "label": "UTC+5:30"
+            },
+            {
+              "label": "UTC+5:45"
+            },
+            {
+              "label": "UTC+6:00"
+            },
+            {
+              "label": "UTC+6:30"
+            },
+            {
+              "label": "UTC+7:00"
+            },
+            {
+              "label": "UTC+8:00"
+            },
+            {
+              "label": "UTC+9:00"
+            },
+            {
+              "label": "UTC+9:30"
+            },
+            {
+              "label": "UTC+10:00"
+            },
+            {
+              "label": "UTC+10:30"
+            },
+            {
+              "label": "UTC+11:00"
+            },
+            {
+              "label": "UTC+12:00"
+            },
+            {
+              "label": "UTC+12:45"
+            },
+            {
+              "label": "UTC+13:00"
+            },
+            {
+              "label": "UTC+14:00"
+            }
+          ]
+        },
+        {
+          "label": "",
+          "description": ""
+        },
+        {
+          "label": "Kokapena",
+          "description": "Kokapenaren izena",
+          "placeholder": "Madison, AEB"
+        },
+        {
+          "label": "Deskribapena",
+          "description": "",
+          "placeholder": "3. H5P konferentzia"
+        }
+      ]
+    },
+    {
+      "label": "Helbide elektronikoa",
+      "fields": [
+        {
+          "label": "Helbide elektronikoa",
+          "description": "",
+          "placeholder": ""
+        }
+      ]
+    },
+    {
+      "label": "H5P edukia",
+      "fields": [
+        {
+          "label": "H5P edukia",
+          "description": "Erakusteko H5P edukia"
+        }
+      ]
+    },
+    {
+      "label": "Kokapena",
+      "fields": [
+        {
+          "label": "Latitudea",
+          "description": "",
+          "placeholder": "69.646007"
+        },
+        {
+          "label": "Longitudea",
+          "description": "",
+          "placeholder": "18.954036"
+        }
+      ]
+    },
+    {
+      "label": "Telefono zenbakia",
+      "fields": [
+        {
+          "label": "Telefono zenbakia",
+          "description": "",
+          "placeholder": "+12 345 67890"
+        }
+      ]
+    },
+    {
+      "label": "SMS",
+      "fields": [
+        {
+          "label": "Telefono zenbakia",
+          "description": "",
+          "placeholder": "+12 345 67890"
+        },
+        {
+          "label": "Mezua",
+          "description": "Bidali beharreko mezua",
+          "placeholder": ""
+        }
+      ]
+    },
+    {
+      "label": "Testua",
+      "fields": [
+        {
+          "label": "Testua",
+          "description": "",
+          "placeholder": ""
+        }
+      ]
+    },
+    {
+      "label": "URLa",
+      "fields": [
+        {
+          "label": "URLa",
+          "description": "",
+          "placeholder": ""
+        }
+      ]
+    },
+    {
+      "label": "Portaeraren ezarpenak",
+      "description": "Aukera hauek lanaren portaera kontrolatzea ahalbidetzen dizute.",
+      "fields": [
+        {
+          "label": ""
+        },
+        {
+          "label": ""
+        },
+        {
+          "label": "",
+          "description": ""
+        },
+        {
+          "label": "",
+          "description": "",
+          "options": [
+            {
+              "label": "ezkerra"
+            },
+            {
+              "label": "erdia"
+            },
+            {
+              "label": "eskuina"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Erabiltzaile-interfazea",
+      "fields": [
+        {
+          "label": "Helbidea",
+          "default": "Helbidea"
+        },
+        {
+          "label": "Kontaktua",
+          "default": "Kontaktua"
+        },
+        {
+          "label": "Herrialdea",
+          "default": "Herrialdea"
+        },
+        {
+          "label": "Amaiera-data",
+          "default": "Amaiera-data"
+        },
+        {
+          "label": "Hasiera-data",
+          "default": "Hasiera-data"
+        },
+        {
+          "label": "Deskribapena",
+          "default": "Deskribapena"
+        },
+        {
+          "label": "Helbide elektronikoa",
+          "default": "Helbide elektronikoa"
+        },
+        {
+          "label": "Ekitaldia",
+          "default": "Ekitaldia"
+        },
+        {
+          "label": "Helbide osoa",
+          "default": "Helbide osoa"
+        },
+        {
+          "label": "Latitudea",
+          "default": "Latitudea"
+        },
+        {
+          "label": "Hiria/herria",
+          "default": "Hiria/herria"
+        },
+        {
+          "label": "Kokapena",
+          "default": "Kokapena"
+        },
+        {
+          "label": "Longitudea",
+          "default": "Longitudea"
+        },
+        {
+          "label": "Mezua",
+          "default": "Mezua"
+        },
+        {
+          "label": "Izena",
+          "default": "Izena"
+        },
+        {
+          "label": "Oharra",
+          "default": "Oharra"
+        },
+        {
+          "label": "Erakundea",
+          "default": "Erakundea"
+        },
+        {
+          "label": "Telefonoa",
+          "default": "Telefonoa"
+        },
+        {
+          "label": "Lurraldea",
+          "default": "Lurraldea"
+        },
+        {
+          "label": "SMS",
+          "default": "SMS"
+        },
+        {
+          "label": "Kalea",
+          "default": "Kalea"
+        },
+        {
+          "label": "Testua",
+          "default": "Testua"
+        },
+        {
+          "label": "Izenburua",
+          "default": "Izenburua"
+        },
+        {
+          "label": "URLa",
+          "default": "URLa"
+        },
+        {
+          "label": "Posta-kodea",
+          "default": "Posta-kodea"
+        }
+      ]
+    },
+    {
+      "label": "",
+      "fields": [
+        {
+          "label": "",
+          "default": ""
+        },
+        {
+          "label": "",
+          "default": ""
+        }
+      ]
+    }
+  ]
+}
