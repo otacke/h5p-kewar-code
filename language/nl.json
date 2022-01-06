@@ -1,7 +1,7 @@
 {
   "semantics": [
     {
-      "label": "Type code",
+      "label": "Type voor code",
       "description": "Selecteer welke soort code je wilt maken",
       "options": [
         {
@@ -46,7 +46,7 @@
         },
         {
           "label": "Titel",
-          "placeholder": "Master in Niets"
+          "placeholder": "Doctor in de 'Weet-niet'-kunde"
         },
         {
           "label": "Telefoonnummer",
@@ -110,7 +110,7 @@
       "fields": [
         {
           "label": "Titel",
-          "description": "Titel voor een kalenderevenement",
+          "description": "Titel voor het kalenderevenement",
           "placeholder": "H5P Conferentie 2020"
         },
         {
@@ -119,22 +119,22 @@
         },
         {
           "label": "Startdatum",
-          "description": "Startdatum van het evenement (gebruik de volgende indeling jjjj/mm/dd)",
+          "description": "Startdatum van het evenement (gebruik de volgende opmaak jjjj/mm/dd)",
           "placeholder": "2020/05/18"
         },
         {
           "label": "Starttijd",
-          "description": "Starttijd van het evenement (gebruik de volgende indeling hh:mm)",
+          "description": "Starttijd van het evenement (gebruik de volgende opmaak hh:mm)",
           "placeholder": "09:00"
         },
         {
           "label": "Einddatum",
-          "description": "Einddatum van het evenement (gebruik de volgende indeling jjjj/mm/dd)",
+          "description": "Einddatum van het evenement (gebruik de volgende opmaak jjjj/mm/dd)",
           "placeholder": "2020/05/20"
         },
         {
           "label": "Eindtijd",
-          "description": "Eindtijd van het evenement (gebruik de volgende indeling hh:mm)",
+          "description": "Eindtijd van het evenement (gebruik de volgende opmaak hh:mm)",
           "placeholder": "16:00"
         },
         {
@@ -264,9 +264,9 @@
           "placeholder": "Amsterdam, Nederland"
         },
         {
-          "label": "Omschrijving",
-          "description": "Voeg een omschrijving van het evenement toe",
-          "placeholder": "Derde H5P conferenctie"
+          "label": "Beschrijving",
+          "description": "Voeg een beschrijving van het evenement toe",
+          "placeholder": "Derde H5P conferentie"
         }
       ]
     },
@@ -281,11 +281,11 @@
       ]
     },
     {
-      "label": "H5P content",
+      "label": "H5P-inhoud",
       "fields": [
         {
-          "label": "H5P content",
-          "description": "H5P content to display"
+          "label": "H5P-inhoud",
+          "description": "H5P-inhoud om te tonen"
         }
       ]
     },
@@ -335,7 +335,7 @@
         {
           "label": "Tekst",
           "description": "Te coderen tekst",
-          "placeholder": "Haal alsjeblieft \n* melk\n* brood"
+          "placeholder": "Haal alsjeblieft\n* melk\n* brood"
         }
       ]
     },
@@ -351,10 +351,10 @@
     },
     {
       "label": "Gedragsinstellingen",
-      "description": "Met deze instelingen bepaal je hoe de code zich gedraagt.",
+      "description": "Met deze opties kun je bepalen hoe de taak zich gedraagt.",
       "fields": [
         {
-          "label": "Kleurcode"
+          "label": "Code-kleur"
         },
         {
           "label": "Achtergrondkleur"
@@ -404,8 +404,8 @@
           "default": "Startdatum"
         },
         {
-          "label": "Omschrijving",
-          "default": "Omschrijving"
+          "label": "Beschrijving",
+          "default": "Beschrijving"
         },
         {
           "label": "E-mail",
@@ -486,14 +486,14 @@
       ]
     },
     {
-      "label": "Readspeaker",
+      "label": "Schermlezer",
       "fields": [
         {
-          "label": "QR-code. Toon informatie (Tekst voor Readspeakers)",
+          "label": "QR-code. Toon informatie (Tekst voor schermlezers)",
           "default": "QR-code. Toon informatie."
         },
         {
-          "label": "Verberg informatie (Tekst voor Readspeakers)",
+          "label": "Verberg informatie (Tekst voor schermlezers)",
           "default": "Verberg informatie."
         }
       ]
