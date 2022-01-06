@@ -1,0 +1,128 @@
+{
+  "semantics": [
+    {
+      "label": "Tipo di codice",
+      "description": "Seleziona il tipo di codice che vuoi generare",
+      "options": [
+        {
+          "label": "Contatti"
+        },
+        {
+          "label": "Evento"
+        },
+        {
+          "label": "Indirizzo email"
+        },
+        {
+          "label": "H5P"
+        },
+        {
+          "label": "Luogo"
+        },
+        {
+          "label": "Numero di telefono"
+        },
+        {
+          "label": "SMS"
+        },
+        {
+          "label": "Testo"
+        },
+        {
+          "label": "URL"
+        }
+      ]
+    },
+    {
+      "label": "Contatti",
+      "fields": [
+        {
+          "label": "Nome",
+          "placeholder": "Mario Rossi"
+        },
+        {
+          "label": "Organizzazione",
+          "placeholder": "Fan club di H5P"
+        },
+        {
+          "label": "Titolo",
+          "placeholder": "Maestro del Nulla"
+        },
+        {
+          "label": "Numero di telefono",
+          "description": "Numero di telefono (formato +12 345 67890)",
+          "placeholder": "+12 345 67890"
+        },
+        {
+          "label": "Indirizzo email",
+          "description": "Indirizzo email al quale inviare un messaggio",
+          "placeholder": "mario@fan-club-h5p-fittizio.org"
+        },
+        {
+          "label": "Indirizzo",
+          "fields": [
+            {
+              "label": "Indirizzo completo",
+              "description": "c/o informazioni ecc.",
+              "placeholder": "c/o Fan club di H5P"
+            },
+            {
+              "label": "Via",
+              "description": "Via e numero",
+              "placeholder": "Via Daytona, 1308"
+            },
+            {
+              "label": "Località",
+              "description": "Nome della città ecc.",
+              "placeholder": "Madison"
+            },
+            {
+              "label": "Regione",
+              "description": "Stato, provincia ecc.",
+              "placeholder": "WI"
+            },
+            {
+              "label": "CAP",
+              "description": "CAP",
+              "placeholder": "53715"
+            },
+            {
+              "label": "Nazione",
+              "description": "Nazione",
+              "placeholder": "USA"
+            }
+          ]
+        },
+        {
+          "label": "Sito web",
+          "description": "Sito web al quale collegarsi (deve iniziare con https:// o con http://)",
+          "placeholder": "https://fan-club-h5p.fittizio.org"
+        },
+        {
+          "label": "Nota",
+          "description": "Nota",
+          "placeholder": "Mario ama H5P"
+        }
+      ]
+    },
+    {
+      "label": "Evento",
+      "fields": [
+        {
+          "label": "Titolo",
+          "description": "Titolo per l'evento del calendario",
+          "placeholder": "Conferenza H5P del 2020"
+        },
+        {
+          "label": "Evento di tutto il giorno",
+          "description": "Attivare se l'evento sarà valido tutto il giorno"
+        },
+        {
+          "label": "Data d'inizio",
+          "description": "Data di inizio dell'evento (formato aaaa/mm/dd)",
+          "placeholder": "2020/05/18"
+        }
+      ]
+    }
+  ]
+}
