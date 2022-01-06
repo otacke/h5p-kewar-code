@@ -50,7 +50,7 @@
         },
         {
           "label": "Telefono zenbakia",
-          "description": "",
+          "description": "Telefono zenbakia (erabili ezazu +12 345 67890 formatua)",
           "placeholder": "+12 345 67890"
         },
         {
@@ -63,8 +63,8 @@
           "fields": [
             {
               "label": "Helbide osoa",
-              "description": "",
-              "placeholder": ""
+              "placeholder": "H5P Fan Klubaren harretarako",
+              "description": "Kontaktuaren informazioa, eta abar."
             },
             {
               "label": "Kalea",
@@ -95,8 +95,8 @@
         },
         {
           "label": "Webgunea",
-          "description": "",
-          "placeholder": "https://gezurrezko-h5p-zaleen-kluba.org"
+          "placeholder": "https://gezurrezko-h5p-zaleen-kluba.org",
+          "description": "Estekatu beharreko webgunea (https:// ala http:// aurrizkiarekin hasi behar da)"
         },
         {
           "label": "Oharra",
@@ -110,36 +110,36 @@
       "fields": [
         {
           "label": "Izenburua",
-          "description": "",
-          "placeholder": "H5P Konferentzia 2020"
+          "placeholder": "H5P Konferentzia 2020",
+          "description": "Egutegiko ekitaldiaren izenburua"
         },
         {
           "label": "Egun osoko ekitaldia",
-          "description": ""
+          "description": "Markatu ezazu ekitaldia egun osokoa izango bada"
         },
         {
           "label": "Hasiera-data",
-          "description": "",
-          "placeholder": "2020/05/18"
+          "placeholder": "2020/05/18",
+          "description": "Ekitaldiaren hasiera-data (erabili mesedez uuuu/hh/ee formatua)"
         },
         {
           "label": "Hasiera-ordua",
-          "description": "",
-          "placeholder": "09:00"
+          "placeholder": "09:00",
+          "description": "Ekitaldiaren hasiera-ordua (erabili mesedez oo:mm formatua)"
         },
         {
           "label": "Amaiera-data",
-          "description": "",
-          "placeholder": "2020/05/20"
+          "placeholder": "2020/05/20",
+          "description": "Ekitaldiaren amaiera-data (erabili mesedez uuuu/hh/ee formatua)"
         },
         {
           "label": "Amaiera-ordua",
-          "description": "",
-          "placeholder": "16:00"
+          "placeholder": "16:00",
+          "description": "Ekitaldiaren amaiera-ordua (erabili mesedez oo:mm formatua)"
         },
         {
-          "label": "",
-          "description": "",
+          "label": "Ordu eremua",
+          "description": "Aukeratu ekitaldia egingo den ustezko ordu eremua",
           "options": [
             {
               "label": "UTC-12:00"
@@ -255,8 +255,8 @@
           ]
         },
         {
-          "label": "",
-          "description": ""
+          "label": "Udako ordutegia",
+          "description": "Markatu ezazu ekitaldiak udako ordutegia erabiltzen deneko kokapenean izango bada"
         },
         {
           "label": "Kokapena",
@@ -265,8 +265,8 @@
         },
         {
           "label": "Deskribapena",
-          "description": "",
-          "placeholder": "3. H5P konferentzia"
+          "placeholder": "3. H5P konferentzia",
+          "description": "Gehitu ekitaldiarentzako deskribapen bat"
         }
       ]
     },
@@ -275,8 +275,8 @@
       "fields": [
         {
           "label": "Helbide elektronikoa",
-          "description": "",
-          "placeholder": ""
+          "description": "Mezua bidali beharreko helbide elektronikoa",
+          "placeholder": "jon@gezurrezko-h5p-zaleen-kluba.org"
         }
       ]
     },
@@ -294,13 +294,13 @@
       "fields": [
         {
           "label": "Latitudea",
-          "description": "",
-          "placeholder": "69.646007"
+          "placeholder": "69.646007",
+          "description": "Latitudea (erabili mesedez 53.864462 formatua)"
         },
         {
           "label": "Longitudea",
-          "description": "",
-          "placeholder": "18.954036"
+          "placeholder": "18.954036",
+          "description": "Longitudea (erabili mesedez 10.663792 formatua)"
         }
       ]
     },
@@ -309,8 +309,8 @@
       "fields": [
         {
           "label": "Telefono zenbakia",
-          "description": "",
-          "placeholder": "+12 345 67890"
+          "placeholder": "+12 345 67890",
+          "description": "Deitu beharreko telefono-zenbakia (erabili mesedez +12 345 67890 formatua)"
         }
       ]
     },
@@ -319,13 +319,13 @@
       "fields": [
         {
           "label": "Telefono zenbakia",
-          "description": "",
-          "placeholder": "+12 345 67890"
+          "placeholder": "+12 345 67890",
+          "description": "Bidali beharreko telefono-zenbakia (erabili mesedez +12 345 67890 formatua)"
         },
         {
           "label": "Mezua",
           "description": "Bidali beharreko mezua",
-          "placeholder": ""
+          "placeholder": "Ekarri mesedez esnea eta ogia!"
         }
       ]
     },
@@ -334,8 +334,8 @@
       "fields": [
         {
           "label": "Testua",
-          "description": "",
-          "placeholder": ""
+          "placeholder": "Ekarri mesedez\n* esnea\n* ogia",
+          "description": "Kodetu beharreko testua"
         }
       ]
     },
@@ -344,8 +344,8 @@
       "fields": [
         {
           "label": "URLa",
-          "description": "",
-          "placeholder": ""
+          "placeholder": "https://gezurrezko-h5p-zaleen-kluba.org",
+          "description": "Estekaren URLa (https:// ala http:// aurrizkiarekin hasi behar da)"
         }
       ]
     },
@@ -354,18 +354,16 @@
       "description": "Aukera hauek lanaren portaera kontrolatzea ahalbidetzen dizute.",
       "fields": [
         {
-          "label": ""
+          "label": "Kolore-kodea"
         },
         {
-          "label": ""
+          "label": "Atzeko planoaren kolorea"
         },
         {
-          "label": "",
-          "description": ""
+          "label": "Gehieneko tamaina",
+          "description": "Emandako kodearentzako gehieneko tamaina CSS notazioan (pixeletan soilik zenbaki bat emanez gero)"
         },
         {
-          "label": "",
-          "description": "",
           "options": [
             {
               "label": "ezkerra"
@@ -376,7 +374,9 @@
             {
               "label": "eskuina"
             }
-          ]
+          ],
+          "label": "Lerrokatze horizontala",
+          "description": "Zehaztu lerrokatze horizontala gehieneko tamaina zehaztu baduzu"
         }
       ]
     },
@@ -486,17 +486,17 @@
       ]
     },
     {
-      "label": "",
       "fields": [
         {
-          "label": "",
-          "default": ""
+          "default": "QR kodea. Erakutsi informazioa.",
+          "label": "QR kodea. Erakutsi informazioa (Irakurtzen duen bozgorailurako Testua)"
         },
         {
-          "label": "",
-          "default": ""
+          "default": "Ezkutatu informazioa.",
+          "label": "Ezkutatu informazioa (Irakurtzen duen bozgorailurako Testua)"
         }
-      ]
+      ],
+      "label": "Irakurtzen duen bozgorailua"
     }
   ]
 }
