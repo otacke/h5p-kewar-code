@@ -98,6 +98,16 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.contentId = contentId;
     this.extras = extras;
 
+    // Decode strings and strip potentially dangerous code
+    for (let section in this.params) {
+      if (['codeType', 'behaviour'].includes(section)) {
+        continue;
+      }
+
+      this.params[section] = Util.htmlDecodeDeep(this.params[section]);
+      this.params[section] = Util.stripHTMLDeep(this.params[section]);
+    }
+
     this.on('resize', () => {
       if (!this.qrcodeContainer) {
         return;
