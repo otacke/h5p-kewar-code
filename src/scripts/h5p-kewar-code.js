@@ -151,7 +151,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         this.bubbleDown(this, 'resize', instance);
 
         const library = !this.params.h5p.library ? null : this.params.h5p.library.split(' ')[0];
-        if (library === 'H5P.Image' || this.params.h5p.library === 'H5P.TwitterUserFeed') {
+        if (library === 'H5P.Image') {
           // Resize when images are loaded
 
           instance.on('loaded', function () {
