@@ -486,10 +486,10 @@
       ]
     },
     {
-      "label": "Čtečtecí zařízení",
+      "label": "Čtecí zařízení",
       "fields": [
         {
-          "label": "QR kód. Zobrazit informace (Text pro čtečtecí zařízení)",
+          "label": "QR kód. Zobrazit informace (Text pro čtecí zařízení)",
           "default": "QR kód. Zobrazit informace."
         },
         {

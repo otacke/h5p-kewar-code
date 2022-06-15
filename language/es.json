@@ -2,7 +2,7 @@
   "semantics": [
     {
       "label": "Tipo de código",
-      "description": "Seleccionar cual tipo de código quiere generar",
+      "description": "Selecciona qué tipo de código quieres generar",
       "options": [
         {
           "label": "Contacto"
@@ -11,7 +11,7 @@
           "label": "Evento"
         },
         {
-          "label": "Dirección Email"
+          "label": "Dirección de Email"
         },
         {
           "label": "H5P"
@@ -38,7 +38,7 @@
       "fields": [
         {
           "label": "Nombre",
-          "placeholder": "Juan Pérez"
+          "placeholder": "Juan López"
         },
         {
           "label": "Organización",
@@ -50,12 +50,12 @@
         },
         {
           "label": "Número telefónico",
-          "description": "Número telefónico (por favor use el formato +12 345 67890)",
+          "description": "Número telefónico (por favor usa el formato +12 345 67890)",
           "placeholder": "+12 345 67890"
         },
         {
-          "label": "Dirección Email",
-          "description": "Dirección Email a la cual escribir mensaje",
+          "label": "Dirección de Email",
+          "description": "Dirección de Email a la que enviar mensaje",
           "placeholder": "juanp@club-de-fan-ficticio-h5p.org"
         },
         {
@@ -95,13 +95,13 @@
         },
         {
           "label": "Sitio web",
-          "description": "Sitio web al cual enlazar (debe comenzar con https:// o con http://)",
+          "description": "Sitio web al que enlazar (debe comenzar con https:// o con http://)",
           "placeholder": "https://club-de-fans-ficticio-h5p.org"
         },
         {
           "label": "Nota",
           "description": "Nota",
-          "placeholder": "Juan ama H5P."
+          "placeholder": "A Juan le chifla H5P."
         }
       ]
     },
@@ -119,27 +119,27 @@
         },
         {
           "label": "Fecha de inicio",
-          "description": "Fecha de inicio del evento (por favor use el formato aaaa/mm/dd)",
+          "description": "Fecha de inicio del evento (por favor usa el formato aaaa/mm/dd)",
           "placeholder": "2020/05/18"
         },
         {
           "label": "Hora de inicio",
-          "description": "Hora de inicio del evento (por favor use el formato hh:mm)",
+          "description": "Hora de inicio del evento (por favor usa el formato hh:mm)",
           "placeholder": "09:00"
         },
         {
-          "label": "Fecha de término",
-          "description": "Fecha de término del evento (por favor use el formato aaaa/mm/dd)",
+          "label": "Fecha de fin",
+          "description": "Fecha de fin del evento (por favor usa el formato aaaa/mm/dd)",
           "placeholder": "2020/05/20"
         },
         {
-          "label": "Hora de término",
-          "description": "Hora de término del evento (por favor use el formato hh:mm)",
+          "label": "Hora de fin",
+          "description": "Hora de fin del evento (por favor usa el formato hh:mm)",
           "placeholder": "16:00"
         },
         {
           "label": "Zona horaria",
-          "description": "Seleccione la zona horaria donde tendrá lugar el evento",
+          "description": "Selecciona la zona horaria donde tendrá lugar el evento",
           "options": [
             {
               "label": "UTC-12:00"
@@ -260,22 +260,22 @@
         },
         {
           "label": "Lugar",
-          "description": "Escriba la localización del lugar",
+          "description": "Escribe la localización del lugar",
           "placeholder": "Madison, USA"
         },
         {
           "label": "Descripción",
-          "description": "Añada una descripción para el evento",
-          "placeholder": "3a conferencia H5P"
+          "description": "Añade una descripción para el evento",
+          "placeholder": "3ª conferencia H5P"
         }
       ]
     },
     {
-      "label": "Dirección Email",
+      "label": "Dirección de Email",
       "fields": [
         {
-          "label": "Dirección Email",
-          "description": "Dirección Email a donde escribir mensaje",
+          "label": "Dirección de Email",
+          "description": "Dirección de Email a la que enviar el mensaje",
           "placeholder": "juanp@club-de-fan-ficticio-h5p.org"
         }
       ]
@@ -294,12 +294,12 @@
       "fields": [
         {
           "label": "Latitud",
-          "description": "Latitud (por favor use el formato 53.864462)",
+          "description": "Latitud (por favor usa el formato 53.864462)",
           "placeholder": "69.646007"
         },
         {
           "label": "Longitud",
-          "description": "Longitud (por favor use el formato 10.663792)",
+          "description": "Longitud (por favor usa el formato 10.663792)",
           "placeholder": "18.954036"
         }
       ]
@@ -309,7 +309,7 @@
       "fields": [
         {
           "label": "Número telefónico",
-          "description": "Número telefónico a llamar (por favor use el formato +12 345 67890)",
+          "description": "Número telefónico a llamar (por favor usa el formato +12 345 67890)",
           "placeholder": "+12 345 67890"
         }
       ]
@@ -319,13 +319,13 @@
       "fields": [
         {
           "label": "Número telefónico",
-          "description": "Número telefónico a donde enviar mensaje de texto (por favor use el formato +12 345 67890)",
+          "description": "Número telefónico al que enviar mensaje de texto (por favor usa el formato +12 345 67890)",
           "placeholder": "+12 345 67890"
         },
         {
           "label": "Mensaje",
           "description": "Mensaje a enviar",
-          "placeholder": "¡Por favor trae pan y leche!"
+          "placeholder": "¡Por favor compra pan y leche!"
         }
       ]
     },
@@ -335,7 +335,7 @@
         {
           "label": "Texto",
           "description": "Texto a codificar",
-          "placeholder": "Por favor trae\n* leche\n* pan"
+          "placeholder": "Por favor, compra\n* leche\n* pan"
         }
       ]
     },
@@ -350,8 +350,8 @@
       ]
     },
     {
-      "label": "Configuraciones del comportamiento",
-      "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
+      "label": "Configuración del comportamiento",
+      "description": "Estas opciones te permitirán controlar como se comporta la tarea.",
       "fields": [
         {
           "label": "Color del código"
@@ -361,11 +361,11 @@
         },
         {
           "label": "Tamaño máximo",
-          "description": "Tamaño máximo para el código dado en notación CSS (pixeles por defecto si solamente es dado un número)"
+          "description": "Tamaño máximo para el código dado en notación CSS (pixeles por defecto si solamente se da un número)"
         },
         {
           "label": "Alineación horizontal",
-          "description": "Configurar alineación horizontal si se configura un tamaño máximo",
+          "description": "Configurar la alineación horizontal si se configura un tamaño máximo",
           "options": [
             {
               "label": "izquierda"
@@ -381,7 +381,7 @@
       ]
     },
     {
-      "label": "Interfaz del usuario",
+      "label": "Interfaz de usuario",
       "fields": [
         {
           "label": "Dirección",
@@ -396,8 +396,8 @@
           "default": "País"
         },
         {
-          "label": "Fecha de término",
-          "default": "Fecha de término"
+          "label": "Fecha de fin",
+          "default": "Fecha de fin"
         },
         {
           "label": "Fecha de inicio",
@@ -486,14 +486,14 @@
       ]
     },
     {
-      "label": "Lector de texto en voz alta",
+      "label": "Lector de pantalla",
       "fields": [
         {
-          "label": "CódigoQR. Mostrar información (Texto para lector en voz alta)",
-          "default": "CódigoQR. Mostrar información."
+          "label": "Código QR. Mostrar información (Texto para lectores de pantalla)",
+          "default": "Código QR. Mostrar información."
         },
         {
-          "label": "Ocultar información (Texto para lector en voz alta)",
+          "label": "Ocultar información (Texto para lectores de pantalla)",
           "default": "Ocultar información."
         }
       ]
