@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Texto introductorio",
+      "description": "Este texto puede ser opcionalmente presentado junto con su código."
     },
     {
       "label": "Tipo de código",
@@ -42,7 +42,7 @@
       "fields": [
         {
           "label": "Nombre",
-          "placeholder": "Juan Pérez"
+          "placeholder": "Juan López"
         },
         {
           "label": "Organización",
@@ -58,8 +58,8 @@
           "placeholder": "+12 345 67890"
         },
         {
-          "label": "Dirección Email",
-          "description": "Dirección Email a la cual escribir mensaje",
+          "label": "Dirección de Email",
+          "description": "Dirección de Email a la que enviar mensaje",
           "placeholder": "juanp@club-de-fan-ficticio-h5p.org"
         },
         {
@@ -275,11 +275,11 @@
       ]
     },
     {
-      "label": "Dirección Email",
+      "label": "Dirección de Email",
       "fields": [
         {
-          "label": "Dirección Email",
-          "description": "Dirección Email a donde escribir mensaje",
+          "label": "Dirección de Email",
+          "description": "Dirección de Email a la cual enviar el mensaje",
           "placeholder": "juanp@club-de-fan-ficticio-h5p.org"
         }
       ]
@@ -329,7 +329,7 @@
         {
           "label": "Mensaje",
           "description": "Mensaje a enviar",
-          "placeholder": "¡Por favor trae pan y leche!"
+          "placeholder": "¡Por favor compra pan y leche!"
         }
       ]
     },
@@ -339,7 +339,7 @@
         {
           "label": "Texto",
           "description": "Texto a codificar",
-          "placeholder": "Por favor trae\n* leche\n* pan"
+          "placeholder": "Por favor, compra\n* leche\n* pan"
         }
       ]
     },
