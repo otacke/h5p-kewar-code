@@ -100,7 +100,7 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     // Decode strings and strip potentially dangerous code
     for (let section in this.params) {
-      if (['codeType', 'behaviour'].includes(section)) {
+      if (['codeType', 'behaviour', 'introduction'].includes(section)) {
         continue;
       }
 
@@ -230,6 +230,16 @@ export default class KewArCode extends H5P.EventDispatcher {
         }
       });
 
+      this.mainContainer = document.createElement('div');
+      this.mainContainer.classList.add('h5p-kewar-code-container-main');
+
+      if (this.params.introduction) {
+        const introduction = document.createElement('div');
+        introduction.classList.add('h5p-kewar-code-introduction');
+        introduction.innerHTML = this.params.introduction;
+        this.mainContainer.appendChild(introduction);
+      }
+
       // Create DOM element
       this.qrcodeContainer = document.createElement('div');
       this.qrcodeContainer.classList.add('h5p-kewar-code-container');
@@ -237,6 +247,7 @@ export default class KewArCode extends H5P.EventDispatcher {
       this.qrcodeContainer.setAttribute('tabindex', 0);
       this.qrcodeContainer.setAttribute('aria-label', this.params.a11y.openCodeInformation);
       this.qrcodeContainer.style.textAlign = this.params.behaviour.alignment;
+
       this.qrcodeContainer.addEventListener('click', () => {
         this.overlay.show();
         setTimeout(() => {
@@ -263,8 +274,10 @@ export default class KewArCode extends H5P.EventDispatcher {
       }
       this.qrcodeContainer.appendChild(this.codeImage);
 
+      this.mainContainer.appendChild(this.qrcodeContainer);
+
       $wrapper.get(0).classList.add('h5p-kewar-code');
-      $wrapper.get(0).appendChild(this.qrcodeContainer);
+      $wrapper.get(0).appendChild(this.mainContainer);
       $wrapper.get(0).appendChild(this.overlay.getDOM());
     };
 

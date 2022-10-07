@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Tipo de código",
       "description": "Selecione que tipo de código você deseja gerar",
       "options": [
@@ -354,10 +358,12 @@
       "description": "Essas opções permitem controlar como a tarefa se comporta.",
       "fields": [
         {
-          "label": "Cor do código"
+          "label": "Cor do código",
+          "default": "#000000"
         },
         {
-          "label": "Cor do plano de fundo"
+          "label": "Cor do plano de fundo",
+          "default": "#ffffff"
         },
         {
           "label": "Tamanho máximo",

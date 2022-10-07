@@ -1,5 +1,42 @@
 [
   {
+    "name": "introduction",
+    "type": "text",
+    "widget": "html",
+    "label": "Introductory text",
+    "importance": "medium",
+    "optional": true,
+    "description": "This text can optionally be presented along with your code.",
+    "enterMode": "div",
+    "tags": [
+      "sub",
+      "sup",
+      "strong",
+      "em",
+      "p",
+      "code",
+      "u",
+      "del",
+      "a",
+      "ul",
+      "ol",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "pre",
+      "hr",
+      "table"
+    ],
+    "font": {
+      "size": true,
+      "color": true,
+      "background": true
+    }
+  },
+  {
     "name": "codeType",
     "type": "select",
     "label": "Code type",
@@ -796,9 +833,9 @@
         "importance": "medium",
         "optional": true,
         "regexp": {
-            "pattern": "^(([1-9]+.[0-9]+)|[0-9]+)(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)?$",
-            "modifiers": "i"
-          }
+          "pattern": "^(([1-9]+.[0-9]+)|[0-9]+)(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)?$",
+          "modifiers": "i"
+        }
       },
       {
         "name": "alignment",

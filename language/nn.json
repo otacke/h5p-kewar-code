@@ -1,7 +1,12 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Code type",
+      "description": "Select what kind of code you want to generate",
       "options": [
         {
           "label": "Contact"
@@ -30,22 +35,22 @@
         {
           "label": "URL"
         }
-      ],
-      "description": "Select what kind of code you want to generate"
+      ]
     },
     {
+      "label": "Contact",
       "fields": [
         {
           "label": "Name",
           "placeholder": "John Smith"
         },
         {
-          "placeholder": "H5P fan club",
-          "label": "Organization"
+          "label": "Organization",
+          "placeholder": "H5P fan club"
         },
         {
-          "placeholder": "Master of None",
-          "label": "Title"
+          "label": "Title",
+          "placeholder": "Master of None"
         },
         {
           "label": "Phone number",
@@ -58,6 +63,7 @@
           "placeholder": "john@fictional-h5p-fan-club.org"
         },
         {
+          "label": "Address",
           "fields": [
             {
               "label": "Extended address",
@@ -70,9 +76,9 @@
               "placeholder": "1308 W. Dayton Street"
             },
             {
-              "placeholder": "Madison",
               "label": "Locality",
-              "description": "City name, etc."
+              "description": "City name, etc.",
+              "placeholder": "Madison"
             },
             {
               "label": "Region",
@@ -85,12 +91,11 @@
               "placeholder": "53715"
             },
             {
-              "description": "Country",
               "label": "Country",
+              "description": "Country",
               "placeholder": "USA"
             }
-          ],
-          "label": "Address"
+          ]
         },
         {
           "label": "Website",
@@ -102,10 +107,10 @@
           "description": "Note",
           "placeholder": "John loves H5P."
         }
-      ],
-      "label": "Contact"
+      ]
     },
     {
+      "label": "Event",
       "fields": [
         {
           "label": "Title",
@@ -137,6 +142,8 @@
           "placeholder": "16:00"
         },
         {
+          "label": "Timezone",
+          "description": "Select the time zone the event is supposed to take place in",
           "options": [
             {
               "label": "UTC-12:00"
@@ -249,13 +256,11 @@
             {
               "label": "UTC+14:00"
             }
-          ],
-          "label": "Timezone",
-          "description": "Select the time zone the event is supposed to take place in"
+          ]
         },
         {
-          "description": "Check if location that the event is taking place in uses daylight savings time",
-          "label": "Daylight savings"
+          "label": "Daylight savings",
+          "description": "Check if location that the event is taking place in uses daylight savings time"
         },
         {
           "label": "Location",
@@ -267,16 +272,15 @@
           "description": "Add a description for the event",
           "placeholder": "3rd H5P conference"
         }
-      ],
-      "label": "Event"
+      ]
     },
     {
       "label": "Email address",
       "fields": [
         {
           "label": "Email address",
-          "placeholder": "john@fictional-h5p-fan-club.org",
-          "description": "Email address to write message to"
+          "description": "Email address to write message to",
+          "placeholder": "john@fictional-h5p-fan-club.org"
         }
       ]
     },
@@ -305,22 +309,22 @@
       ]
     },
     {
+      "label": "Phone number",
       "fields": [
         {
           "label": "Phone number",
           "description": "Phone number to call (please use the format +12 345 67890)",
           "placeholder": "+12 345 67890"
         }
-      ],
-      "label": "Phone number"
+      ]
     },
     {
       "label": "SMS",
       "fields": [
         {
           "label": "Phone number",
-          "placeholder": "+12 345 67890",
-          "description": "Phone number to send to (please use the format +12 345 67890)"
+          "description": "Phone number to send to (please use the format +12 345 67890)",
+          "placeholder": "+12 345 67890"
         },
         {
           "label": "Message",
@@ -354,10 +358,12 @@
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Code color"
+          "label": "Code color",
+          "default": "#000000"
         },
         {
-          "label": "Background color"
+          "label": "Background color",
+          "default": "#ffffff"
         },
         {
           "label": "Maximum size",
@@ -416,8 +422,8 @@
           "default": "Event"
         },
         {
-          "default": "Extended address",
-          "label": "Extended address"
+          "label": "Extended address",
+          "default": "Extended address"
         },
         {
           "label": "Latitude",
@@ -444,8 +450,8 @@
           "default": "Name"
         },
         {
-          "default": "Note",
-          "label": "Note"
+          "label": "Note",
+          "default": "Note"
         },
         {
           "label": "Organization",
@@ -493,8 +499,8 @@
           "default": "QRCode. Display information."
         },
         {
-          "default": "Hide information.",
-          "label": "Hide information (Text for Readspeakers)"
+          "label": "Hide information (Text for Readspeakers)",
+          "default": "Hide information."
         }
       ]
     }

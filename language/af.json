@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Kode tipe",
       "description": "Kies watter tipe kode jy wil gebruik",
       "options": [
@@ -298,9 +302,9 @@
           "placeholder": "69.646007"
         },
         {
-          "placeholder": "18.954036",
+          "label": "Lengtegraad",
           "description": "Lengtegraad (gebruik asb. die formaat 10.663792)",
-          "label": "Lengtegraad"
+          "placeholder": "18.954036"
         }
       ]
     },
@@ -354,10 +358,12 @@
       "description": "Hierdie keuses laat jou beheer hoe die onderskeie take uitgevoer moet word.",
       "fields": [
         {
-          "label": "Kodekleur"
+          "label": "Kodekleur",
+          "default": "#000000"
         },
         {
-          "label": "Agtergrondkleur"
+          "label": "Agtergrondkleur",
+          "default": "#ffffff"
         },
         {
           "label": "Maksimum grote",

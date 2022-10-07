@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Code type",
       "description": "Select what kind of code you want to generate",
       "options": [
@@ -62,14 +66,14 @@
           "label": "Address",
           "fields": [
             {
-              "placeholder": "c/o H5P Fan Club",
               "label": "Extended address",
-              "description": "c/o information, etc."
+              "description": "c/o information, etc.",
+              "placeholder": "c/o H5P Fan Club"
             },
             {
               "label": "Street",
-              "placeholder": "1308 W. Dayton Street",
-              "description": "Street including number"
+              "description": "Street including number",
+              "placeholder": "1308 W. Dayton Street"
             },
             {
               "label": "Locality",
@@ -95,8 +99,8 @@
         },
         {
           "label": "Website",
-          "placeholder": "https://fictional-h5p-fan-club.org",
-          "description": "Website to link to (must start with https:// or http://)"
+          "description": "Website to link to (must start with https:// or http://)",
+          "placeholder": "https://fictional-h5p-fan-club.org"
         },
         {
           "label": "Note",
@@ -118,9 +122,9 @@
           "description": "Check if event will be valid all day long"
         },
         {
-          "placeholder": "2020/05/18",
           "label": "Start date",
-          "description": "Start date of the event (please use the format yyyy/mm/dd)"
+          "description": "Start date of the event (please use the format yyyy/mm/dd)",
+          "placeholder": "2020/05/18"
         },
         {
           "label": "Start time",
@@ -129,8 +133,8 @@
         },
         {
           "label": "End date",
-          "placeholder": "2020/05/20",
-          "description": "End date of the event (please use the format yyyy/mm/dd)"
+          "description": "End date of the event (please use the format yyyy/mm/dd)",
+          "placeholder": "2020/05/20"
         },
         {
           "label": "End time",
@@ -290,19 +294,19 @@
       ]
     },
     {
+      "label": "Location",
       "fields": [
         {
           "label": "Latitude",
-          "placeholder": "69.646007",
-          "description": "Latitude (please use the format 53.864462)"
+          "description": "Latitude (please use the format 53.864462)",
+          "placeholder": "69.646007"
         },
         {
           "label": "Longitude",
           "description": "Longitude (please use the format 10.663792)",
           "placeholder": "18.954036"
         }
-      ],
-      "label": "Location"
+      ]
     },
     {
       "label": "Phone number",
@@ -354,10 +358,12 @@
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Code color"
+          "label": "Code color",
+          "default": "#000000"
         },
         {
-          "label": "Background color"
+          "label": "Background color",
+          "default": "#ffffff"
         },
         {
           "label": "Maximum size",
@@ -436,16 +442,16 @@
           "default": "Longitude"
         },
         {
-          "default": "Message",
-          "label": "Message"
+          "label": "Message",
+          "default": "Message"
         },
         {
-          "default": "Name",
-          "label": "Name"
+          "label": "Name",
+          "default": "Name"
         },
         {
-          "default": "Note",
-          "label": "Note"
+          "label": "Note",
+          "default": "Note"
         },
         {
           "label": "Organization",
@@ -464,8 +470,8 @@
           "default": "SMS"
         },
         {
-          "default": "Street",
-          "label": "Street"
+          "label": "Street",
+          "default": "Street"
         },
         {
           "label": "Text",
@@ -489,8 +495,8 @@
       "label": "Readspeaker",
       "fields": [
         {
-          "default": "QRCode. Display information.",
-          "label": "QRCode. Display information (Text for Readspeakers)"
+          "label": "QRCode. Display information (Text for Readspeakers)",
+          "default": "QRCode. Display information."
         },
         {
           "label": "Hide information (Text for Readspeakers)",

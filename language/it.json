@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Tipo di codice",
       "description": "Seleziona il tipo di codice che vuoi generare",
       "options": [
@@ -123,8 +127,8 @@
           "placeholder": "2020/05/18"
         },
         {
-          "description": "Start time of the event (please use the format hh:mm)",
           "label": "Start time",
+          "description": "Start time of the event (please use the format hh:mm)",
           "placeholder": "09:00"
         },
         {
@@ -138,6 +142,8 @@
           "placeholder": "16:00"
         },
         {
+          "label": "Timezone",
+          "description": "Select the time zone the event is supposed to take place in",
           "options": [
             {
               "label": "UTC-12:00"
@@ -250,13 +256,11 @@
             {
               "label": "UTC+14:00"
             }
-          ],
-          "description": "Select the time zone the event is supposed to take place in",
-          "label": "Timezone"
+          ]
         },
         {
-          "description": "Check if location that the event is taking place in uses daylight savings time",
-          "label": "Daylight savings"
+          "label": "Daylight savings",
+          "description": "Check if location that the event is taking place in uses daylight savings time"
         },
         {
           "label": "Location",
@@ -271,14 +275,14 @@
       ]
     },
     {
+      "label": "Email address",
       "fields": [
         {
-          "description": "Email address to write message to",
           "label": "Email address",
+          "description": "Email address to write message to",
           "placeholder": "john@fictional-h5p-fan-club.org"
         }
-      ],
-      "label": "Email address"
+      ]
     },
     {
       "label": "H5P content",
@@ -290,6 +294,7 @@
       ]
     },
     {
+      "label": "Location",
       "fields": [
         {
           "label": "Latitude",
@@ -297,12 +302,11 @@
           "placeholder": "69.646007"
         },
         {
-          "description": "Longitude (please use the format 10.663792)",
           "label": "Longitude",
+          "description": "Longitude (please use the format 10.663792)",
           "placeholder": "18.954036"
         }
-      ],
-      "label": "Location"
+      ]
     },
     {
       "label": "Phone number",
@@ -315,10 +319,11 @@
       ]
     },
     {
+      "label": "SMS",
       "fields": [
         {
-          "description": "Phone number to send to (please use the format +12 345 67890)",
           "label": "Phone number",
+          "description": "Phone number to send to (please use the format +12 345 67890)",
           "placeholder": "+12 345 67890"
         },
         {
@@ -326,8 +331,7 @@
           "description": "Message to send",
           "placeholder": "Please fetch milk and bread!"
         }
-      ],
-      "label": "SMS"
+      ]
     },
     {
       "label": "Text",
@@ -340,28 +344,33 @@
       ]
     },
     {
+      "label": "URL",
       "fields": [
         {
-          "description": "URL to link to (must start with https:// or http://)",
           "label": "URL",
+          "description": "URL to link to (must start with https:// or http://)",
           "placeholder": "https://fictional-h5p-fan-club.org"
         }
-      ],
-      "label": "URL"
+      ]
     },
     {
+      "label": "Behavioural settings",
+      "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Code color"
+          "label": "Code color",
+          "default": "#000000"
         },
         {
-          "label": "Background color"
+          "label": "Background color",
+          "default": "#ffffff"
         },
         {
           "label": "Maximum size",
           "description": "Maximum size for the code given in CSS notation (pixels by default if only a number is given)"
         },
         {
+          "label": "Horizontal alignment",
           "description": "Set horizontal alignment if you set a maximum size",
           "options": [
             {
@@ -373,22 +382,20 @@
             {
               "label": "right"
             }
-          ],
-          "label": "Horizontal alignment"
+          ]
         }
-      ],
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves."
+      ]
     },
     {
+      "label": "User interface",
       "fields": [
         {
           "label": "Address",
           "default": "Address"
         },
         {
-          "default": "Contact",
-          "label": "Contact"
+          "label": "Contact",
+          "default": "Contact"
         },
         {
           "label": "Country",
@@ -415,8 +422,8 @@
           "default": "Event"
         },
         {
-          "default": "Extended address",
-          "label": "Extended address"
+          "label": "Extended address",
+          "default": "Extended address"
         },
         {
           "label": "Latitude",
@@ -479,11 +486,10 @@
           "default": "URL"
         },
         {
-          "default": "ZIP code",
-          "label": "ZIP code"
+          "label": "ZIP code",
+          "default": "ZIP code"
         }
-      ],
-      "label": "User interface"
+      ]
     },
     {
       "label": "Readspeaker",

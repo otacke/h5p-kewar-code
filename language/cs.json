@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Typ kódu",
       "description": "Vyberte druh kódu, jaký chcete vygenerovat",
       "options": [
@@ -354,10 +358,12 @@
       "description": "Tyto možnosti vám umožní ovládat, jak se úkol chová.",
       "fields": [
         {
-          "label": "Barva kódu"
+          "label": "Barva kódu",
+          "default": "#000000"
         },
         {
-          "label": "Barva pozadí"
+          "label": "Barva pozadí",
+          "default": "#ffffff"
         },
         {
           "label": "Maximální velikost",

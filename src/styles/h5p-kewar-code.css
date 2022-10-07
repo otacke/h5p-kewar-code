@@ -8,6 +8,15 @@
   width: 100%;
 }
 
+.h5p-kewar-code .h5p-kewar-code-container-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.h5p-kewar-code .h5p-kewar-code-introduction {
+  margin: 0 1rem;
+}
+
 .h5p-kewar-code .h5p-kewar-code-container img {
   width: 100%;
   height: 100%;

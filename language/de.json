@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Code-Typ",
       "description": "Wähle, welchen Typ Code du erstellen möchtest",
       "options": [
@@ -354,10 +358,12 @@
       "description": "Diese Optionen legen fest, wie die Aufgabe im Detail funktioniert.",
       "fields": [
         {
-          "label": "Code-Farbe"
+          "label": "Code-Farbe",
+          "default": "#000000"
         },
         {
-          "label": "Hintergrundfarbe"
+          "label": "Hintergrundfarbe",
+          "default": "#ffffff"
         },
         {
           "label": "Maximale Größe",

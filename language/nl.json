@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Type voor code",
       "description": "Selecteer welke soort code je wilt maken",
       "options": [
@@ -354,10 +358,12 @@
       "description": "Met deze opties kun je bepalen hoe de taak zich gedraagt.",
       "fields": [
         {
-          "label": "Code-kleur"
+          "label": "Code-kleur",
+          "default": "#000000"
         },
         {
-          "label": "Achtergrondkleur"
+          "label": "Achtergrondkleur",
+          "default": "#ffffff"
         },
         {
           "label": "Maximale grootte",

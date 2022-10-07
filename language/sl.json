@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Namen kode",
       "description": "Izbira namena za katerega bo koda uporabljena.",
       "options": [
@@ -354,10 +358,12 @@
       "description": "Nastavitve omogočajo nadzor nad interakcijo aktivnosti za udeležence.",
       "fields": [
         {
-          "label": "Barva QR kode"
+          "label": "Barva QR kode",
+          "default": "#000000"
         },
         {
-          "label": "Barva ozadja"
+          "label": "Barva ozadja",
+          "default": "#ffffff"
         },
         {
           "label": "Največja velikost",
