@@ -500,7 +500,7 @@
         },
         {
           "label": "Hide information (Text for Readspeakers)",
-          "default": "Hide information."
+          "default": "Nascondi l'informazione."
         }
       ]
     }
