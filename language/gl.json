@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Texto de introdución",
+      "description": "Este texto pódese presentar opcionalmente xunto co teu código."
     },
     {
       "label": "Tipo de código",
@@ -134,7 +134,7 @@
         {
           "label": "Data de fin",
           "description": "Data de fin do evento (por favor, usa o formato aaaa/mm/dd)",
-          "placeholder": "2020/05/20"
+          "placeholder": "20/05/2020"
         },
         {
           "label": "Hora de fin",
@@ -280,7 +280,7 @@
         {
           "label": "Enderezo de email",
           "description": "Enderezo de email ao que escribimos",
-          "placeholder": "john@fictional-h5p-fan-club.org"
+          "placeholder": "john@h5p-fan-club-ficticio.org"
         }
       ]
     },
@@ -304,7 +304,7 @@
         {
           "label": "Lonxitude",
           "description": "Lonxitude (por favor, usa o formato 10.663792)",
-          "placeholder": "18.954036"
+          "placeholder": "18,954036"
         }
       ]
     },
@@ -349,7 +349,7 @@
         {
           "label": "URL",
           "description": "URL á que enlazar (debe empezar con https:// ou http://)",
-          "placeholder": "https://fictional-h5p-fan-club.org"
+          "placeholder": "https://h5p-fan-club-ficticio.org"
         }
       ]
     },
@@ -426,8 +426,8 @@
           "default": "Enderezo estendido"
         },
         {
-          "label": "Latitude",
-          "default": "Latitude"
+          "label": "Latitud",
+          "default": "Latitud"
         },
         {
           "label": "Localidade",
