@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Texto introductorio",
+      "description": "Este texto se puede presentar opcionalmente junto con tu código."
     },
     {
       "label": "Tipo de código",
@@ -78,7 +78,7 @@
             {
               "label": "Localidad",
               "description": "Nombre de ciudad, etc.",
-              "placeholder": "Madison"
+              "placeholder": "madison"
             },
             {
               "label": "Región",
@@ -124,7 +124,7 @@
         {
           "label": "Fecha de inicio",
           "description": "Fecha de inicio del evento (por favor usa el formato aaaa/mm/dd)",
-          "placeholder": "2020/05/18"
+          "placeholder": "18/05/2020"
         },
         {
           "label": "Hora de inicio",
@@ -134,7 +134,7 @@
         {
           "label": "Fecha de fin",
           "description": "Fecha de fin del evento (por favor usa el formato aaaa/mm/dd)",
-          "placeholder": "2020/05/20"
+          "placeholder": "20/05/2020"
         },
         {
           "label": "Hora de fin",
@@ -265,7 +265,7 @@
         {
           "label": "Lugar",
           "description": "Escribe la localización del lugar",
-          "placeholder": "Madison, USA"
+          "placeholder": "Madison, Estados Unidos"
         },
         {
           "label": "Descripción",
@@ -304,7 +304,7 @@
         {
           "label": "Longitud",
           "description": "Longitud (por favor usa el formato 10.663792)",
-          "placeholder": "18.954036"
+          "placeholder": "18,954036"
         }
       ]
     },
