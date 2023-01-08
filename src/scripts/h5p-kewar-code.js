@@ -1,11 +1,10 @@
 import Overlay from './h5p-kewar-code-overlay';
-import Util from "../scripts/h5p-kewar-code-util";
-import qrcode from "../scripts/h5p-kewar-code-qrcode";
+import Util from '../scripts/h5p-kewar-code-util';
+import qrcode from '../scripts/h5p-kewar-code-qrcode';
 
 export default class KewArCode extends H5P.EventDispatcher {
   /**
-   * @constructor
-   *
+   * @class
    * @param {object} params Parameters passed by the editor.
    * @param {number} contentId Content id.
    * @param {object} extras Extras like previous state, metadata, ...
@@ -140,7 +139,7 @@ export default class KewArCode extends H5P.EventDispatcher {
     /**
      * Attach library to wrapper.
      *
-     * @param {jQuery} $wrapper Content's container.
+     * @param {H5P.jQuery} $wrapper Content's container.
      */
     this.attach = function ($wrapper) {
       // Display content type instead of QR code if called from self.
@@ -283,8 +282,9 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Create SVG image and use img tag to make it downloadable.
+     *
      * @param {string} inlineSVG Inline SVG.
-     * @return {HTMLElement} SVG image.
+     * @returns {HTMLElement} SVG image.
      */
     this.buildSVGImage = function (inlineSVG) {
       // Set size for downloadable image
@@ -312,6 +312,7 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Build contact.
+     *
      * @param {object} contact Contact object.
      * @param {string} contact.name Name.
      * @param {string} [contact.organization] Organization.
@@ -327,14 +328,14 @@ export default class KewArCode extends H5P.EventDispatcher {
      * @param {object} [contact.address.zip] Address zip.
      * @param {object} [contact.address.country] Address country.
      * @param {string} [contact.note] Note.
-     * @return {object} Payload and display.
+     * @returns {object} Payload and display.
      */
     this.buildContact = function (contact) {
       const address = contact.address;
 
       // Payload
-      let payload = `BEGIN:VCARD\n`;
-      payload += `VERSION:3.0\n`;
+      let payload = 'BEGIN:VCARD\n';
+      payload += 'VERSION:3.0\n';
       payload += `N:${contact.name}\n`;
       payload += (contact.organization !== '') ? `ORG:${contact.organization}\n` : '';
       payload += (contact.title !== '') ? `TITLE:${contact.title}\n` : '';
@@ -350,7 +351,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         address.country !== ''
       ) ? `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n` : '';
       payload += (this.params.contact.note !== '') ? `NOTE:${this.params.contact.note}\n` : '';
-      payload += `END:VCARD`;
+      payload += 'END:VCARD';
 
       // Display
       const displayContent = [
@@ -372,7 +373,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         displayContent.push({name: this.params.l10n.url, content: `<a href="${contact.url}" target="blank">${contact.url}</a>`});
       }
       const addressChunks = [address.extended, address.street, address.locality, address.region, address.zip, address.country]
-        .filter(chunk => chunk !== '')
+        .filter((chunk) => chunk !== '')
         .join(', ');
       if (addressChunks !== '') {
         displayContent.push({name: this.params.l10n.address, content: addressChunks});
@@ -390,6 +391,7 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Build event.
+     *
      * @param {object} event Event data.
      * @param {string} event.title Title.
      * @param {boolean} event.allDay If true, event will take all day.
@@ -401,7 +403,7 @@ export default class KewArCode extends H5P.EventDispatcher {
      * @param {boolean} event.daylightSavings If true, consider daylight savings time.
      * @param {string} [event.location] Location.
      * @param {string} [event.description] Description.
-     * @return {object} Payload and display.
+     * @returns {object} Payload and display.
      */
     this.buildEvent = function (event) {
       // QR Code readers don't interpret dates without time as full day events.
@@ -413,10 +415,10 @@ export default class KewArCode extends H5P.EventDispatcher {
       }
 
       // Date formatting
-      event.dateStart = event.dateStart.split('/').map(value => parseInt(value, 10));
-      event.dateEnd = event.dateEnd.split('/').map(value => parseInt(value, 10));
-      event.timeStart = event.timeStart.split(':').map(value => parseInt(value, 10));
-      event.timeEnd = event.timeEnd.split(':').map(value => parseInt(value, 10));
+      event.dateStart = event.dateStart.split('/').map((value) => parseInt(value, 10));
+      event.dateEnd = event.dateEnd.split('/').map((value) => parseInt(value, 10));
+      event.timeStart = event.timeStart.split(':').map((value) => parseInt(value, 10));
+      event.timeEnd = event.timeEnd.split(':').map((value) => parseInt(value, 10));
 
       event.timezone = event.timezone.split(':');
 
@@ -452,13 +454,13 @@ export default class KewArCode extends H5P.EventDispatcher {
         .concat(event.allDay ? '' : 'Z');  // Z indicates UTC, not floating time
 
       // Payload
-      let payload  = `BEGIN:VEVENT\n`;
+      let payload  = 'BEGIN:VEVENT\n';
       payload += `SUMMARY:${event.title}\n`;
       payload += `DTSTART:${dateStartCode}\n`;
       payload += `DTEND:${dateEndCode}\n`;
-      payload += (event.location) ? `LOCATION:${event.location}\n` : ``;
-      payload += (event.description) ? `DESCRIPTION:${event.description}\n` : ``;
-      payload += `END:VEVENT`;
+      payload += (event.location) ? `LOCATION:${event.location}\n` : '';
+      payload += (event.description) ? `DESCRIPTION:${event.description}\n` : '';
+      payload += 'END:VEVENT';
 
       // Display
       const displayContent = [
@@ -482,10 +484,12 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Build display for overlay.
+     *
      * @param {string} [titleText=''] Text for the title, can be empty.
      * @param {object|string} [rows=''] Content rows.
      * @param {string} rows.name Name of the row.
      * @param {string} rows.content Content of the row.
+     * @returns {HTMLElement} Display element.
      */
     this.buildDisplay = function (titleText = '', rows = '') {
       if (typeof rows === 'string') {
@@ -503,7 +507,7 @@ export default class KewArCode extends H5P.EventDispatcher {
       display.appendChild(title);
 
       // Rows
-      rows.forEach( rowContent => {
+      rows.forEach( (rowContent) => {
         const row = document.createElement('div');
         row.classList.add('h5p-kewar-code-display-row');
 
@@ -527,6 +531,7 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Handle close callback from overlay.
+     *
      * @param {boolean} focus If true, container will get focus.
      */
     this.handleClosedOverlay = function (focus) {
@@ -541,7 +546,8 @@ export default class KewArCode extends H5P.EventDispatcher {
     /**
      * Check if KewAr called itself.
      * Uses GET parameter kewar=true.
-     * @return {boolean} True, if KewAr called itself.
+     *
+     * @returns {boolean} True, if KewAr called itself.
      */
     this.calledFromKewAr = function () {
       return new RegExp(`[?&]kewar=${this.contentId}`).test(window.location.href);
@@ -549,10 +555,11 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Make it easy to bubble events from child to parent.
+     *
      * @private
-     * @param {Object} origin Origin of event.
+     * @param {object} origin Origin of event.
      * @param {string} eventName Name of event.
-     * @param {Object} target Target to trigger event on.
+     * @param {object} target Target to trigger event on.
      */
     this.bubbleUp = function (origin, eventName, target) {
       origin.on(eventName, function (event) {
@@ -571,7 +578,7 @@ export default class KewArCode extends H5P.EventDispatcher {
      * Makes it easy to bubble events from parent to children
      *
      * @private
-     * @param {Object} origin Origin of the Event
+     * @param {object} origin Origin of the Event
      * @param {string} eventName Name of the Event
      * @param {Array} targets Targets to trigger event on
      */
@@ -585,7 +592,7 @@ export default class KewArCode extends H5P.EventDispatcher {
           return; // Prevent send event back down.
         }
 
-        targets.forEach(target => {
+        targets.forEach((target) => {
           target.trigger(eventName, event);
         });
       });

@@ -1,9 +1,9 @@
-import Util from "../scripts/h5p-kewar-code-util";
+import Util from '../scripts/h5p-kewar-code-util';
 
 /** Class representing the overlay */
 export default class Overlay {
   /**
-   * @constructor
+   * @class
    * @param {object} params Parameters.
    * @param {HTMLElement} params.content Content.
    * @param {function} params.callback Callback when closed
@@ -76,7 +76,8 @@ export default class Overlay {
 
   /**
    * Return the DOM for the overlay.
-   * @return {HTMLElement} DOM for overlay.
+   *
+   * @returns {HTMLElement} DOM for overlay.
    */
   getDOM() {
     return this.overlay;
@@ -84,7 +85,8 @@ export default class Overlay {
 
   /**
    * Get height of the overlay box.
-   * @return {number} Height of the overlay box.
+   *
+   * @returns {number} Height of the overlay box.
    */
   getBoxHeight() {
     const styles = window.getComputedStyle(this.boxOuter);
@@ -96,7 +98,8 @@ export default class Overlay {
 
   /**
    * Set content for the overlay.
-   * @param {string} text Text for overlay.
+   *
+   * @param {string} content Text for overlay.
    */
   setContent(content) {
     if (!content) {
@@ -108,6 +111,7 @@ export default class Overlay {
 
   /**
    * Show overlay.
+   *
    * @param {HTMLElement} content Element for overlay.
    * @param {boolean} focus If true, closeButton will get focus.
    */
