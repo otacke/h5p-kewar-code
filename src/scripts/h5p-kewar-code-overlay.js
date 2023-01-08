@@ -1,4 +1,4 @@
-import Util from '@scripts/h5p-kewar-code-util';
+import Util from '@services/util';
 
 /** Class representing the overlay */
 export default class Overlay {

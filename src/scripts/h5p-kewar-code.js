@@ -1,5 +1,5 @@
 import Overlay from '@scripts/h5p-kewar-code-overlay';
-import Util from '@scripts/h5p-kewar-code-util';
+import Util from '@services/util';
 import qrcode from '@scripts/h5p-kewar-code-qrcode';
 
 export default class KewArCode extends H5P.EventDispatcher {
