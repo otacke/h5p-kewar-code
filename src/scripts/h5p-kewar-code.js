@@ -305,6 +305,8 @@ export default class KewArCode extends H5P.EventDispatcher {
       const imageSVG = document.createElement('img');
       imageSVG.src = imgData;
 
+      imageSVG.alt = '';
+
       return imageSVG;
     };
 
