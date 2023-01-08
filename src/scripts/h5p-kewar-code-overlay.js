@@ -1,3 +1,4 @@
+import FocusTrap from '@services/focus-trap';
 import Util from '@services/util';
 
 /** Class representing the overlay */
@@ -71,6 +72,8 @@ export default class Overlay {
     }
     this.boxInner.appendChild(this.content);
 
+    this.focusTrap = new FocusTrap({ trapElement: this.overlay });
+
     this.hide();
   }
 
@@ -132,6 +135,11 @@ export default class Overlay {
       this.closeButtonHasFocus = true;
       this.buttonClose.focus();
     }
+
+    // Wait to allow DOM to progress
+    window.requestAnimationFrame(() => {
+      this.focusTrap.activate();
+    });
   }
 
   /**
@@ -140,6 +148,8 @@ export default class Overlay {
   hide() {
     this.isTransparent = true;
     this.overlay.classList.add('h5p-kewar-code-no-opacity');
+
+    this.focusTrap.deactivate();
   }
 
   /**

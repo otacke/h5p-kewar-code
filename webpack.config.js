@@ -9,6 +9,7 @@ module.exports = {
   mode: nodeEnv,
   resolve: {
     alias: {
+      '@services': path.resolve(__dirname, 'src/scripts/services'),
       '@scripts': path.resolve(__dirname, 'src/scripts'),
       '@styles': path.resolve(__dirname, 'src/styles')
     }
