@@ -22,6 +22,7 @@ export default class Overlay {
     this.closeButtonHasFocus = false;
 
     this.handleGlobalClick = this.handleGlobalClick.bind(this);
+    this.handleKeyup = this.handleKeyup.bind(this);
 
     // Overlay
     this.overlay = document.createElement('div');
@@ -144,7 +145,8 @@ export default class Overlay {
     // Wait to allow DOM to progress
     window.requestAnimationFrame(() => {
       this.focusTrap.activate();
-      document.addEventListener('click', this.handleGlobalClick);
+      this.overlay.addEventListener('click', this.handleGlobalClick);
+      this.overlay.addEventListener('keyup', this.handleKeyup);
     });
   }
 
@@ -155,7 +157,8 @@ export default class Overlay {
     this.isTransparent = true;
     this.overlay.classList.add('h5p-kewar-code-no-opacity');
 
-    document.removeEventListener('click', this.handleGlobalClick);
+    this.overlay.removeEventListener('click', this.handleGlobalClick);
+    this.overlay.removeEventListener('keyup', this.handleKeyup);
 
     this.focusTrap.deactivate();
   }
@@ -180,6 +183,17 @@ export default class Overlay {
       !this.boxOuter.contains(event.target) &&
       event.target.isConnected // H5P content may have removed element already
     ) {
+      this.handleClosed();
+    }
+  }
+
+  /**
+   * Handle keyboard event.
+   *
+   * @param {KeyboardEvent} event Keyboard event.
+   */
+  handleKeyup(event) {
+    if (event.key === 'Escape') {
       this.handleClosed();
     }
   }
