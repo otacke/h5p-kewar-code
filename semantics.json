@@ -1070,7 +1070,7 @@
         "type": "text",
         "label": "Code contents (Text for Readspeakers)",
         "importance": "low",
-        "default": "Code contents."
+        "default": ". Code contents"
       }
     ]
   }

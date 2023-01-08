@@ -501,6 +501,10 @@
         {
           "label": "Informationen ausblenden (Text für Vorlesewerkzeug/Barrierefreiheit)",
           "default": "Informationen ausblenden."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }

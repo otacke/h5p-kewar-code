@@ -89,7 +89,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         a11y: {
           openCodeInformation: 'QRCode. Display information.',
           closeCodeInformation: 'Hide information.',
-          codeContents: 'Code contents'
+          codeContents: '. Code contents'
         }
       },
       params

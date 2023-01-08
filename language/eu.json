@@ -501,6 +501,10 @@
         {
           "label": "Ezkutatu informazioa (Irakurtzen duen bozgorailurako Testua)",
           "default": "Ezkutatu informazioa."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }

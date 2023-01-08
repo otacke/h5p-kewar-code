@@ -501,6 +501,10 @@
         {
           "label": "Skrýt informace (Text pro čtečtecí zařízení)",
           "default": "Skrýt informace."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }

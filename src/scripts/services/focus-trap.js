@@ -9,7 +9,7 @@ export default class FocusTrap {
    * @param {HTMLElement} [params.initialFocus] Element to get initial focus.
    */
   constructor(params = {}) {
-    this.handleBlurEvent = this.handleBlurEvent.bind(this);
+    this.handleKeydownEvent = this.handleKeydownEvent.bind(this);
 
     this.attachTo(params);
   }
@@ -65,7 +65,7 @@ export default class FocusTrap {
 
     this.observer.unobserve(this.params.trapElement);
 
-    document.removeEventListener('blur', this.handleBlurEvent, true);
+    this.params.trapElement.removeEventListener('keydown', this.handleKeydownEvent, true);
     this.isActivated = false;
   }
 
@@ -77,10 +77,20 @@ export default class FocusTrap {
       return;
     }
 
+    const focusableElementsString = [
+      'a[href]:not([disabled])',
+      'button:not([disabled])',
+      'textarea:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'video',
+      'audio',
+      '[tabindex]:not([tabindex="-1"])'
+    ].join(', ');
+
     this.focusableElements = []
-      .slice.call(this.params.trapElement.querySelectorAll(
-        'video, audio, button, [href], input, select, textarea,[tabindex]:not([tabindex="-1"])'
-      ))
+      .slice
+      .call(this.params.trapElement.querySelectorAll(focusableElementsString))
       .filter((element) => {
         return element.getAttribute('disabled') !== 'true' &&
           element.getAttribute('disabled') !== true;
@@ -117,28 +127,29 @@ export default class FocusTrap {
   handleVisible() {
     this.updateFocusableElements();
 
-    document.addEventListener('blur', this.handleBlurEvent, true);
+    this.params.trapElement.addEventListener(
+      'keydown', this.handleKeydownEvent, true
+    );
 
-    let focusElement;
     if (this.params.initialFocus && this.isChild(this.params.initialFocus)) {
-      focusElement = this.params.initialFocus;
+      this.currentFocusElement = this.params.initialFocus;
     }
 
-    if (!focusElement && this.focusableElements.length) {
-      focusElement = this.focusableElements[0];
+    if (!this.currentFocusElement && this.focusableElements.length) {
+      this.currentFocusElement = this.focusableElements[0];
     }
 
-    if (focusElement) {
-      focusElement.focus();
+    if (this.currentFocusElement) {
+      this.currentFocusElement.focus();
     }
   }
 
   /**
-   * Handle focus event.
+   * Handle keyboard event.
    *
-   * @param {FocusEvent} event Focus event.
+   * @param {KeyboardEvent} event Keyboard event.
    */
-  handleBlurEvent(event) {
+  handleKeydownEvent(event) {
     // Some previously available elements may have an updated tabindex
     this.updateFocusableElements();
 
@@ -146,21 +157,23 @@ export default class FocusTrap {
       return;
     }
 
-    if (event.relatedTarget && this.isChild(event.relatedTarget)) {
-      this.currentFocusElement = event.relatedTarget;
-      return; // Focus is inside overlay
+    if (event.key !== 'Tab') {
+      return;
     }
 
-    // Focus was either on first or last overlay element
-    if (this.currentFocusElement === this.focusableElements[0]) {
-      this.currentFocusElement = this.focusableElements[this.focusableElements.length - 1];
-    }
-    else {
-      this.currentFocusElement = this.focusableElements[0];
-    }
+    event.preventDefault();
 
-    window.requestAnimationFrame(() => {
-      this.currentFocusElement.focus();
+    const index = this.focusableElements.findIndex((element) => {
+      return element === this.currentFocusElement;
     });
+
+    const length = this.focusableElements.length;
+
+    const newIndex = (event.shiftKey) ?
+      (index + length - 1) % length :
+      (index + 1) % length;
+
+    this.currentFocusElement = this.focusableElements[newIndex];
+    this.currentFocusElement.focus();
   }
 }

@@ -501,6 +501,10 @@
         {
           "label": "Agachar información (Texto para lectores de pantalla)",
           "default": "Agachar información."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }

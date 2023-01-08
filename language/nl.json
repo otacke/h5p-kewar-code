@@ -501,6 +501,10 @@
         {
           "label": "Verberg informatie (Tekst voor schermlezers)",
           "default": "Verberg informatie."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }
