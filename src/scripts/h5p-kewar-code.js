@@ -89,6 +89,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         a11y: {
           openCodeInformation: 'QRCode. Display information.',
           closeCodeInformation: 'Hide information.',
+          codeContents: 'Code contents'
         }
       },
       params
@@ -225,8 +226,9 @@ export default class KewArCode extends H5P.EventDispatcher {
         content: display,
         callbackClosed: () => this.handleClosedOverlay(focus),
         a11y: {
-          closeCodeInformation: this.params.a11y.closeCodeInformation
-        }
+          closeCodeInformation: this.params.a11y.closeCodeInformation,
+          codeContents: this.params.a11y.codeContents
+        },
       });
 
       this.mainContainer = document.createElement('div');

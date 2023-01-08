@@ -1064,6 +1064,13 @@
         "label": "Hide information (Text for Readspeakers)",
         "importance": "low",
         "default": "Hide information."
+      },
+      {
+        "name": "codeContents",
+        "type": "text",
+        "label": "Code contents (Text for Readspeakers)",
+        "importance": "low",
+        "default": "Code contents."
       }
     ]
   }

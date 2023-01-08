@@ -21,8 +21,13 @@ export default class Overlay {
 
     this.closeButtonHasFocus = false;
 
+    this.handleGlobalClick = this.handleGlobalClick.bind(this);
+
     // Overlay
     this.overlay = document.createElement('div');
+    this.overlay.setAttribute('role', 'dialog');
+    this.overlay.setAttribute('aria-modal', 'true');
+    this.overlay.setAttribute('aria-label', this.params.a11y.codeContents);
     this.overlay.classList.add('h5p-kewar-code-overlay');
     this.overlay.classList.add('h5p-kewar-code-no-display');
 
@@ -139,6 +144,7 @@ export default class Overlay {
     // Wait to allow DOM to progress
     window.requestAnimationFrame(() => {
       this.focusTrap.activate();
+      document.addEventListener('click', this.handleGlobalClick);
     });
   }
 
@@ -148,6 +154,8 @@ export default class Overlay {
   hide() {
     this.isTransparent = true;
     this.overlay.classList.add('h5p-kewar-code-no-opacity');
+
+    document.removeEventListener('click', this.handleGlobalClick);
 
     this.focusTrap.deactivate();
   }
@@ -160,6 +168,20 @@ export default class Overlay {
     this.closeButtonHasFocus = false;
 
     // Close-Callback will be triggered by event listener after animation ended
+  }
+
+  /**
+   * Handle global click event.
+   *
+   * @param {Event} event Click event.
+   */
+  handleGlobalClick(event) {
+    if (
+      !this.boxOuter.contains(event.target) &&
+      event.target.isConnected // H5P content may have removed element already
+    ) {
+      this.handleClosed();
+    }
   }
 
   /**
