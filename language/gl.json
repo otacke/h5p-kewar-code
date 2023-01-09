@@ -503,8 +503,8 @@
           "default": "Agachar información."
         },
         {
-          "label": "Code contents (Text for Readspeakers)",
-          "default": ". Code contents"
+          "label": "Contido do código (Texto para lectores de pantalla)",
+          "default": ". Contido do código"
         }
       ]
     }
