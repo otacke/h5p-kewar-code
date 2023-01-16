@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Einleitungstext",
+      "description": "Dieser Text kann optional zusammen mit deinem Code angezeigt werden."
     },
     {
       "label": "Code-Typ",
@@ -503,8 +503,8 @@
           "default": "Informationen ausblenden."
         },
         {
-          "label": "Code contents (Text for Readspeakers)",
-          "default": ". Code contents"
+          "label": "Inhalt des Codes (Text für Vorlesewerkzeuge)",
+          "default": ". Inhalte des Codes"
         }
       ]
     }
