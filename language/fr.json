@@ -6,31 +6,31 @@
     },
     {
       "label": "Contact",
-      "description": "Select what kind of code you want to generate",
+      "description": "Sélectionnez le type de code que vous souhaitez générer",
       "options": [
         {
           "label": "Contact"
         },
         {
-          "label": "Event"
+          "label": "Événement"
         },
         {
-          "label": "Email address"
+          "label": "Adresse e-mail"
         },
         {
           "label": "H5P"
         },
         {
-          "label": "Location"
+          "label": "Emplacement"
         },
         {
-          "label": "Phone number"
+          "label": "Numéro de téléphone"
         },
         {
           "label": "SMS"
         },
         {
-          "label": "Text"
+          "label": "Texte"
         },
         {
           "label": "URL"
@@ -46,7 +46,7 @@
         },
         {
           "label": "Événement de toute une journée",
-          "placeholder": "H5P fan club"
+          "placeholder": "Fan-club du H5P"
         },
         {
           "label": "Date de début",
@@ -66,7 +66,7 @@
           "label": "Heure de fin",
           "fields": [
             {
-              "label": "Extended address",
+              "label": "Adresse complète",
               "description": "c/o information, etc.",
               "placeholder": "c/o H5P Fan Club"
             },
