@@ -85,7 +85,6 @@ export default class Overlay {
 
   /**
    * Return the DOM for the overlay.
-   *
    * @returns {HTMLElement} DOM for overlay.
    */
   getDOM() {
@@ -94,7 +93,6 @@ export default class Overlay {
 
   /**
    * Get height of the overlay box.
-   *
    * @returns {number} Height of the overlay box.
    */
   getBoxHeight() {
@@ -107,7 +105,6 @@ export default class Overlay {
 
   /**
    * Set content for the overlay.
-   *
    * @param {string} content Text for overlay.
    */
   setContent(content) {
@@ -120,7 +117,6 @@ export default class Overlay {
 
   /**
    * Show overlay.
-   *
    * @param {HTMLElement} content Element for overlay.
    * @param {boolean} focus If true, closeButton will get focus.
    */
@@ -175,7 +171,6 @@ export default class Overlay {
 
   /**
    * Handle global click event.
-   *
    * @param {Event} event Click event.
    */
   handleGlobalClick(event) {
@@ -189,7 +184,6 @@ export default class Overlay {
 
   /**
    * Handle keyboard event.
-   *
    * @param {KeyboardEvent} event Keyboard event.
    */
   handleKeyup(event) {

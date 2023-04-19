@@ -2,7 +2,6 @@
 export default class Util {
   /**
    * Extend an array just like JQuery's extend.
-   *
    * @returns {object} Merged objects.
    */
   static extend() {
@@ -23,7 +22,6 @@ export default class Util {
 
   /**
    * Retrieve true string from HTML encoded string.
-   *
    * @param {string} input Input string.
    * @returns {string} Output string.
    */
@@ -34,7 +32,6 @@ export default class Util {
 
   /**
    * Retrieve object with true strings from HTML encoded strings.
-   *
    * @param {object|string|number} elements Elements to decode.
    * @returns {object|string|number} Output elements.
    */
@@ -55,7 +52,6 @@ export default class Util {
 
   /**
    * Retrieve string without HTML tags.
-   *
    * @param {string} html Input string.
    * @returns {string} Output string.
    */
@@ -67,7 +63,6 @@ export default class Util {
 
   /**
    * Retrieve object without HTML in strings.
-   *
    * @param {object|string|number} elements Elements to strip HTML from.
    * @returns {object|string|number} Output elements.
    */

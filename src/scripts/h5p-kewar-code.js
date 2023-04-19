@@ -139,7 +139,6 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Attach library to wrapper.
-     *
      * @param {H5P.jQuery} $wrapper Content's container.
      */
     this.attach = function ($wrapper) {
@@ -284,7 +283,6 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Create SVG image and use img tag to make it downloadable.
-     *
      * @param {string} inlineSVG Inline SVG.
      * @returns {HTMLElement} SVG image.
      */
@@ -314,7 +312,6 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Build contact.
-     *
      * @param {object} contact Contact object.
      * @param {string} contact.name Name.
      * @param {string} [contact.organization] Organization.
@@ -393,7 +390,6 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Build event.
-     *
      * @param {object} event Event data.
      * @param {string} event.title Title.
      * @param {boolean} event.allDay If true, event will take all day.
@@ -486,7 +482,6 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Build display for overlay.
-     *
      * @param {string} [titleText=''] Text for the title, can be empty.
      * @param {object|string} [rows=''] Content rows.
      * @param {string} rows.name Name of the row.
@@ -533,7 +528,6 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Handle close callback from overlay.
-     *
      * @param {boolean} focus If true, container will get focus.
      */
     this.handleClosedOverlay = function (focus) {
@@ -548,7 +542,6 @@ export default class KewArCode extends H5P.EventDispatcher {
     /**
      * Check if KewAr called itself.
      * Uses GET parameter kewar=true.
-     *
      * @returns {boolean} True, if KewAr called itself.
      */
     this.calledFromKewAr = function () {
@@ -557,7 +550,6 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Make it easy to bubble events from child to parent.
-     *
      * @private
      * @param {object} origin Origin of event.
      * @param {string} eventName Name of event.
@@ -578,7 +570,6 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Makes it easy to bubble events from parent to children
-     *
      * @private
      * @param {object} origin Origin of the Event
      * @param {string} eventName Name of the Event
