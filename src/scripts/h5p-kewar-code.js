@@ -168,10 +168,10 @@ export default class KewArCode extends H5P.EventDispatcher {
       let display = document.createElement('div').innerHTML = payload;
 
       if (this.params.codeType === 'contact') {
-        ({payload, display} = this.buildContact(this.params.contact));
+        ({ payload, display } = this.buildContact(this.params.contact));
       }
       else if (this.params.codeType === 'event') {
-        ({payload, display} = this.buildEvent(this.params.event));
+        ({ payload, display } = this.buildEvent(this.params.event));
       }
       else if (this.params.codeType === 'email') {
         payload = `mailto:${this.params.email}`;
@@ -180,8 +180,8 @@ export default class KewArCode extends H5P.EventDispatcher {
       else if (this.params.codeType === 'location') {
         payload = `geo:${this.params.location.latitude},${this.params.location.longitude}`;
         display = this.buildDisplay(this.params.l10n.location, [
-          {name: this.params.l10n.latitude, content: this.params.location.latitude},
-          {name: this.params.l10n.longitude, content: this.params.location.longitude}
+          { name: this.params.l10n.latitude, content: this.params.location.latitude },
+          { name: this.params.l10n.longitude, content: this.params.location.longitude }
         ]);
       }
       else if (this.params.codeType === 'phone') {
@@ -192,8 +192,8 @@ export default class KewArCode extends H5P.EventDispatcher {
         const number = this.params.sms.number.replace(/[^+0-9]/gi, '');
         payload = `smsto:${number}:${this.params.sms.message}`;
         display = this.buildDisplay(this.params.l10n.sms, [
-          {name: this.params.l10n.phone, content: number},
-          {name: this.params.l10n.message, content: this.params.sms.message}
+          { name: this.params.l10n.phone, content: number },
+          { name: this.params.l10n.message, content: this.params.sms.message }
         ]);
       }
       else if (this.params.codeType === 'text') {
@@ -354,31 +354,31 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       // Display
       const displayContent = [
-        {name: this.params.l10n.name, content: contact.name}
+        { name: this.params.l10n.name, content: contact.name }
       ];
       if (contact.organization !== '') {
-        displayContent.push({name: this.params.l10n.organization, content: contact.organization});
+        displayContent.push({ name: this.params.l10n.organization, content: contact.organization });
       }
       if (contact.title !== '') {
-        displayContent.push({name: this.params.l10n.title, content: contact.title});
+        displayContent.push({ name: this.params.l10n.title, content: contact.title });
       }
       if (contact.number !== '') {
-        displayContent.push({name: this.params.l10n.phone, content: contact.number});
+        displayContent.push({ name: this.params.l10n.phone, content: contact.number });
       }
       if (contact.email !== '') {
-        displayContent.push({name: this.params.l10n.email, content: `<a href="mailto:${contact.email}">${contact.email}</a>`});
+        displayContent.push({ name: this.params.l10n.email, content: `<a href="mailto:${contact.email}">${contact.email}</a>` });
       }
       if (contact.url !== '') {
-        displayContent.push({name: this.params.l10n.url, content: `<a href="${contact.url}" target="blank">${contact.url}</a>`});
+        displayContent.push({ name: this.params.l10n.url, content: `<a href="${contact.url}" target="blank">${contact.url}</a>` });
       }
       const addressChunks = [address.extended, address.street, address.locality, address.region, address.zip, address.country]
         .filter((chunk) => chunk !== '')
         .join(', ');
       if (addressChunks !== '') {
-        displayContent.push({name: this.params.l10n.address, content: addressChunks});
+        displayContent.push({ name: this.params.l10n.address, content: addressChunks });
       }
       if (contact.note !== '') {
-        displayContent.push({name: this.params.l10n.note, content: contact.note});
+        displayContent.push({ name: this.params.l10n.note, content: contact.note });
       }
       let display = this.buildDisplay(this.params.l10n.contact, displayContent);
 
@@ -462,15 +462,15 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       // Display
       const displayContent = [
-        {name: this.params.l10n.title, content: event.title},
-        {name: this.params.l10n.dateStart, content: dateStart.toString()},
-        {name: this.params.l10n.dateEnd, content: dateEnd.toString()}
+        { name: this.params.l10n.title, content: event.title },
+        { name: this.params.l10n.dateStart, content: dateStart.toString() },
+        { name: this.params.l10n.dateEnd, content: dateEnd.toString() }
       ];
       if (event.location) {
-        displayContent.push({name: this.params.l10n.location, content: event.location});
+        displayContent.push({ name: this.params.l10n.location, content: event.location });
       }
       if (event.description) {
-        displayContent.push({name: this.params.l10n.description, content: event.description});
+        displayContent.push({ name: this.params.l10n.description, content: event.description });
       }
       let display = this.buildDisplay(this.params.l10n.event, displayContent);
 
@@ -482,15 +482,15 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     /**
      * Build display for overlay.
-     * @param {string} [titleText=''] Text for the title, can be empty.
-     * @param {object|string} [rows=''] Content rows.
+     * @param {string} [titleText] Text for the title, can be empty.
+     * @param {object|string} [rows] Content rows.
      * @param {string} rows.name Name of the row.
      * @param {string} rows.content Content of the row.
      * @returns {HTMLElement} Display element.
      */
     this.buildDisplay = function (titleText = '', rows = '') {
       if (typeof rows === 'string') {
-        rows = [{name: '', content: rows}];
+        rows = [{ name: '', content: rows }];
       }
 
       // Display

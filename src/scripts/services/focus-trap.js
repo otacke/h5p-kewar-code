@@ -3,7 +3,7 @@ export default class FocusTrap {
   /**
    * Simple focus trap.
    * @class
-   * @param {object} [params={}] Parameters.
+   * @param {object} [params] Parameters.
    * @param {HTMLElement} params.trapElement Element to be made a trap.
    * @param {HTMLElement} [params.initialFocus] Element to get initial focus.
    */
@@ -15,7 +15,7 @@ export default class FocusTrap {
 
   /**
    * Attach focus trap.
-   * @param {object} [params={}] Parameters.
+   * @param {object} [params] Parameters.
    * @param {HTMLElement} params.trapElement Element to be made a trap.
    * @param {HTMLElement} [params.initialFocus] Element to get initial focus.
    */
