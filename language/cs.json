@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Úvodní text",
+      "description": "Tento text může být volitelně prezentován spolu s vaším kódem."
     },
     {
       "label": "Typ kódu",
@@ -58,7 +58,7 @@
           "placeholder": "+420 602 678 123"
         },
         {
-          "label": "Emailová adresa",
+          "label": "E-mailová adresa",
           "description": "E-mailová adresa, na kterou chcete napsat zprávu",
           "placeholder": "petr@seznam.cz"
         },
@@ -414,8 +414,8 @@
           "default": "Popis"
         },
         {
-          "label": "Email",
-          "default": "Email"
+          "label": "E-mail",
+          "default": "E-mail"
         },
         {
           "label": "Událost",
@@ -501,6 +501,10 @@
         {
           "label": "Skrýt informace (Text pro čtečtecí zařízení)",
           "default": "Skrýt informace."
+        },
+        {
+          "label": "Obsah kódu (Text pro čtenáře)",
+          "default": ". Obsah kódu"
         }
       ]
     }

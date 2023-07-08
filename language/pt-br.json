@@ -501,6 +501,10 @@
         {
           "label": "Ocultar informações (Texto para Leitores de Tela)",
           "default": "Ocultar informações."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }

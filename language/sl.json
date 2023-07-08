@@ -501,6 +501,10 @@
         {
           "label": "Skrij informacije (besedilo za bralnik zaslona)",
           "default": "Skrij informacije."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }

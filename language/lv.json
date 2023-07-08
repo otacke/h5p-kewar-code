@@ -501,6 +501,10 @@
         {
           "label": "Paslēpt informāciju (teksts asistīvajām tehnoloģijām)",
           "default": "Paslēpt informāciju."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }

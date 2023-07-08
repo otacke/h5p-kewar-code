@@ -1,36 +1,36 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Tipo de código",
+      "description": "Selecione que tipo de código deseja gerar"
     },
     {
-      "label": "Tipo di codice",
-      "description": "Seleziona il tipo di codice che vuoi generare",
+      "label": "Contato",
+      "description": "Select what kind of code you want to generate",
       "options": [
         {
-          "label": "Contatti"
+          "label": "Contact"
         },
         {
-          "label": "Evento"
+          "label": "Event"
         },
         {
-          "label": "Indirizzo email"
+          "label": "Email address"
         },
         {
           "label": "H5P"
         },
         {
-          "label": "Luogo"
+          "label": "Location"
         },
         {
-          "label": "Numero di telefono"
+          "label": "Phone number"
         },
         {
           "label": "SMS"
         },
         {
-          "label": "Testo"
+          "label": "Text"
         },
         {
           "label": "URL"
@@ -38,92 +38,92 @@
       ]
     },
     {
-      "label": "Contatti",
+      "label": "Evento",
       "fields": [
         {
-          "label": "Nome",
-          "placeholder": "Mario Rossi"
+          "label": "Título",
+          "placeholder": "H5P Conference 2020"
         },
         {
-          "label": "Organizzazione",
-          "placeholder": "Fan club di H5P"
+          "label": "Evento de dia inteiro",
+          "placeholder": "H5P fan club"
         },
         {
-          "label": "Titolo",
-          "placeholder": "Maestro del Nulla"
+          "label": "Data inicial",
+          "placeholder": "2020/05/18"
         },
         {
-          "label": "Numero di telefono",
-          "description": "Numero di telefono (formato +12 345 67890)",
-          "placeholder": "+12 345 67890"
+          "label": "Hora de início",
+          "description": "Hora de início do evento (use o formato hh:mm)",
+          "placeholder": "09:00"
         },
         {
-          "label": "Indirizzo email",
-          "description": "Indirizzo email al quale inviare un messaggio",
-          "placeholder": "mario@fan-club-h5p-fittizio.org"
+          "label": "Data final",
+          "description": "Data de término do evento (use o formato aaaa/mm/dd)",
+          "placeholder": "2020/05/20"
         },
         {
-          "label": "Indirizzo",
+          "label": "Tempo final",
           "fields": [
             {
-              "label": "Indirizzo completo",
-              "description": "c/o informazioni ecc.",
-              "placeholder": "c/o Fan club di H5P"
+              "label": "Extended address",
+              "description": "c/o information, etc.",
+              "placeholder": "c/o H5P Fan Club"
             },
             {
-              "label": "Via",
-              "description": "Via e numero",
-              "placeholder": "Via Daytona, 1308"
+              "label": "Street",
+              "description": "Street including number",
+              "placeholder": "1308 W. Dayton Street"
             },
             {
-              "label": "Località",
-              "description": "Nome della città ecc.",
+              "label": "Locality",
+              "description": "City name, etc.",
               "placeholder": "Madison"
             },
             {
-              "label": "Regione",
-              "description": "Stato, provincia ecc.",
+              "label": "Region",
+              "description": "Federal state, county, etc.",
               "placeholder": "WI"
             },
             {
-              "label": "CAP",
-              "description": "CAP",
+              "label": "ZIP code",
+              "description": "ZIP code",
               "placeholder": "53715"
             },
             {
-              "label": "Nazione",
-              "description": "Nazione",
+              "label": "Country",
+              "description": "Country",
               "placeholder": "USA"
             }
           ]
         },
         {
-          "label": "Sito web",
-          "description": "Sito web al quale collegarsi (deve iniziare con https:// o con http://)",
-          "placeholder": "https://fan-club-h5p.fittizio.org"
+          "label": "Fuso horário",
+          "description": "Selecione o fuso horário em que o evento deve ocorrer",
+          "placeholder": "https://fictional-h5p-fan-club.org"
         },
         {
-          "label": "Nota",
-          "description": "Nota",
-          "placeholder": "Mario ama H5P"
+          "label": "Horário de verão",
+          "description": "Verifique se o local em que o evento está ocorrendo utiliza o horário de verão",
+          "placeholder": "John loves H5P."
         }
       ]
     },
     {
-      "label": "Evento",
+      "label": "Endereço de e-mail",
       "fields": [
         {
-          "label": "Titolo",
-          "description": "Titolo per l'evento del calendario",
-          "placeholder": "Conferenza H5P del 2020"
+          "label": "Endereço de e-mail",
+          "description": "Endereço de e-mail para enviar mensagens",
+          "placeholder": "john@fictional-h5p-fan-club.org"
         },
         {
-          "label": "Evento di tutto il giorno",
-          "description": "Attivare se l'evento sarà valido tutto il giorno"
+          "label": "All day event",
+          "description": "Check if event will be valid all day long"
         },
         {
-          "label": "Data d'inizio",
-          "description": "Data di inizio dell'evento (formato aaaa/mm/dd)",
+          "label": "Start date",
+          "description": "Start date of the event (please use the format yyyy/mm/dd)",
           "placeholder": "2020/05/18"
         },
         {
@@ -275,31 +275,31 @@
       ]
     },
     {
-      "label": "Email address",
+      "label": "Guia do autor do conteúdo H5P",
       "fields": [
         {
-          "label": "Email address",
-          "description": "Email address to write message to",
+          "label": "Guia do autor do conteúdo H5P",
+          "description": "Guia do autor do conteúdo H5P a ser exibido",
           "placeholder": "john@fictional-h5p-fan-club.org"
         }
       ]
     },
     {
-      "label": "H5P content",
+      "label": "Localização",
       "fields": [
         {
-          "label": "H5P content",
-          "description": "H5P content to display"
+          "label": "Latitude",
+          "description": "Latitude (use o formato 53.864462)"
         }
       ]
     },
     {
-      "label": "Location",
+      "label": "Número de telefone",
       "fields": [
         {
-          "label": "Latitude",
-          "description": "Latitude (please use the format 53.864462)",
-          "placeholder": "69.646007"
+          "label": "Número de telefone",
+          "description": "Número de telefone para ligar (utilize o formato +12 345 67890)",
+          "placeholder": "+12 345 67890"
         },
         {
           "label": "Longitude",
@@ -309,22 +309,22 @@
       ]
     },
     {
-      "label": "Phone number",
+      "label": "SMS",
       "fields": [
         {
-          "label": "Phone number",
-          "description": "Phone number to call (please use the format +12 345 67890)",
+          "label": "Número de telefone",
+          "description": "Número de telefone para enviar (por favor, use o formato +12 345 67890)",
           "placeholder": "+12 345 67890"
         }
       ]
     },
     {
-      "label": "SMS",
+      "label": "Texto",
       "fields": [
         {
-          "label": "Phone number",
-          "description": "Phone number to send to (please use the format +12 345 67890)",
-          "placeholder": "+12 345 67890"
+          "label": "Texto",
+          "description": "Texto a codificar",
+          "placeholder": "Por favor, traga * leite * pão"
         },
         {
           "label": "Message",
@@ -334,43 +334,43 @@
       ]
     },
     {
-      "label": "Text",
-      "fields": [
-        {
-          "label": "Text",
-          "description": "Text to encode",
-          "placeholder": "Please fetch\n* milk\n* bread"
-        }
-      ]
-    },
-    {
       "label": "URL",
       "fields": [
         {
           "label": "URL",
+          "description": "URL para o link (deve começar com https:// ou http://)",
+          "placeholder": "https://fictional-h5p-fan-club.org"
+        }
+      ]
+    },
+    {
+      "label": "Configurações comportamentais",
+      "fields": [
+        {
+          "label": "Cor do código",
           "description": "URL to link to (must start with https:// or http://)",
           "placeholder": "https://fictional-h5p-fan-club.org"
         }
       ]
     },
     {
-      "label": "Behavioural settings",
+      "label": "Interface de utilizador",
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Code color",
-          "default": "#000000"
+          "label": "Endereço",
+          "default": "Endereço"
         },
         {
-          "label": "Background color",
-          "default": "#ffffff"
+          "label": "Contato",
+          "default": "Contato"
         },
         {
-          "label": "Maximum size",
+          "label": "País",
           "description": "Maximum size for the code given in CSS notation (pixels by default if only a number is given)"
         },
         {
-          "label": "Horizontal alignment",
+          "label": "Data final",
           "description": "Set horizontal alignment if you set a maximum size",
           "options": [
             {
@@ -387,15 +387,15 @@
       ]
     },
     {
-      "label": "User interface",
+      "label": "ReadSpeaker",
       "fields": [
         {
-          "label": "Address",
-          "default": "Address"
+          "label": "QRCode. Informações de exibição (Texto para leitores de tela)",
+          "default": "QRCode. Exibir informações."
         },
         {
-          "label": "Contact",
-          "default": "Contact"
+          "label": "Ocultar informações (Texto para leitores de tela)",
+          "default": "Ocultar informações."
         },
         {
           "label": "Country",
@@ -500,7 +500,7 @@
         },
         {
           "label": "Hide information (Text for Readspeakers)",
-          "default": "Nascondi l'informazione."
+          "default": "Hide information."
         },
         {
           "label": "Code contents (Text for Readspeakers)",

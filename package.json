@@ -1,10 +1,11 @@
 {
   "name": "h5p-kewar-code",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "H5P Content Type for displaying QR codes",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "stylelint './src/**/*.scss' && eslint './src/**/*.js'",
     "build": "cross-env NODE_ENV=production webpack",
     "watch": "cross-env NODE_ENV=development webpack --watch"
   },

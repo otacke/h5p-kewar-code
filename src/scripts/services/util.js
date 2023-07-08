@@ -2,8 +2,7 @@
 export default class Util {
   /**
    * Extend an array just like JQuery's extend.
-   * @param {object} arguments Objects to be merged.
-   * @return {object} Merged objects.
+   * @returns {object} Merged objects.
    */
   static extend() {
     for (let i = 1; i < arguments.length; i++) {
@@ -24,7 +23,7 @@ export default class Util {
   /**
    * Retrieve true string from HTML encoded string.
    * @param {string} input Input string.
-   * @return {string} Output string.
+   * @returns {string} Output string.
    */
   static htmlDecode(input) {
     const dparser = new DOMParser().parseFromString(input, 'text/html');
@@ -34,7 +33,7 @@ export default class Util {
   /**
    * Retrieve object with true strings from HTML encoded strings.
    * @param {object|string|number} elements Elements to decode.
-   * @return {object|string|number} Output elements.
+   * @returns {object|string|number} Output elements.
    */
   static htmlDecodeDeep(elements) {
     if (typeof elements === 'string') {
@@ -53,8 +52,8 @@ export default class Util {
 
   /**
    * Retrieve string without HTML tags.
-   * @param {string} input Input string.
-   * @return {string} Output string.
+   * @param {string} html Input string.
+   * @returns {string} Output string.
    */
   static stripHTML(html) {
     const div = document.createElement('div');
@@ -65,7 +64,7 @@ export default class Util {
   /**
    * Retrieve object without HTML in strings.
    * @param {object|string|number} elements Elements to strip HTML from.
-   * @return {object|string|number} Output elements.
+   * @returns {object|string|number} Output elements.
    */
   static stripHTMLDeep(elements) {
     if (typeof elements === 'object') {

@@ -501,6 +501,10 @@
         {
           "label": "Ocultar información (Texto para lectores de pantalla)",
           "default": "Ocultar información."
+        },
+        {
+          "label": "Contenidos del código (Texto para Lectores en voz alta)",
+          "default": ". Contenidos del código"
         }
       ]
     }

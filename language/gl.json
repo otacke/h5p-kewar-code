@@ -501,6 +501,10 @@
         {
           "label": "Agachar información (Texto para lectores de pantalla)",
           "default": "Agachar información."
+        },
+        {
+          "label": "Contido do código (Texto para lectores de pantalla)",
+          "default": ". Contido do código"
         }
       ]
     }

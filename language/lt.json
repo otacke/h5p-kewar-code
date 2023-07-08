@@ -1,36 +1,36 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Įvadinis tekstas",
+      "description": "Šį tekstą pasirinktinai galima pateikti kartu su jūsų kodu."
     },
     {
-      "label": "Tipo di codice",
-      "description": "Seleziona il tipo di codice che vuoi generare",
+      "label": "Kodo tipas",
+      "description": "Pasirinkite, kokio tipo kodą norite generuoti",
       "options": [
         {
-          "label": "Contatti"
+          "label": "Kontaktai"
         },
         {
-          "label": "Evento"
+          "label": "Įvykis"
         },
         {
-          "label": "Indirizzo email"
+          "label": "Elektroninio pašto adresas"
         },
         {
           "label": "H5P"
         },
         {
-          "label": "Luogo"
+          "label": "Vieta"
         },
         {
-          "label": "Numero di telefono"
+          "label": "Telefono numeris"
         },
         {
           "label": "SMS"
         },
         {
-          "label": "Testo"
+          "label": "Tekstas"
         },
         {
           "label": "URL"
@@ -38,93 +38,93 @@
       ]
     },
     {
-      "label": "Contatti",
+      "label": "Kontaktai",
       "fields": [
         {
-          "label": "Nome",
-          "placeholder": "Mario Rossi"
+          "label": "Vardas",
+          "placeholder": "John Smith"
         },
         {
-          "label": "Organizzazione",
-          "placeholder": "Fan club di H5P"
+          "label": "Organizacija",
+          "placeholder": "H5P fanų klubas"
         },
         {
-          "label": "Titolo",
-          "placeholder": "Maestro del Nulla"
+          "label": "Pavadinimas",
+          "placeholder": "Master of None"
         },
         {
-          "label": "Numero di telefono",
-          "description": "Numero di telefono (formato +12 345 67890)",
-          "placeholder": "+12 345 67890"
+          "label": "Telefono numeris",
+          "description": "Telefono numeris (naudokite formatą +370 6xx xxxxx)",
+          "placeholder": "+370 6xx xxxxx"
         },
         {
-          "label": "Indirizzo email",
-          "description": "Indirizzo email al quale inviare un messaggio",
-          "placeholder": "mario@fan-club-h5p-fittizio.org"
+          "label": "Elektroninio pašto adresas",
+          "description": "Pašto adresas, kuriuo galite rašyti žinutę",
+          "placeholder": "john@fictional-h5p-fan-club.org"
         },
         {
-          "label": "Indirizzo",
+          "label": "Adresas",
           "fields": [
             {
-              "label": "Indirizzo completo",
-              "description": "c/o informazioni ecc.",
-              "placeholder": "c/o Fan club di H5P"
+              "label": "Išplėstinis adresas",
+              "description": "c/o information, etc.",
+              "placeholder": "c/o H5P Fan Club"
             },
             {
-              "label": "Via",
-              "description": "Via e numero",
-              "placeholder": "Via Daytona, 1308"
+              "label": "Gatvė",
+              "description": "Gatvė su numeriu",
+              "placeholder": "1308 W. Dayton Street"
             },
             {
-              "label": "Località",
-              "description": "Nome della città ecc.",
+              "label": "Locality",
+              "description": "City name, etc.",
               "placeholder": "Madison"
             },
             {
-              "label": "Regione",
-              "description": "Stato, provincia ecc.",
+              "label": "Region",
+              "description": "Federal state, county, etc.",
               "placeholder": "WI"
             },
             {
-              "label": "CAP",
-              "description": "CAP",
+              "label": "Pašto kodas",
+              "description": "Pašto kodas",
               "placeholder": "53715"
             },
             {
-              "label": "Nazione",
-              "description": "Nazione",
-              "placeholder": "USA"
+              "label": "Šalis",
+              "description": "Šalis",
+              "placeholder": "LT"
             }
           ]
         },
         {
-          "label": "Sito web",
-          "description": "Sito web al quale collegarsi (deve iniziare con https:// o con http://)",
-          "placeholder": "https://fan-club-h5p.fittizio.org"
+          "label": "Interneto svetainė",
+          "description": "Svetainės nuoroda (turi prasidėti https:// arba http://)",
+          "placeholder": "https://fictional-h5p-fan-club.org"
         },
         {
-          "label": "Nota",
-          "description": "Nota",
-          "placeholder": "Mario ama H5P"
+          "label": "Pastaba",
+          "description": "Pastaba",
+          "placeholder": "John loves H5P."
         }
       ]
     },
     {
-      "label": "Evento",
+      "label": "Įvykis",
       "fields": [
         {
-          "label": "Titolo",
-          "description": "Titolo per l'evento del calendario",
-          "placeholder": "Conferenza H5P del 2020"
+          "label": "Pavadinimas",
+          "description": "Kalendoriaus įvykio pavadinimas",
+          "placeholder": "H5P konferencija 2023"
         },
         {
-          "label": "Evento di tutto il giorno",
-          "description": "Attivare se l'evento sarà valido tutto il giorno"
+          "label": "Visos dienos įvykis",
+          "description": "Check if event will be valid all day long"
         },
         {
-          "label": "Data d'inizio",
-          "description": "Data di inizio dell'evento (formato aaaa/mm/dd)",
-          "placeholder": "2020/05/18"
+          "label": "Pradžios data",
+          "description": "Start date of the event (please use the format yyyy/mm/dd)",
+          "placeholder": "2023/09/18"
         },
         {
           "label": "Start time",
@@ -500,7 +500,7 @@
         },
         {
           "label": "Hide information (Text for Readspeakers)",
-          "default": "Nascondi l'informazione."
+          "default": "Hide information."
         },
         {
           "label": "Code contents (Text for Readspeakers)",
