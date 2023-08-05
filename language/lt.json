@@ -77,7 +77,7 @@
             },
             {
               "label": "Locality",
-              "description": "City name, etc.",
+              "description": "Miesto pavadinimas ir pan.",
               "placeholder": "Madison"
             },
             {
