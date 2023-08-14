@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
+    },
+    {
       "label": "Koda veids",
       "description": "Atlasiet, kāda veida kodu vēlaties ģenerēt",
       "options": [
@@ -50,8 +54,8 @@
         },
         {
           "label": "Telefona numurs",
-          "placeholder": "+371 123 45678",
-          "description": "Tālruņa numurs (lūdzu, izmantojiet formātu +371 123 45678)"
+          "description": "Tālruņa numurs (lūdzu, izmantojiet formātu +371 123 45678)",
+          "placeholder": "+371 123 45678"
         },
         {
           "label": "Epasta adrese",
@@ -72,9 +76,9 @@
               "placeholder": "Brīvības iela 100"
             },
             {
-              "placeholder": "Rīga",
               "label": "Atrašanās vieta",
-              "description": "Pilsētas nosaukums utt."
+              "description": "Pilsētas nosaukums utt.",
+              "placeholder": "Rīga"
             },
             {
               "label": "Novads",
@@ -95,8 +99,8 @@
         },
         {
           "label": "Tīmekļa vietne",
-          "placeholder": "https://fictional-h5p-fan-club.org",
-          "description": "Vietne, uz kuru izveidot saiti (jāsākas ar https:// vai http://)"
+          "description": "Vietne, uz kuru izveidot saiti (jāsākas ar https:// vai http://)",
+          "placeholder": "https://fictional-h5p-fan-club.org"
         },
         {
           "label": "Piezīme",
@@ -106,6 +110,7 @@
       ]
     },
     {
+      "label": "Notikums",
       "fields": [
         {
           "label": "Nosaukums",
@@ -123,8 +128,8 @@
         },
         {
           "label": "Sākuma laiks",
-          "placeholder": "09:00",
-          "description": "Notikuma sākuma laiks (lūdzu, izmantojiet formātu hh:mm)"
+          "description": "Notikuma sākuma laiks (lūdzu, izmantojiet formātu hh:mm)",
+          "placeholder": "09:00"
         },
         {
           "label": "Beigu datums",
@@ -138,6 +143,7 @@
         },
         {
           "label": "Laika zona",
+          "description": "Norādiet laika joslu, kurā pasākumam jānotiek",
           "options": [
             {
               "label": "UTC-12:00"
@@ -250,8 +256,7 @@
             {
               "label": "UTC+14:00"
             }
-          ],
-          "description": "Norādiet laika joslu, kurā pasākumam jānotiek"
+          ]
         },
         {
           "label": "Vasaras laiks",
@@ -267,8 +272,7 @@
           "description": "Pievienojiet notikuma aprakstu",
           "placeholder": "3. H5P konference"
         }
-      ],
-      "label": "Notikums"
+      ]
     },
     {
       "label": "Epasta adrese",
@@ -299,8 +303,8 @@
         },
         {
           "label": "Ģeogrāfiskais garums",
-          "placeholder": "18.954036",
-          "description": "Ģeogrāfiskais garums (lūdzu, izmantojiet formātu 10.663792)"
+          "description": "Ģeogrāfiskais garums (lūdzu, izmantojiet formātu 10.663792)",
+          "placeholder": "18.954036"
         }
       ]
     },
@@ -309,8 +313,8 @@
       "fields": [
         {
           "label": "Telefona numurs",
-          "placeholder": "+371 123 45678",
-          "description": "Tālruņa numurs, uz kuru zvanīt (lūdzu, izmantojiet formātu +371 123 45678)"
+          "description": "Tālruņa numurs, uz kuru zvanīt (lūdzu, izmantojiet formātu +371 123 45678)",
+          "placeholder": "+371 123 45678"
         }
       ]
     },
@@ -344,8 +348,8 @@
       "fields": [
         {
           "label": "URL",
-          "placeholder": "https://fictional-h5p-fan-club.org",
-          "description": "URL, uz kuru izveidot saiti (jāsākas ar https:// vai http://)"
+          "description": "URL, uz kuru izveidot saiti (jāsākas ar https:// vai http://)",
+          "placeholder": "https://fictional-h5p-fan-club.org"
         }
       ]
     },
@@ -354,10 +358,12 @@
       "description": "Šie iestatījumi ļaus jums kontrolēt uzdevuma uzvedību.",
       "fields": [
         {
-          "label": "Koda krāsa"
+          "label": "Koda krāsa",
+          "default": "#000000"
         },
         {
-          "label": "Fona krāsa"
+          "label": "Fona krāsa",
+          "default": "#ffffff"
         },
         {
           "label": "Maksimālais izmērs",
@@ -452,8 +458,8 @@
           "default": "Organizācija"
         },
         {
-          "default": "Tālrunis",
-          "label": "Tālrunis"
+          "label": "Tālrunis",
+          "default": "Tālrunis"
         },
         {
           "label": "Novads",
@@ -495,6 +501,10 @@
         {
           "label": "Paslēpt informāciju (teksts asistīvajām tehnoloģijām)",
           "default": "Paslēpt informāciju."
+        },
+        {
+          "label": "Code contents (Text for Readspeakers)",
+          "default": ". Code contents"
         }
       ]
     }

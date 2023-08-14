@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Úvodní text",
+      "description": "Tento text může být volitelně prezentován spolu s vaším kódem."
+    },
+    {
       "label": "Typ kódu",
       "description": "Vyberte druh kódu, jaký chcete vygenerovat",
       "options": [
@@ -54,7 +58,7 @@
           "placeholder": "+420 602 678 123"
         },
         {
-          "label": "Emailová adresa",
+          "label": "E-mailová adresa",
           "description": "E-mailová adresa, na kterou chcete napsat zprávu",
           "placeholder": "petr@seznam.cz"
         },
@@ -354,10 +358,12 @@
       "description": "Tyto možnosti vám umožní ovládat, jak se úkol chová.",
       "fields": [
         {
-          "label": "Barva kódu"
+          "label": "Barva kódu",
+          "default": "#000000"
         },
         {
-          "label": "Barva pozadí"
+          "label": "Barva pozadí",
+          "default": "#ffffff"
         },
         {
           "label": "Maximální velikost",
@@ -408,8 +414,8 @@
           "default": "Popis"
         },
         {
-          "label": "Email",
-          "default": "Email"
+          "label": "E-mail",
+          "default": "E-mail"
         },
         {
           "label": "Událost",
@@ -486,15 +492,19 @@
       ]
     },
     {
-      "label": "Čtečtecí zařízení",
+      "label": "Čtecí zařízení",
       "fields": [
         {
-          "label": "QR kód. Zobrazit informace (Text pro čtečtecí zařízení)",
+          "label": "QR kód. Zobrazit informace (Text pro čtecí zařízení)",
           "default": "QR kód. Zobrazit informace."
         },
         {
           "label": "Skrýt informace (Text pro čtečtecí zařízení)",
           "default": "Skrýt informace."
+        },
+        {
+          "label": "Obsah kódu (Text pro čtenáře)",
+          "default": ". Obsah kódu"
         }
       ]
     }

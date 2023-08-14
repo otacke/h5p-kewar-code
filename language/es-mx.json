@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Texto introductorio",
+      "description": "Este texto puede ser opcionalmente presentado junto con su código."
+    },
+    {
       "label": "Tipo de código",
       "description": "Seleccionar cual tipo de código quiere generar",
       "options": [
@@ -38,7 +42,7 @@
       "fields": [
         {
           "label": "Nombre",
-          "placeholder": "Juan Pérez"
+          "placeholder": "Juan López"
         },
         {
           "label": "Organización",
@@ -54,8 +58,8 @@
           "placeholder": "+12 345 67890"
         },
         {
-          "label": "Dirección Email",
-          "description": "Dirección Email a la cual escribir mensaje",
+          "label": "Dirección de Email",
+          "description": "Dirección de Email a la que enviar mensaje",
           "placeholder": "juanp@club-de-fan-ficticio-h5p.org"
         },
         {
@@ -271,11 +275,11 @@
       ]
     },
     {
-      "label": "Dirección Email",
+      "label": "Dirección de Email",
       "fields": [
         {
-          "label": "Dirección Email",
-          "description": "Dirección Email a donde escribir mensaje",
+          "label": "Dirección de Email",
+          "description": "Dirección de Email a la cual enviar el mensaje",
           "placeholder": "juanp@club-de-fan-ficticio-h5p.org"
         }
       ]
@@ -325,7 +329,7 @@
         {
           "label": "Mensaje",
           "description": "Mensaje a enviar",
-          "placeholder": "¡Por favor trae pan y leche!"
+          "placeholder": "¡Por favor compra pan y leche!"
         }
       ]
     },
@@ -335,7 +339,7 @@
         {
           "label": "Texto",
           "description": "Texto a codificar",
-          "placeholder": "Por favor trae\n* leche\n* pan"
+          "placeholder": "Por favor, compra\n* leche\n* pan"
         }
       ]
     },
@@ -354,10 +358,12 @@
       "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
-          "label": "Color del código"
+          "label": "Color del código",
+          "default": "#000000"
         },
         {
-          "label": "Color del fondo"
+          "label": "Color del fondo",
+          "default": "#ffffff"
         },
         {
           "label": "Tamaño máximo",
@@ -495,6 +501,10 @@
         {
           "label": "Ocultar información (Texto para lector en voz alta)",
           "default": "Ocultar información."
+        },
+        {
+          "label": "Contenidos del código (Texto para Lectores en voz alta)",
+          "default": ". Contenidos del código"
         }
       ]
     }

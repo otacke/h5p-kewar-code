@@ -1,5 +1,42 @@
 [
   {
+    "name": "introduction",
+    "type": "text",
+    "widget": "html",
+    "label": "Introductory text",
+    "importance": "medium",
+    "optional": true,
+    "description": "This text can optionally be presented along with your code.",
+    "enterMode": "div",
+    "tags": [
+      "sub",
+      "sup",
+      "strong",
+      "em",
+      "p",
+      "code",
+      "u",
+      "del",
+      "a",
+      "ul",
+      "ol",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "pre",
+      "hr",
+      "table"
+    ],
+    "font": {
+      "size": true,
+      "color": true,
+      "background": true
+    }
+  },
+  {
     "name": "codeType",
     "type": "select",
     "label": "Code type",
@@ -541,31 +578,31 @@
           "H5P.Blanks 1.14",
           "H5P.Chart 1.2",
           "H5P.Collage 0.3",
-          "H5P.Column 1.15",
+          "H5P.Column 1.16",
           "H5P.Crossword 0.4",
-          "H5P.CoursePresentation 1.24",
+          "H5P.CoursePresentation 1.25",
           "H5P.Dialogcards 1.9",
-          "H5P.Dictation 1.2",
+          "H5P.Dictation 1.3",
           "H5P.DocumentationTool 1.8",
-          "H5P.DragQuestion 1.13",
-          "H5P.DragText 1.9",
-          "H5P.Essay 1.4",
+          "H5P.DragQuestion 1.14",
+          "H5P.DragText 1.10",
+          "H5P.Essay 1.5",
           "H5P.FindTheWords 1.4",
-          "H5P.Flashcards 1.5",
-          "H5P.GuessTheAnswer 1.4",
+          "H5P.Flashcards 1.6",
+          "H5P.GuessTheAnswer 1.5",
           "H5P.Table 1.1",
           "H5P.AdvancedText 1.1",
           "H5P.IFrameEmbed 1.0",
           "H5P.Image 1.1",
-          "H5P.MultiMediaChoice 0.2",
-          "H5P.ImageHotspots 1.9",
+          "H5P.MultiMediaChoice 0.3",
+          "H5P.ImageHotspots 1.10",
           "H5P.ImageHotspotQuestion 1.8",
           "H5P.ImageJuxtaposition 1.5",
           "H5P.ImagePair 1.4",
           "H5P.ImageSequencing 1.1",
           "H5P.ImageSlider 1.1",
-          "H5P.InteractiveBook 1.5",
-          "H5P.InteractiveVideo 1.24",
+          "H5P.InteractiveBook 1.7",
+          "H5P.InteractiveVideo 1.26",
           "H5P.Link 1.3",
           "H5P.MarkTheWords 1.11",
           "H5P.MemoryGame 1.3",
@@ -796,9 +833,9 @@
         "importance": "medium",
         "optional": true,
         "regexp": {
-            "pattern": "^(([1-9]+.[0-9]+)|[0-9]+)(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)?$",
-            "modifiers": "i"
-          }
+          "pattern": "^(([1-9]+.[0-9]+)|[0-9]+)(cm|mm|in|px|pt|pc|em|ex|ch|rem|vw|vh|vmin|vmax|%)?$",
+          "modifiers": "i"
+        }
       },
       {
         "name": "alignment",
@@ -1027,6 +1064,13 @@
         "label": "Hide information (Text for Readspeakers)",
         "importance": "low",
         "default": "Hide information."
+      },
+      {
+        "name": "codeContents",
+        "type": "text",
+        "label": "Code contents (Text for Readspeakers)",
+        "importance": "low",
+        "default": ". Code contents"
       }
     ]
   }

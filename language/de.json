@@ -1,6 +1,10 @@
 {
   "semantics": [
     {
+      "label": "Einleitungstext",
+      "description": "Dieser Text kann optional zusammen mit deinem Code angezeigt werden."
+    },
+    {
       "label": "Code-Typ",
       "description": "Wähle, welchen Typ Code du erstellen möchtest",
       "options": [
@@ -354,10 +358,12 @@
       "description": "Diese Optionen legen fest, wie die Aufgabe im Detail funktioniert.",
       "fields": [
         {
-          "label": "Code-Farbe"
+          "label": "Code-Farbe",
+          "default": "#000000"
         },
         {
-          "label": "Hintergrundfarbe"
+          "label": "Hintergrundfarbe",
+          "default": "#ffffff"
         },
         {
           "label": "Maximale Größe",
@@ -495,6 +501,10 @@
         {
           "label": "Informationen ausblenden (Text für Vorlesewerkzeug/Barrierefreiheit)",
           "default": "Informationen ausblenden."
+        },
+        {
+          "label": "Inhalt des Codes (Text für Vorlesewerkzeuge)",
+          "default": ". Inhalte des Codes"
         }
       ]
     }

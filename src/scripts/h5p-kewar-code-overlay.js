@@ -1,9 +1,10 @@
-import Util from "../scripts/h5p-kewar-code-util";
+import FocusTrap from '@services/focus-trap';
+import Util from '@services/util';
 
 /** Class representing the overlay */
 export default class Overlay {
   /**
-   * @constructor
+   * @class
    * @param {object} params Parameters.
    * @param {HTMLElement} params.content Content.
    * @param {function} params.callback Callback when closed
@@ -20,8 +21,14 @@ export default class Overlay {
 
     this.closeButtonHasFocus = false;
 
+    this.handleGlobalClick = this.handleGlobalClick.bind(this);
+    this.handleKeyup = this.handleKeyup.bind(this);
+
     // Overlay
     this.overlay = document.createElement('div');
+    this.overlay.setAttribute('role', 'dialog');
+    this.overlay.setAttribute('aria-modal', 'true');
+    this.overlay.setAttribute('aria-label', this.params.a11y.codeContents);
     this.overlay.classList.add('h5p-kewar-code-overlay');
     this.overlay.classList.add('h5p-kewar-code-no-display');
 
@@ -71,12 +78,14 @@ export default class Overlay {
     }
     this.boxInner.appendChild(this.content);
 
+    this.focusTrap = new FocusTrap({ trapElement: this.overlay });
+
     this.hide();
   }
 
   /**
    * Return the DOM for the overlay.
-   * @return {HTMLElement} DOM for overlay.
+   * @returns {HTMLElement} DOM for overlay.
    */
   getDOM() {
     return this.overlay;
@@ -84,7 +93,7 @@ export default class Overlay {
 
   /**
    * Get height of the overlay box.
-   * @return {number} Height of the overlay box.
+   * @returns {number} Height of the overlay box.
    */
   getBoxHeight() {
     const styles = window.getComputedStyle(this.boxOuter);
@@ -96,7 +105,7 @@ export default class Overlay {
 
   /**
    * Set content for the overlay.
-   * @param {string} text Text for overlay.
+   * @param {string} content Text for overlay.
    */
   setContent(content) {
     if (!content) {
@@ -128,6 +137,13 @@ export default class Overlay {
       this.closeButtonHasFocus = true;
       this.buttonClose.focus();
     }
+
+    // Wait to allow DOM to progress
+    window.requestAnimationFrame(() => {
+      this.focusTrap.activate();
+      this.overlay.addEventListener('click', this.handleGlobalClick);
+      this.overlay.addEventListener('keyup', this.handleKeyup);
+    });
   }
 
   /**
@@ -136,6 +152,11 @@ export default class Overlay {
   hide() {
     this.isTransparent = true;
     this.overlay.classList.add('h5p-kewar-code-no-opacity');
+
+    this.overlay.removeEventListener('click', this.handleGlobalClick);
+    this.overlay.removeEventListener('keyup', this.handleKeyup);
+
+    this.focusTrap.deactivate();
   }
 
   /**
@@ -146,6 +167,29 @@ export default class Overlay {
     this.closeButtonHasFocus = false;
 
     // Close-Callback will be triggered by event listener after animation ended
+  }
+
+  /**
+   * Handle global click event.
+   * @param {Event} event Click event.
+   */
+  handleGlobalClick(event) {
+    if (
+      !this.boxOuter.contains(event.target) &&
+      event.target.isConnected // H5P content may have removed element already
+    ) {
+      this.handleClosed();
+    }
+  }
+
+  /**
+   * Handle keyboard event.
+   * @param {KeyboardEvent} event Keyboard event.
+   */
+  handleKeyup(event) {
+    if (event.key === 'Escape') {
+      this.handleClosed();
+    }
   }
 
   /**
