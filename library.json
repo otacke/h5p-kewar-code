@@ -3,7 +3,7 @@
   "description": "H5P content type for displaying QR codes",
   "majorVersion": 1,
   "minorVersion": 2,
-  "patchVersion": 0,
+  "patchVersion": 2,
   "runnable": 1,
   "author": "Oliver Tacke",
   "license": "MIT",
