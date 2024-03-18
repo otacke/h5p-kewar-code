@@ -1,6 +1,6 @@
 {
   "name": "h5p-kewar-code",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "description": "H5P Content Type for displaying QR codes",
   "private": true,
   "scripts": {
