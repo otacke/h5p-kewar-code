@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Inleidende tekst",
+      "description": "Deze tekst kan optioneel samen met je code worden weergegeven."
     },
     {
       "label": "Type voor code",
@@ -27,7 +27,7 @@
           "label": "Telefoonnummer"
         },
         {
-          "label": "SMS"
+          "label": "sms"
         },
         {
           "label": "Tekst"
@@ -124,7 +124,7 @@
         {
           "label": "Startdatum",
           "description": "Startdatum van het evenement (gebruik de volgende opmaak jjjj/mm/dd)",
-          "placeholder": "2020/05/18"
+          "placeholder": "18/05/2020"
         },
         {
           "label": "Starttijd",
@@ -134,7 +134,7 @@
         {
           "label": "Einddatum",
           "description": "Einddatum van het evenement (gebruik de volgende opmaak jjjj/mm/dd)",
-          "placeholder": "2020/05/20"
+          "placeholder": "20/05/2020"
         },
         {
           "label": "Eindtijd",
@@ -313,7 +313,7 @@
       "fields": [
         {
           "label": "Telefoonnummer",
-          "description": "Telefoonnummer (gebruik de volgende indeling +12 345 67890)",
+          "description": "Te bellen telefoonnummer (gebruik de volgende indeling +12 345 67890)",
           "placeholder": "+12 345 67890"
         }
       ]
@@ -466,8 +466,8 @@
           "default": "Regio"
         },
         {
-          "label": "SMS",
-          "default": "SMS"
+          "label": "sms",
+          "default": "sms"
         },
         {
           "label": "Straat",
@@ -503,8 +503,8 @@
           "default": "Verberg informatie."
         },
         {
-          "label": "Code contents (Text for Readspeakers)",
-          "default": ". Code contents"
+          "label": "Inhoud van de code (tekst voor schermsprekers)",
+          "default": ".Code-inhoud"
         }
       ]
     }
