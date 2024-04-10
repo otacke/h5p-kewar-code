@@ -1,5 +1,5 @@
-import FocusTrap from '@services/focus-trap';
-import Util from '@services/util';
+import FocusTrap from '@services/focus-trap.js';
+import Util from '@services/util.js';
 
 /** Class representing the overlay */
 export default class Overlay {
