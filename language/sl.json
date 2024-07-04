@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Introductory text",
-      "description": "This text can optionally be presented along with your code."
+      "label": "Uvod",
+      "description": "Neobvezno besedilo za prikaz ob kodi."
     },
     {
       "label": "Namen kode",
@@ -503,8 +503,8 @@
           "default": "Skrij informacije."
         },
         {
-          "label": "Code contents (Text for Readspeakers)",
-          "default": ". Code contents"
+          "label": "Vsebina kode (besedilo za bralnik zaslona)",
+          "default": "Vsebina kode."
         }
       ]
     }
