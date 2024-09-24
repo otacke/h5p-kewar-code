@@ -17,7 +17,7 @@
 //
 //---------------------------------------------------------------------
 
-export default qrcode = function () {
+var qrcode = function () {
 
   //---------------------------------------------------------------------
   // qrcode
@@ -2264,6 +2264,8 @@ export default qrcode = function () {
 
   return qrcode;
 }();
+
+export default qrcode;
 
 // multibyte support
 !function () {
