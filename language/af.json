@@ -288,8 +288,13 @@
       "label": "H5P inhoud",
       "fields": [
         {
-          "label": "H5P inhoud",
-          "description": "H5P inhoud om te vertoon"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "H5P inhoud",
+          "field": {
+            "label": "H5P inhoud",
+            "description": "H5P inhoud om te vertoon"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Hierdie keuses laat jou beheer hoe die onderskeie take uitgevoer moet word.",
       "fields": [
         {
-          "label": "Kodekleur",
-          "default": "#000000"
+          "label": "Kodekleur"
         },
         {
-          "label": "Agtergrondkleur",
-          "default": "#ffffff"
+          "label": "Agtergrondkleur"
         },
         {
           "label": "Maksimum grote",
@@ -488,6 +491,10 @@
         {
           "label": "Poskode",
           "default": "Poskode"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

@@ -84,7 +84,8 @@ export default class KewArCode extends H5P.EventDispatcher {
           text: 'Text',
           title: 'Title',
           url: 'URL',
-          zip: 'ZIP code'
+          zip: 'ZIP code',
+          noContentToDisplay: 'No content to display'
         },
         a11y: {
           openCodeInformation: 'QRCode. Display information.',
@@ -97,6 +98,16 @@ export default class KewArCode extends H5P.EventDispatcher {
 
     this.contentId = contentId;
     this.extras = extras;
+
+    if (!this.params.h5p?.length) {
+      this.params.h5p = null; // No H5P content to display
+    }
+    else if (this.params.h5p.length === 1) {
+      this.params.h5p = this.params.h5p[0];
+    }
+    else {
+      this.params.h5p = this.params.h5p[Math.floor(Math.random() * this.params.h5p.length)];
+    }
 
     // Decode strings and strip potentially dangerous code
     for (let section in this.params) {
@@ -144,21 +155,33 @@ export default class KewArCode extends H5P.EventDispatcher {
     this.attach = function ($wrapper) {
       // Display content type instead of QR code if called from self.
       if (this.calledFromKewAr()) {
-        const instance = H5P.newRunnable(this.params.h5p, this.contentId, $wrapper, false, this.extras);
-
-        this.bubbleUp(instance, 'resize', this);
-        this.bubbleDown(this, 'resize', instance);
-
-        const library = !this.params.h5p.library ? null : this.params.h5p.library.split(' ')[0];
-        if (library === 'H5P.Image') {
-          // Resize when images are loaded
-
-          instance.on('loaded', function () {
-            this.trigger('resize');
-          });
+        let instance;
+        if (this.params.h5p) {
+          instance = H5P.newRunnable(this.params.h5p, this.contentId, $wrapper, false, this.extras);
         }
 
-        return;
+        if (!instance) {
+          const message = document.createElement('div');
+          message.textContent = this.params.l10n.noContentToDisplay;
+
+          $wrapper.get(0).appendChild(message);
+          return;
+        }
+        else {
+          this.bubbleUp(instance, 'resize', this);
+          this.bubbleDown(this, 'resize', instance);
+
+          const library = !this.params.h5p.library ? null : this.params.h5p.library.split(' ')[0];
+          if (library === 'H5P.Image') {
+            // Resize when images are loaded
+
+            instance.on('loaded', function () {
+              this.trigger('resize');
+            });
+          }
+
+          return;
+        }
       }
 
       // Create code object

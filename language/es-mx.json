@@ -288,8 +288,13 @@
       "label": "Contenido H5P",
       "fields": [
         {
-          "label": "Contenido H5P",
-          "description": "Contenido H5P a mostrar"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "Contenido H5P",
+            "description": "Contenido H5P a mostrar"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
-          "label": "Color del código",
-          "default": "#000000"
+          "label": "Color del código"
         },
         {
-          "label": "Color del fondo",
-          "default": "#ffffff"
+          "label": "Color del fondo"
         },
         {
           "label": "Tamaño máximo",
@@ -488,6 +491,10 @@
         {
           "label": "Código Postal",
           "default": "Código Postal"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

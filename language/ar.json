@@ -38,32 +38,32 @@
       ]
     },
     {
-      "label": "الحدث",
+     "label": "Contact",
       "fields": [
         {
-          "label": "العنوان",
-          "placeholder": "مؤتمر H5P 2020"
+          "label": "Name",
+          "placeholder": "John Smith"
         },
         {
-          "label": "حدث ليوم كامل",
+          "label": "Organization",
           "placeholder": "H5P fan club"
         },
         {
-          "label": "تاريخ البدء",
-          "placeholder": "18/05/2020"
+          "label": "Title",
+          "placeholder": "Master of None"
         },
         {
-          "label": "وقت البدء",
-          "description": "وقت بدء الحدث (يُرجى استخدام النمط ساعة:دقيقة)",
-          "placeholder": "09:00"
+          "label": "Phone number",
+          "description": "Phone number (please use the format +12 345 67890)",
+          "placeholder": "+12 345 67890"
         },
         {
-          "label": "تاريخ الانتهاء",
-          "description": "تاريخ انتهاء الحدث (يُرجى استخدام النمط سنة/شهر/يوم)",
-          "placeholder": "20/05/2020"
+          "label": "Email address",
+          "description": "Email address to write message to",
+          "placeholder": "john@fictional-h5p-fan-club.org"
         },
         {
-          "label": "وقت الانتهاء",
+          "label": "Address",
           "fields": [
             {
               "label": "Extended address",
@@ -98,24 +98,24 @@
           ]
         },
         {
-          "label": "منطقة التوقيت",
-          "description": "اختر منطقة التوقيت التي يُفترض أن يقع فيها الحدث",
+          "label": "Website",
+          "description": "Website to link to (must start with https:// or http://)",
           "placeholder": "https://fictional-h5p-fan-club.org"
         },
         {
-          "label": "التوقيت الصيفي",
-          "description": "تحقق مما إذا كان الموقع الذي يقع فيه الحدث يستخدم التوقيت الصيفي",
+          "label": "Note",
+          "description": "Note",
           "placeholder": "John loves H5P."
         }
       ]
     },
     {
-      "label": "عنوان البريد الإلكتروني",
+      "label": "الحدث",
       "fields": [
         {
-          "label": "عنوان البريد الإلكتروني",
-          "description": "عنوان البريد الإلكتروني المُرسَل إليه",
-          "placeholder": "john@fictional-h5p-fan-club.org"
+          "label": "Title",
+          "description": "Title for the calendar event",
+          "placeholder": "H5P Conference 2020"
         },
         {
           "label": "All day event",
@@ -142,8 +142,8 @@
           "placeholder": "16:00"
         },
         {
-          "label": "Timezone",
-          "description": "Select the time zone the event is supposed to take place in",
+          "label": "منطقة التوقيت",
+          "description": "اختر منطقة التوقيت التي يُفترض أن يقع فيها الحدث",
           "options": [
             {
               "label": "UTC-12:00"
@@ -259,8 +259,8 @@
           ]
         },
         {
-          "label": "Daylight savings",
-          "description": "Check if location that the event is taking place in uses daylight savings time"
+          "label": "التوقيت الصيفي",
+          "description": "تحقق مما إذا كان الموقع الذي يقع فيه الحدث يستخدم التوقيت الصيفي"
         },
         {
           "label": "Location",
@@ -275,12 +275,26 @@
       ]
     },
     {
-      "label": "محتوى H5P",
+      "label": "عنوان البريد الإلكتروني",
       "fields": [
         {
-          "label": "محتوى H5P",
-          "description": "محتوى H5P المطلوب عرضه",
+          "label": "عنوان البريد الإلكتروني",
+          "description": "عنوان البريد الإلكتروني المُرسَل إليه",
           "placeholder": "john@fictional-h5p-fan-club.org"
+        }
+      ]
+    },
+    {
+      "label": "H5P content",
+      "fields": [
+        {
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "H5P content",
+            "description": "H5P content to display"
+          }
         }
       ]
     },
@@ -289,17 +303,8 @@
       "fields": [
         {
           "label": "دائرة العرض",
-          "description": "دائرة العرض (يُرجى استخدام النمط 53.864462)"
-        }
-      ]
-    },
-    {
-      "label": "رقم الهاتف",
-      "fields": [
-        {
-          "label": "رقم الهاتف",
-          "description": "رقم الهاتف المطلوب الاتصال به (يُرجى استخدام النمط +12 345 67890)",
-          "placeholder": "67890 345 12+"
+          "description": "دائرة العرض (يُرجى استخدام النمط 53.864462)",
+          "placeholder": "69.646007"
         },
         {
           "label": "Longitude",
@@ -309,11 +314,11 @@
       ]
     },
     {
-      "label": "رسالة جوال قصيرة",
+      "label": "رقم الهاتف",
       "fields": [
         {
           "label": "رقم الهاتف",
-          "description": "رقم الهاتف المطلوب الإرسال إليه (يُرجى استخدام النمط +12 345 67890)",
+          "description": "رقم الهاتف المطلوب الاتصال به (يُرجى استخدام النمط +12 345 67890)",
           "placeholder": "67890 345 12+"
         }
       ]
@@ -334,7 +339,17 @@
       ]
     },
     {
-      "label": "عنوان الموقع",
+      "label": "Text",
+      "fields": [
+        {
+          "label": "Text",
+          "description": "Text to encode",
+          "placeholder": "Please fetch\n* milk\n* bread"
+        }
+      ]
+    },
+    {
+      "label": "الإعدادات السلوكية",
       "fields": [
         {
           "label": "عنوان الموقع",
@@ -345,32 +360,20 @@
     },
     {
       "label": "الإعدادات السلوكية",
-      "fields": [
-        {
-          "label": "لون الشفرة",
-          "description": "URL to link to (must start with https:// or http://)",
-          "placeholder": "https://fictional-h5p-fan-club.org"
-        }
-      ]
-    },
-    {
-      "label": "واجهة المستخدم",
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "العنوان",
-          "default": "العنوان"
+          "label": "لون الشفرة"
         },
         {
-          "label": "جهة الاتصال",
-          "default": "جهة الاتصال"
+          "label": "Background color"
         },
         {
-          "label": "البلد",
+          "label": "Maximum size",
           "description": "Maximum size for the code given in CSS notation (pixels by default if only a number is given)"
         },
         {
-          "label": "تاريخ الانتهاء",
+          "label": "Horizontal alignment",
           "description": "Set horizontal alignment if you set a maximum size",
           "options": [
             {
@@ -387,23 +390,23 @@
       ]
     },
     {
-      "label": "برنامج ReadSpeaker",
+      "label": "واجهة المستخدم",
       "fields": [
         {
-          "label": "رمز QR. معلومات العرض (نص لبرنامج Readspeakers)",
-          "default": "رمز QR. معلومات العرض."
+          "label": "العنوان",
+          "default": "العنوان"
         },
         {
-          "label": "إخفاء المعلومات (نص لبرنامج Readspeakers)",
-          "default": "إخفاء المعلومات."
+          "label": "جهة الاتصال",
+          "default": "جهة الاتصال"
         },
         {
-          "label": "Country",
-          "default": "Country"
+          "label": "البلد",
+          "default": "البلد"
         },
         {
-          "label": "End date",
-          "default": "End date"
+          "label": "تاريخ الانتهاء",
+          "default": "تاريخ الانتهاء"
         },
         {
           "label": "Start date",
@@ -488,19 +491,23 @@
         {
           "label": "ZIP code",
           "default": "ZIP code"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },
     {
-      "label": "Readspeaker",
+      "label": "برنامج ReadSpeaker",
       "fields": [
         {
-          "label": "QRCode. Display information (Text for Readspeakers)",
-          "default": "QRCode. Display information."
+          "label": "رمز QR. معلومات العرض (نص لبرنامج Readspeakers)",
+          "default": "رمز QR. معلومات العرض."
         },
         {
-          "label": "Hide information (Text for Readspeakers)",
-          "default": "Hide information."
+          "label": "إخفاء المعلومات (نص لبرنامج Readspeakers)",
+          "default": "إخفاء المعلومات."
         },
         {
           "label": "Code contents (Text for Readspeakers)",

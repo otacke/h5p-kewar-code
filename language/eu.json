@@ -288,8 +288,13 @@
       "label": "H5P edukia",
       "fields": [
         {
-          "label": "H5P edukia",
-          "description": "Erakusteko H5P edukia"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "H5P edukia",
+            "description": "Erakusteko H5P edukia"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Aukera hauek lanaren portaera kontrolatzea ahalbidetzen dizute.",
       "fields": [
         {
-          "label": "Kolore-kodea",
-          "default": "#000000"
+          "label": "Kolore-kodea"
         },
         {
-          "label": "Atzeko planoaren kolorea",
-          "default": "#ffffff"
+          "label": "Atzeko planoaren kolorea"
         },
         {
           "label": "Gehieneko tamaina",
@@ -488,6 +491,10 @@
         {
           "label": "Posta-kodea",
           "default": "Posta-kodea"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

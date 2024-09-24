@@ -288,8 +288,13 @@
       "label": "H5P obsah",
       "fields": [
         {
-          "label": "H5P obsah",
-          "description": "H5P obsah k zobrazení"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "H5P obsah",
+            "description": "H5P obsah k zobrazení"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Tyto možnosti vám umožní ovládat, jak se úkol chová.",
       "fields": [
         {
-          "label": "Barva kódu",
-          "default": "#000000"
+          "label": "Barva kódu"
         },
         {
-          "label": "Barva pozadí",
-          "default": "#ffffff"
+          "label": "Barva pozadí"
         },
         {
           "label": "Maximální velikost",
@@ -488,6 +491,10 @@
         {
           "label": "PSČ",
           "default": "PSČ"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

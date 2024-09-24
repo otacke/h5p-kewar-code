@@ -288,8 +288,13 @@
       "label": "Vsebina H5P",
       "fields": [
         {
-          "label": "Vsebina H5P",
-          "description": "Vsebina H5P za prikaz"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "Vsebina H5P",
+            "description": "Vsebina H5P za prikaz"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Nastavitve omogočajo nadzor nad interakcijo aktivnosti za udeležence.",
       "fields": [
         {
-          "label": "Barva QR kode",
-          "default": "#000000"
+          "label": "Barva QR kode"
         },
         {
-          "label": "Barva ozadja",
-          "default": "#ffffff"
+          "label": "Barva ozadja"
         },
         {
           "label": "Največja velikost",
@@ -488,6 +491,10 @@
         {
           "label": "Poštna številka",
           "default": "Poštna številka"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

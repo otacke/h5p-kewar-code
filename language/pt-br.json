@@ -288,8 +288,13 @@
       "label": "Conteúdo H5P",
       "fields": [
         {
-          "label": "Conteúdo H5P",
-          "description": "Conteúdo H5P a ser exibido"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "Conteúdo H5P",
+            "description": "Conteúdo H5P a ser exibido"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Essas opções permitem controlar como a tarefa se comporta.",
       "fields": [
         {
-          "label": "Cor do código",
-          "default": "#000000"
+          "label": "Cor do código"
         },
         {
-          "label": "Cor do plano de fundo",
-          "default": "#ffffff"
+          "label": "Cor do plano de fundo"
         },
         {
           "label": "Tamanho máximo",
@@ -488,6 +491,10 @@
         {
           "label": "CEP",
           "default": "CEP"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

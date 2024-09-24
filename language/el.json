@@ -288,8 +288,13 @@
       "label": "Αντικείμενο e-me content",
       "fields": [
         {
-          "label": "Αντικείμενο e-me content",
-          "description": "Αντικείμενο e-me content για προβολή"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "Αντικείμενο e-me content",
+            "description": "Αντικείμενο e-me content για προβολή"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Αυτές οι επιλογές θα σας επιτρέψουν να ελέγξετε τον τρόπο εμφάνισης.",
       "fields": [
         {
-          "label": "Χρώμα κώδικα",
-          "default": "#000000"
+          "label": "Χρώμα κώδικα"
         },
         {
-          "label": "Χρώμα φόντου",
-          "default": "#ffffff"
+          "label": "Χρώμα φόντου"
         },
         {
           "label": "Μέγιστο μέγεθος",
@@ -488,6 +491,10 @@
         {
           "label": "Ταχυδρομικός κώδικας",
           "default": "Ταχυδρομικός κώδικας"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

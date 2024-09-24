@@ -288,8 +288,13 @@
       "label": "Contido H5P",
       "fields": [
         {
-          "label": "Contido H5P",
-          "description": "Contido H5P amosado"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "Contido H5P",
+            "description": "Contido H5P amosado"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Estas opcións permítenche controlar o comportamento da tarefa.",
       "fields": [
         {
-          "label": "Color do código",
-          "default": "#000000"
+          "label": "Color do código"
         },
         {
-          "label": "Color do fondo",
-          "default": "#ffffff"
+          "label": "Color do fondo"
         },
         {
           "label": "Tamaño máximo",
@@ -488,6 +491,10 @@
         {
           "label": "Código postal",
           "default": "Código postal"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

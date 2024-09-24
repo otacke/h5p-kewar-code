@@ -1,11 +1,11 @@
 {
   "semantics": [
     {
-      "label": "Aina ya msimbo",
-      "description": "Chagua aina ya msimbo unayotaka kutengeneza"
+      "label": "Introductory text",
+      "description": "This text can optionally be presented along with your code."
     },
     {
-      "label": "Anwani",
+      "label": "Code type",
       "description": "Select what kind of code you want to generate",
       "options": [
         {
@@ -38,32 +38,32 @@
       ]
     },
     {
-      "label": "Tukio",
+      "label": "Contact",
       "fields": [
         {
-          "label": "Mada",
-          "placeholder": "Mkutano wa H5P 2020"
+          "label": "Name",
+          "placeholder": "John Smith"
         },
         {
-          "label": "Tukio la siku nzima",
+          "label": "Organization",
           "placeholder": "H5P fan club"
         },
         {
-          "label": "Tarehe ya Kuanza",
-          "placeholder": "2020/05/18"
+          "label": "Title",
+          "placeholder": "Master of None"
         },
         {
-          "label": "Muda wa kuanza",
-          "description": "Muda wa kuanza wa tukio (tafadhali tumia muundo wa saa: dakika)",
-          "placeholder": "09:00"
+          "label": "Phone number",
+          "description": "Phone number (please use the format +12 345 67890)",
+          "placeholder": "+12 345 67890"
         },
         {
-          "label": "Tarehe ya mwisho",
-          "description": "Tarehe ya mwisho ya tukio (tafadhali tumia muundo wa mwaka/mwezi/tarehe)",
-          "placeholder": "2020/05/20"
+          "label": "Email address",
+          "description": "Email address to write message to",
+          "placeholder": "john@fictional-h5p-fan-club.org"
         },
         {
-          "label": "Muda wa mwisho",
+          "label": "Address",
           "fields": [
             {
               "label": "Extended address",
@@ -98,24 +98,24 @@
           ]
         },
         {
-          "label": "Saa za eneo",
-          "description": "Chagua saa za eneo ambapo tukio linapaswa kufanyika",
+          "label": "Website",
+          "description": "Website to link to (must start with https:// or http://)",
           "placeholder": "https://fictional-h5p-fan-club.org"
         },
         {
-          "label": "Akiba ya mchana",
-          "description": "Weka alama ikiwa eneo ambalo tukio linafanyika mchana linatumia muda wa akiba",
+          "label": "Note",
+          "description": "Note",
           "placeholder": "John loves H5P."
         }
       ]
     },
     {
-      "label": "Anwani ya barua-pepe",
+      "label": "Event",
       "fields": [
         {
-          "label": "Anwani ya barua-pepe",
-          "description": "Anwani ya barua pepe ili kuandika ujumbe kwa",
-          "placeholder": "john@fictional-h5p-fan-club.org"
+          "label": "Title",
+          "description": "Title for the calendar event",
+          "placeholder": "H5P Conference 2020"
         },
         {
           "label": "All day event",
@@ -275,31 +275,36 @@
       ]
     },
     {
-      "label": "Maudhui ya H5P",
+      "label": "Email address",
       "fields": [
         {
-          "label": "Maudhui ya H5P",
-          "description": "Maudhui ya H5P ya kuonyesha",
+          "label": "Email address",
+          "description": "Email address to write message to",
           "placeholder": "john@fictional-h5p-fan-club.org"
         }
       ]
     },
     {
-      "label": "Eneo",
+      "label": "H5P content",
       "fields": [
         {
-          "label": "Latitudo",
-          "description": "Latitudo (tafadhali tumia muundo wa 53.864462)"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "H5P content",
+            "description": "H5P content to display"
+          }
         }
       ]
     },
     {
-      "label": "Nambari ya Simu",
+      "label": "Location",
       "fields": [
         {
-          "label": "Nambari ya Simu",
-          "description": "Nambari ya simu ya kupiga (tafadhali tumia umbizo la +12 345 67890)",
-          "placeholder": "+12 345 67890"
+          "label": "Latitude",
+          "description": "Latitude (please use the format 53.864462)",
+          "placeholder": "69.646007"
         },
         {
           "label": "Longitude",
@@ -309,22 +314,22 @@
       ]
     },
     {
-      "label": "UJUMBE MFUPI",
+      "label": "Phone number",
       "fields": [
         {
-          "label": "Nambari ya Simu",
-          "description": "Nambari ya simu ya kupiga (tafadhali tumia umbizo la +12 345 67890)",
+          "label": "Phone number",
+          "description": "Phone number to call (please use the format +12 345 67890)",
           "placeholder": "+12 345 67890"
         }
       ]
     },
     {
-      "label": "Maandishi",
+      "label": "SMS",
       "fields": [
         {
-          "label": "Maandishi",
-          "description": "Maandishi ya kusimba",
-          "placeholder": "Tafadhali chukua mkate wa * maziwa *"
+          "label": "Phone number",
+          "description": "Phone number to send to (please use the format +12 345 67890)",
+          "placeholder": "+12 345 67890"
         },
         {
           "label": "Message",
@@ -334,43 +339,41 @@
       ]
     },
     {
-      "label": "URL",
+      "label": "Text",
       "fields": [
         {
-          "label": "URL",
-          "description": "URL ya kuunganisha (lazima ianze na https: // or http: //)",
-          "placeholder": "https://fictional-h5p-fan-club.org"
+          "label": "Text",
+          "description": "Text to encode",
+          "placeholder": "Please fetch\n* milk\n* bread"
         }
       ]
     },
     {
-      "label": "Mipangilio ya tabia",
+      "label": "URL",
       "fields": [
         {
-          "label": "Rangi ya msimbo",
+          "label": "URL",
           "description": "URL to link to (must start with https:// or http://)",
           "placeholder": "https://fictional-h5p-fan-club.org"
         }
       ]
     },
     {
-      "label": "Kiolesura cha mtumiaji",
+      "label": "Behavioural settings",
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Anwani",
-          "default": "Anwani"
+          "label": "Code color"
         },
         {
-          "label": "Anwani",
-          "default": "Anwani"
+          "label": "Background color"
         },
         {
-          "label": "Nchi",
+          "label": "Maximum size",
           "description": "Maximum size for the code given in CSS notation (pixels by default if only a number is given)"
         },
         {
-          "label": "Tarehe ya mwisho",
+          "label": "Horizontal alignment",
           "description": "Set horizontal alignment if you set a maximum size",
           "options": [
             {
@@ -387,15 +390,15 @@
       ]
     },
     {
-      "label": "Kisoma maandishi",
+      "label": "User interface",
       "fields": [
         {
-          "label": "QRCode. Onyesha habari (Maandishi kwa Visoma maandishi)",
-          "default": "QRCode. Onyesha habari."
+          "label": "Address",
+          "default": "Address"
         },
         {
-          "label": "Ficha habari (Maandishi kwa Visoma maandishi)",
-          "default": "Ficha habari."
+          "label": "Contact",
+          "default": "Contact"
         },
         {
           "label": "Country",
@@ -488,6 +491,10 @@
         {
           "label": "ZIP code",
           "default": "ZIP code"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

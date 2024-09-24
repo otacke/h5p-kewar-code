@@ -288,8 +288,13 @@
       "label": "H5P-inhoud",
       "fields": [
         {
-          "label": "H5P-inhoud",
-          "description": "H5P-inhoud om te tonen"
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "H5P-inhoud",
+            "description": "H5P-inhoud om te tonen"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Met deze opties kun je bepalen hoe de taak zich gedraagt.",
       "fields": [
         {
-          "label": "Code-kleur",
-          "default": "#000000"
+          "label": "Code-kleur"
         },
         {
-          "label": "Achtergrondkleur",
-          "default": "#ffffff"
+          "label": "Achtergrondkleur"
         },
         {
           "label": "Maximale grootte",
@@ -488,6 +491,10 @@
         {
           "label": "Postcode",
           "default": "Postcode"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

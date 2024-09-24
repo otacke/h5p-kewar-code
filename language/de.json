@@ -288,8 +288,13 @@
       "label": "H5P-Inhalt",
       "fields": [
         {
-          "label": "H5P-Inhalt",
-          "description": "H5P-Inhalt, der angezeigt werden soll"
+          "label": "H5P-Inhalte",
+          "description": "Wähle den H5P-Inhalt, der dargestellt werden soll. Falls du mehr als einen Inhalt nutzt, wird beim Scannen des Codes zufällig einer angezeigt.",
+          "entity": "H5P-Inhalt",
+          "field": {
+            "label": "H5P-Inhalt",
+            "description": "H5P-Inhalt, der angezeigt werden soll"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Diese Optionen legen fest, wie die Aufgabe im Detail funktioniert.",
       "fields": [
         {
-          "label": "Code-Farbe",
-          "default": "#000000"
+          "label": "Code-Farbe"
         },
         {
-          "label": "Hintergrundfarbe",
-          "default": "#ffffff"
+          "label": "Hintergrundfarbe"
         },
         {
           "label": "Maximale Größe",
@@ -488,6 +491,10 @@
         {
           "label": "Postleitzahl",
           "default": "Postleitzahl"
+        },
+        {
+          "label": "Kein Inhalt zum Anzeigen",
+          "default": "Kein Inhalt zum Anzeigen"
         }
       ]
     },

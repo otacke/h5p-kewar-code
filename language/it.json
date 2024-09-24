@@ -288,8 +288,13 @@
       "label": "H5P content",
       "fields": [
         {
-          "label": "H5P content",
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "H5P content",
           "description": "H5P content to display"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Code color",
-          "default": "#000000"
+          "label": "Code color"
         },
         {
-          "label": "Background color",
-          "default": "#ffffff"
+          "label": "Background color"
         },
         {
           "label": "Maximum size",
@@ -488,6 +491,10 @@
         {
           "label": "ZIP code",
           "default": "ZIP code"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },

@@ -288,8 +288,13 @@
       "label": "H5P saturs",
       "fields": [
         {
-          "label": "H5P saturs",
+          "label": "Content types",
+          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "entity": "content type",
+          "field": {
+            "label": "H5P saturs",
           "description": "Parādāmais H5P saturs"
+          }
         }
       ]
     },
@@ -358,12 +363,10 @@
       "description": "Šie iestatījumi ļaus jums kontrolēt uzdevuma uzvedību.",
       "fields": [
         {
-          "label": "Koda krāsa",
-          "default": "#000000"
+          "label": "Koda krāsa"
         },
         {
-          "label": "Fona krāsa",
-          "default": "#ffffff"
+          "label": "Fona krāsa"
         },
         {
           "label": "Maksimālais izmērs",
@@ -488,6 +491,10 @@
         {
           "label": "pasta indekss",
           "default": "pasta indekss"
+        },
+        {
+          "label": "No content to display",
+          "default": "No content to display"
         }
       ]
     },
