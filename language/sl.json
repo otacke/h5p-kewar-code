@@ -504,7 +504,7 @@
         },
         {
           "label": "Vsebina kode (besedilo za bralnik zaslona)",
-          "default": "Vsebina kode."
+          "default": ". Vsebina kode"
         }
       ]
     }
