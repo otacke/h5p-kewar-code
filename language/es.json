@@ -290,7 +290,7 @@
         {
           "label": "Content types",
           "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
-          "entity": "content type",
+          "entity": "Tipo de contenido",
           "field": {
             "label": "Contenido H5P",
             "description": "Contenido H5P a mostrar"
@@ -493,8 +493,8 @@
           "default": "Código Postal"
         },
         {
-          "label": "No content to display",
-          "default": "No content to display"
+          "label": "No hay contenido que mostrar",
+          "default": "No hay contenido que mostrar"
         }
       ]
     },
