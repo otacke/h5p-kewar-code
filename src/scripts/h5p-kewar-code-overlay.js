@@ -1,6 +1,9 @@
 import FocusTrap from '@services/focus-trap.js';
 import Util from '@services/util.js';
 
+/** @constant {number} SLACK Slack for width. */
+const SLACK = 5;
+
 /** Class representing the overlay */
 export default class Overlay {
   /**
@@ -62,9 +65,7 @@ export default class Overlay {
       this.handleClosed();
     });
     this.buttonClose.addEventListener('keydown', (event) => {
-      event = event || window.event;
-      const key = event.which || event.keyCode;
-      if (key === 13 || key === 32) {
+      if (event.key === 'Enter' || event.key === ' ') {
         this.handleClosed();
       }
     });
@@ -210,7 +211,8 @@ export default class Overlay {
       return;
     }
 
-    const rowMaxWidth = rowWidest + 5;
+    const rowMaxWidth = rowWidest + SLACK;
+    // eslint-disable-next-line no-magic-numbers
     const rowWidth = 100 * rowMaxWidth / this.content.offsetWidth;
 
     [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-name'))
@@ -226,6 +228,7 @@ export default class Overlay {
     [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-content'))
       .forEach((name) => {
         name.style.flexGrow = 1;
+        // eslint-disable-next-line no-magic-numbers
         name.style.width = `${100 - rowWidth}%`;
       });
   }

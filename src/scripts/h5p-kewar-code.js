@@ -2,6 +2,15 @@ import Overlay from '@scripts/h5p-kewar-code-overlay.js';
 import Util from '@services/util.js';
 import qrcode from '@scripts/h5p-kewar-code-qrcode.js';
 
+/** @constant {number} TYPE_NUMBER cmp. https://kazuhikoarase.github.io/qrcode-generator/js/demo/ */
+const TYPE_NUMBER = 0; // 0 = auto sizing; otherwise 1-40,
+
+/** @constant {string} ERROR_CORRECTION Error correction. */
+const ERROR_CORRECTION = 'L'; // L (7 %), M (15 %), Q (25 %), H (30 %).
+
+/** @constant {number} SVG_IMAGE_SIZE_PX Size of downloadable image. */
+const SVG_IMAGE_SIZE_PX = 4096;
+
 export default class KewArCode extends H5P.EventDispatcher {
   /**
    * @class
@@ -185,7 +194,7 @@ export default class KewArCode extends H5P.EventDispatcher {
       }
 
       // Create code object
-      const code = qrcode(KewArCode.typeNumber, KewArCode.errorCorrection);
+      const code = qrcode(TYPE_NUMBER, ERROR_CORRECTION);
 
       let payload = 'Something went wrong';
       let display = document.createElement('div').innerHTML = payload;
@@ -198,7 +207,10 @@ export default class KewArCode extends H5P.EventDispatcher {
       }
       else if (this.params.codeType === 'email') {
         payload = `mailto:${this.params.email}`;
-        display = this.buildDisplay(this.params.l10n.email, `<a href="mailto:${this.params.email}">${this.params.email}</a>`);
+        display = this.buildDisplay(
+          this.params.l10n.email,
+          `<a href="mailto:${this.params.email}">${this.params.email}</a>`
+        );
       }
       else if (this.params.codeType === 'location') {
         payload = `geo:${this.params.location.latitude},${this.params.location.longitude}`;
@@ -225,14 +237,23 @@ export default class KewArCode extends H5P.EventDispatcher {
       }
       else if (this.params.codeType === 'url') {
         payload = this.params.url;
-        display = this.buildDisplay(this.params.l10n.url, `<a href="${this.params.url}" target="blank">${this.params.url}</a>`);
+        display = this.buildDisplay(
+          this.params.l10n.url,
+          `<a href="${this.params.url}" target="blank">${this.params.url}</a>`
+        );
       }
       else if (this.params.codeType === 'h5p') {
         const url = window.location.href;
 
-        payload = url.indexOf('?') === -1 ?
-          window.location.href + `?kewar=${this.contentId}` :
-          this.calledFromKewAr() ? url : url + `&kewar=${this.contentId}`;
+        if (url.indexOf('?') === -1) {
+          payload = `${window.location.href}?kewar=${this.contentId}`;
+        }
+        else if (this.calledFromKewAr()) {
+          payload = url;
+        }
+        else {
+          payload = `${url}&kewar=${this.contentId}`;
+        }
 
         display = this.buildDisplay(
           this.params.l10n.url,
@@ -278,9 +299,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         }, 0);
       });
       this.qrcodeContainer.addEventListener('keydown', (event) => {
-        event = event || window.event;
-        const key = event.which || event.keyCode;
-        if (key === 13 || key === 32) {
+        if (event.key === 'Enter' || event.key === ' ') {
           this.overlay.show(undefined, true);
           this.qrcodeContainer.removeAttribute('tabindex');
           setTimeout(() => {
@@ -311,8 +330,8 @@ export default class KewArCode extends H5P.EventDispatcher {
      */
     this.buildSVGImage = function (inlineSVG) {
       // Set size for downloadable image
-      inlineSVG = inlineSVG.replace(/width="[0-9]*px"/, `width="${KewArCode.svgImageSize}px"`);
-      inlineSVG = inlineSVG.replace(/height="[0-9]*px"/, `height="${KewArCode.svgImageSize}px"`);
+      inlineSVG = inlineSVG.replace(/width="[0-9]*px"/, `width="${SVG_IMAGE_SIZE_PX}px"`);
+      inlineSVG = inlineSVG.replace(/height="[0-9]*px"/, `height="${SVG_IMAGE_SIZE_PX}px"`);
 
       const codeSVG = document.createElement('div');
       codeSVG.innerHTML = inlineSVG;
@@ -371,7 +390,10 @@ export default class KewArCode extends H5P.EventDispatcher {
         address.region ||
         address.zip !== '' ||
         address.country !== ''
-      ) ? `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n` : '';
+      ) ?
+        // eslint-disable-next-line max-len
+        `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n` :
+        '';
       payload += (this.params.contact.note !== '') ? `NOTE:${this.params.contact.note}\n` : '';
       payload += 'END:VCARD';
 
@@ -380,23 +402,39 @@ export default class KewArCode extends H5P.EventDispatcher {
         { name: this.params.l10n.name, content: contact.name }
       ];
       if (contact.organization !== '') {
-        displayContent.push({ name: this.params.l10n.organization, content: contact.organization });
+        displayContent.push({
+          name: this.params.l10n.organization,
+          content: contact.organization
+        });
       }
       if (contact.title !== '') {
-        displayContent.push({ name: this.params.l10n.title, content: contact.title });
+        displayContent.push({
+          name: this.params.l10n.title,
+          content: contact.title
+        });
       }
       if (contact.number !== '') {
-        displayContent.push({ name: this.params.l10n.phone, content: contact.number });
+        displayContent.push({
+          name: this.params.l10n.phone,
+          content: contact.number
+        });
       }
       if (contact.email !== '') {
-        displayContent.push({ name: this.params.l10n.email, content: `<a href="mailto:${contact.email}">${contact.email}</a>` });
+        displayContent.push({
+          name: this.params.l10n.email,
+          content: `<a href="mailto:${contact.email}">${contact.email}</a>`
+        });
       }
       if (contact.url !== '') {
-        displayContent.push({ name: this.params.l10n.url, content: `<a href="${contact.url}" target="blank">${contact.url}</a>` });
+        displayContent.push({
+          name: this.params.l10n.url,
+          content: `<a href="${contact.url}" target="blank">${contact.url}</a>`
+        });
       }
-      const addressChunks = [address.extended, address.street, address.locality, address.region, address.zip, address.country]
-        .filter((chunk) => chunk !== '')
-        .join(', ');
+      const addressChunks =
+        [address.extended, address.street, address.locality, address.region, address.zip, address.country]
+          .filter((chunk) => chunk !== '')
+          .join(', ');
       if (addressChunks !== '') {
         displayContent.push({ name: this.params.l10n.address, content: addressChunks });
       }
@@ -616,12 +654,3 @@ export default class KewArCode extends H5P.EventDispatcher {
 
   }
 }
-
-/** @constant {number} */
-KewArCode.typeNumber = 0; // 0 = auto sizing; otherwise 1-40, cmp. https://kazuhikoarase.github.io/qrcode-generator/js/demo/
-
-/** @constant {string} */
-KewArCode.errorCorrection = 'L'; // L (7 %), M (15 %), Q (25 %), H (30 %).
-
-/** @constant {number} */
-KewArCode.svgImageSize = 4096; // Size of downloadable image in px
