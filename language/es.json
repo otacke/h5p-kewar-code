@@ -288,8 +288,8 @@
       "label": "Contenido H5P",
       "fields": [
         {
-          "label": "Content types",
-          "description": "Select the H5P content type that you want to display. If you select more than one, one will be picked randomly when scanning the code.",
+          "label": "Tipos de contenido",
+          "description": "Seleccionar el tipo de contenido H5P que deseas mostrar. Si seleccionas más de uno, se elegirá uno aleatoriamente al revisar el código.",
           "entity": "Tipo de contenido",
           "field": {
             "label": "Contenido H5P",
