@@ -1,0 +1,519 @@
+{
+  "semantics": [
+    {
+      "label": "Text introductiv",
+      "description": "Acest text poate fi prezentat opțional împreună cu codul dumneavoastră."
+    },
+    {
+      "label": "Tip de cod",
+      "description": "Selectați ce fel de cod doriți să generați",
+      "options": [
+        {
+          "label": "Contact"
+        },
+        {
+          "label": "Eveniment"
+        },
+        {
+          "label": "Adresă de e-mail"
+        },
+        {
+          "label": "H5P"
+        },
+        {
+          "label": "Locație"
+        },
+        {
+          "label": "Număr de telefon"
+        },
+        {
+          "label": "SMS"
+        },
+        {
+          "label": "Text"
+        },
+        {
+          "label": "URL"
+        }
+      ]
+    },
+    {
+      "label": "Contact",
+      "fields": [
+        {
+          "label": "Nume",
+          "placeholder": "Ion Popescu"
+        },
+        {
+          "label": "Organizație",
+          "placeholder": "Clubul fanilor H5P"
+        },
+        {
+          "label": "Titlu",
+          "placeholder": "Maestru în Nimic"
+        },
+        {
+          "label": "Număr de telefon",
+          "description": "Număr de telefon (vă rugăm folosiți formatul +40 123 456789)",
+          "placeholder": "+40 123 456789"
+        },
+        {
+          "label": "Adresă de e-mail",
+          "description": "Adresă de e-mail către care se trimite mesajul",
+          "placeholder": "ion@fictional-h5p-fan-club.org"
+        },
+        {
+          "label": "Adresă",
+          "fields": [
+            {
+              "label": "Adresă extinsă",
+              "description": "informații c/o, etc.",
+              "placeholder": "c/o Clubul fanilor H5P"
+            },
+            {
+              "label": "Stradă",
+              "description": "Stradă inclusiv număr",
+              "placeholder": "Strada Florilor, nr. 1"
+            },
+            {
+              "label": "Localitate",
+              "description": "Nume oraș, etc.",
+              "placeholder": "București"
+            },
+            {
+              "label": "Regiune",
+              "description": "Județ, etc.",
+              "placeholder": "Sector 1"
+            },
+            {
+              "label": "Cod poștal",
+              "description": "Cod poștal",
+              "placeholder": "010101"
+            },
+            {
+              "label": "Țară",
+              "description": "Țară",
+              "placeholder": "România"
+            }
+          ]
+        },
+        {
+          "label": "Site web",
+          "description": "Site web către care se face legătura (trebuie să înceapă cu https:// sau http://)",
+          "placeholder": "https://fictional-h5p-fan-club.org"
+        },
+        {
+          "label": "Notă",
+          "description": "Notă",
+          "placeholder": "Ion iubește H5P."
+        }
+      ]
+    },
+    {
+      "label": "Eveniment",
+      "fields": [
+        {
+          "label": "Titlu",
+          "description": "Titlu pentru evenimentul din calendar",
+          "placeholder": "Conferința H5P 2020"
+        },
+        {
+          "label": "Eveniment de o zi întreagă",
+          "description": "Bifați dacă evenimentul va fi valabil toată ziua"
+        },
+        {
+          "label": "Data de începere",
+          "description": "Data de începere a evenimentului (vă rugăm folosiți formatul aaaa/ll/zz)",
+          "placeholder": "2020/05/18"
+        },
+        {
+          "label": "Ora de începere",
+          "description": "Ora de începere a evenimentului (vă rugăm folosiți formatul hh:mm)",
+          "placeholder": "09:00"
+        },
+        {
+          "label": "Data de încheiere",
+          "description": "Data de încheiere a evenimentului (vă rugăm folosiți formatul aaaa/ll/zz)",
+          "placeholder": "2020/05/20"
+        },
+        {
+          "label": "Ora de încheiere",
+          "description": "Ora de încheiere a evenimentului (vă rugăm folosiți formatul hh:mm)",
+          "placeholder": "16:00"
+        },
+        {
+          "label": "Fus orar",
+          "description": "Selectați fusul orar în care se va desfășura evenimentul",
+          "options": [
+            {
+              "label": "UTC-12:00"
+            },
+            {
+              "label": "UTC-11:00"
+            },
+            {
+              "label": "UTC-10:00"
+            },
+            {
+              "label": "UTC-9:30"
+            },
+            {
+              "label": "UTC-9:00"
+            },
+            {
+              "label": "UTC-8:00"
+            },
+            {
+              "label": "UTC-7:00"
+            },
+            {
+              "label": "UTC-6:00"
+            },
+            {
+              "label": "UTC-5:00"
+            },
+            {
+              "label": "UTC-4:00"
+            },
+            {
+              "label": "UTC-3:30"
+            },
+            {
+              "label": "UTC-3:00"
+            },
+            {
+              "label": "UTC-2:00"
+            },
+            {
+              "label": "UTC-1:00"
+            },
+            {
+              "label": "UTC"
+            },
+            {
+              "label": "UTC+1:00"
+            },
+            {
+              "label": "UTC+2:00"
+            },
+            {
+              "label": "UTC+3:00"
+            },
+            {
+              "label": "UTC+3:30"
+            },
+            {
+              "label": "UTC+4:00"
+            },
+            {
+              "label": "UTC+4:30"
+            },
+            {
+              "label": "UTC+5:00"
+            },
+            {
+              "label": "UTC+5:30"
+            },
+            {
+              "label": "UTC+5:45"
+            },
+            {
+              "label": "UTC+6:00"
+            },
+            {
+              "label": "UTC+6:30"
+            },
+            {
+              "label": "UTC+7:00"
+            },
+            {
+              "label": "UTC+8:00"
+            },
+            {
+              "label": "UTC+9:00"
+            },
+            {
+              "label": "UTC+9:30"
+            },
+            {
+              "label": "UTC+10:00"
+            },
+            {
+              "label": "UTC+10:30"
+            },
+            {
+              "label": "UTC+11:00"
+            },
+            {
+              "label": "UTC+12:00"
+            },
+            {
+              "label": "UTC+12:45"
+            },
+            {
+              "label": "UTC+13:00"
+            },
+            {
+              "label": "UTC+14:00"
+            }
+          ]
+        },
+        {
+          "label": "Ora de vară",
+          "description": "Bifați dacă locația în care are loc evenimentul folosește ora de vară"
+        },
+        {
+          "label": "Locație",
+          "description": "Numiți locația",
+          "placeholder": "București, România"
+        },
+        {
+          "label": "Descriere",
+          "description": "Adăugați o descriere pentru eveniment",
+          "placeholder": "A 3-a conferință H5P"
+        }
+      ]
+    },
+    {
+      "label": "Adresă de e-mail",
+      "fields": [
+        {
+          "label": "Adresă de e-mail",
+          "description": "Adresă de e-mail către care se trimite mesajul",
+          "placeholder": "ion@fictional-h5p-fan-club.org"
+        }
+      ]
+    },
+    {
+      "label": "Conținut H5P",
+      "fields": [
+        {
+          "label": "Tipuri de conținut",
+          "description": "Selectați tipul de conținut H5P pe care doriți să-l afișați. Dacă selectați mai mult de unul, unul va fi ales aleatoriu la scanarea codului.",
+          "entity": "tip de conținut",
+          "field": {
+            "label": "Conținut H5P",
+            "description": "Conținut H5P de afișat"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Locație",
+      "fields": [
+        {
+          "label": "Latitudine",
+          "description": "Latitudine (vă rugăm folosiți formatul 44.426765)",
+          "placeholder": "69.646007"
+        },
+        {
+          "label": "Longitudine",
+          "description": "Longitudine (vă rugăm folosiți formatul 26.102537)",
+          "placeholder": "18.954036"
+        }
+      ]
+    },
+    {
+      "label": "Număr de telefon",
+      "fields": [
+        {
+          "label": "Număr de telefon",
+          "description": "Număr de telefon de apelat (vă rugăm folosiți formatul +40 123 456789)",
+          "placeholder": "+40 123 456789"
+        }
+      ]
+    },
+    {
+      "label": "SMS",
+      "fields": [
+        {
+          "label": "Număr de telefon",
+          "description": "Număr de telefon către care se trimite (vă rugăm folosiți formatul +40 123 456789)",
+          "placeholder": "+40 123 456789"
+        },
+        {
+          "label": "Mesaj",
+          "description": "Mesaj de trimis",
+          "placeholder": "Te rog să iei lapte și pâine!"
+        }
+      ]
+    },
+    {
+      "label": "Text",
+      "fields": [
+        {
+          "label": "Text",
+          "description": "Text de codat",
+          "placeholder": "Te rog să iei\n* lapte\n* pâine"
+        }
+      ]
+    },
+    {
+      "label": "URL",
+      "fields": [
+        {
+          "label": "URL",
+          "description": "URL către care se face legătura (trebuie să înceapă cu https:// sau http://)",
+          "placeholder": "https://fictional-h5p-fan-club.org"
+        }
+      ]
+    },
+    {
+      "label": "Setări de comportament",
+      "description": "Aceste opțiuni vă vor permite să controlați cum se comportă sarcina.",
+      "fields": [
+        {
+          "label": "Culoare cod"
+        },
+        {
+          "label": "Culoare fundal"
+        },
+        {
+          "label": "Dimensiune maximă",
+          "description": "Dimensiune maximă pentru cod, dată în notație CSS (pixeli în mod implicit dacă se dă doar un număr)"
+        },
+        {
+          "label": "Aliniere orizontală",
+          "description": "Setați alinierea orizontală dacă setați o dimensiune maximă",
+          "options": [
+            {
+              "label": "stânga"
+            },
+            {
+              "label": "centru"
+            },
+            {
+              "label": "dreapta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Interfață utilizator",
+      "fields": [
+        {
+          "label": "Adresă",
+          "default": "Adresă"
+        },
+        {
+          "label": "Contact",
+          "default": "Contact"
+        },
+        {
+          "label": "Țară",
+          "default": "Țară"
+        },
+        {
+          "label": "Data de încheiere",
+          "default": "Data de încheiere"
+        },
+        {
+          "label": "Data de începere",
+          "default": "Data de începere"
+        },
+        {
+          "label": "Descriere",
+          "default": "Descriere"
+        },
+        {
+          "label": "E-mail",
+          "default": "E-mail"
+        },
+        {
+          "label": "Eveniment",
+          "default": "Eveniment"
+        },
+        {
+          "label": "Adresă extinsă",
+          "default": "Adresă extinsă"
+        },
+        {
+          "label": "Latitudine",
+          "default": "Latitudine"
+        },
+        {
+          "label": "Localitate",
+          "default": "Localitate"
+        },
+        {
+          "label": "Locație",
+          "default": "Locație"
+        },
+        {
+          "label": "Longitudine",
+          "default": "Longitudine"
+        },
+        {
+          "label": "Mesaj",
+          "default": "Mesaj"
+        },
+        {
+          "label": "Nume",
+          "default": "Nume"
+        },
+        {
+          "label": "Notă",
+          "default": "Notă"
+        },
+        {
+          "label": "Organizație",
+          "default": "Organizație"
+        },
+        {
+          "label": "Telefon",
+          "default": "Telefon"
+        },
+        {
+          "label": "Regiune",
+          "default": "Regiune"
+        },
+        {
+          "label": "SMS",
+          "default": "SMS"
+        },
+        {
+          "label": "Stradă",
+          "default": "Stradă"
+        },
+        {
+          "label": "Text",
+          "default": "Text"
+        },
+        {
+          "label": "Titlu",
+          "default": "Titlu"
+        },
+        {
+          "label": "URL",
+          "default": "URL"
+        },
+        {
+          "label": "Cod poștal",
+          "default": "Cod poștal"
+        },
+        {
+          "label": "Niciun conținut de afișat",
+          "default": "Niciun conținut de afișat"
+        }
+      ]
+    },
+    {
+      "label": "Cititor de ecran",
+      "fields": [
+        {
+          "label": "Cod QR. Afișează informații (Text pentru cititoare de ecran)",
+          "default": "Cod QR. Afișează informații."
+        },
+        {
+          "label": "Ascunde informații (Text pentru cititoare de ecran)",
+          "default": "Ascunde informații."
+        },
+        {
+          "label": "Conținut cod (Text pentru cititoare de ecran)",
+          "default": ". Conținut cod"
+        }
+      ]
+    }
+  ]
+}
