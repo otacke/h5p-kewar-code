@@ -18,8 +18,8 @@ export default class Overlay {
     this.params = Util.extend({
       callbackClosed: () => {},
       a11y: {
-        closeCodeInformation: 'Close information.'
-      }
+        closeCodeInformation: 'Close information.',
+      },
     }, params);
 
     this.closeButtonHasFocus = false;
@@ -212,7 +212,7 @@ export default class Overlay {
     }
 
     const rowMaxWidth = rowWidest + SLACK;
-    // eslint-disable-next-line no-magic-numbers
+     
     const rowWidth = 100 * rowMaxWidth / this.content.offsetWidth;
 
     [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-name'))
@@ -228,7 +228,7 @@ export default class Overlay {
     [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-content'))
       .forEach((name) => {
         name.style.flexGrow = 1;
-        // eslint-disable-next-line no-magic-numbers
+         
         name.style.width = `${100 - rowWidth}%`;
       });
   }

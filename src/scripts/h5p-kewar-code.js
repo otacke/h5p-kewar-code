@@ -37,9 +37,9 @@ export default class KewArCode extends H5P.EventDispatcher {
             locality: '',
             region: '',
             zip: '',
-            country: ''
+            country: '',
           },
-          note: ''
+          note: '',
         },
         event: {
           title: 'Unnamed event',
@@ -49,24 +49,24 @@ export default class KewArCode extends H5P.EventDispatcher {
           dateEnd: '1970/1/1',
           timeEnd: '01:00',
           timezone: '0:00',
-          daylightSavings: false
+          daylightSavings: false,
         },
         email: 'add_your@email.here',
         location: {
           latitude: '69.646007',
-          longitude: '18.954036'
+          longitude: '18.954036',
         },
         phone: '+123456789',
         sms: {
           number: '+123456789',
-          message: 'Please fetch milk and bread!'
+          message: 'Please fetch milk and bread!',
         },
         text: 'Please fetch\n* milk\n* bread',
         url: 'https://h5p.org',
         behaviour: {
           codeColor: '#000000',
           backgroundColor: '#ffffff',
-          alignment: 'center'
+          alignment: 'center',
         },
         l10n: {
           address: 'Address',
@@ -94,15 +94,15 @@ export default class KewArCode extends H5P.EventDispatcher {
           title: 'Title',
           url: 'URL',
           zip: 'ZIP code',
-          noContentToDisplay: 'No content to display'
+          noContentToDisplay: 'No content to display',
         },
         a11y: {
           openCodeInformation: 'QRCode. Display information.',
           closeCodeInformation: 'Hide information.',
-          codeContents: '. Code contents'
-        }
+          codeContents: '. Code contents',
+        },
       },
-      params
+      params,
     );
 
     this.contentId = contentId;
@@ -209,14 +209,14 @@ export default class KewArCode extends H5P.EventDispatcher {
         payload = `mailto:${this.params.email}`;
         display = this.buildDisplay(
           this.params.l10n.email,
-          `<a href="mailto:${this.params.email}">${this.params.email}</a>`
+          `<a href="mailto:${this.params.email}">${this.params.email}</a>`,
         );
       }
       else if (this.params.codeType === 'location') {
         payload = `geo:${this.params.location.latitude},${this.params.location.longitude}`;
         display = this.buildDisplay(this.params.l10n.location, [
           { name: this.params.l10n.latitude, content: this.params.location.latitude },
-          { name: this.params.l10n.longitude, content: this.params.location.longitude }
+          { name: this.params.l10n.longitude, content: this.params.location.longitude },
         ]);
       }
       else if (this.params.codeType === 'phone') {
@@ -228,7 +228,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         payload = `smsto:${number}:${this.params.sms.message}`;
         display = this.buildDisplay(this.params.l10n.sms, [
           { name: this.params.l10n.phone, content: number },
-          { name: this.params.l10n.message, content: this.params.sms.message }
+          { name: this.params.l10n.message, content: this.params.sms.message },
         ]);
       }
       else if (this.params.codeType === 'text') {
@@ -239,7 +239,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         payload = this.params.url;
         display = this.buildDisplay(
           this.params.l10n.url,
-          `<a href="${this.params.url}" target="blank">${this.params.url}</a>`
+          `<a href="${this.params.url}" target="blank">${this.params.url}</a>`,
         );
       }
       else if (this.params.codeType === 'h5p') {
@@ -257,7 +257,7 @@ export default class KewArCode extends H5P.EventDispatcher {
 
         display = this.buildDisplay(
           this.params.l10n.url,
-          `<a href="${payload}" target="blank">${payload}</a>`
+          `<a href="${payload}" target="blank">${payload}</a>`,
         );
       }
 
@@ -270,7 +270,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         callbackClosed: () => this.handleClosedOverlay(focus),
         a11y: {
           closeCodeInformation: this.params.a11y.closeCodeInformation,
-          codeContents: this.params.a11y.codeContents
+          codeContents: this.params.a11y.codeContents,
         },
       });
 
@@ -391,7 +391,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         address.zip !== '' ||
         address.country !== ''
       ) ?
-        // eslint-disable-next-line max-len
+        // eslint-disable-next-line @stylistic/js/max-len
         `ADR:;${address.extended};${address.street};${address.locality};${address.region};${address.zip};${address.country}\n` :
         '';
       payload += (this.params.contact.note !== '') ? `NOTE:${this.params.contact.note}\n` : '';
@@ -399,36 +399,36 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       // Display
       const displayContent = [
-        { name: this.params.l10n.name, content: contact.name }
+        { name: this.params.l10n.name, content: contact.name },
       ];
       if (contact.organization !== '') {
         displayContent.push({
           name: this.params.l10n.organization,
-          content: contact.organization
+          content: contact.organization,
         });
       }
       if (contact.title !== '') {
         displayContent.push({
           name: this.params.l10n.title,
-          content: contact.title
+          content: contact.title,
         });
       }
       if (contact.number !== '') {
         displayContent.push({
           name: this.params.l10n.phone,
-          content: contact.number
+          content: contact.number,
         });
       }
       if (contact.email !== '') {
         displayContent.push({
           name: this.params.l10n.email,
-          content: `<a href="mailto:${contact.email}">${contact.email}</a>`
+          content: `<a href="mailto:${contact.email}">${contact.email}</a>`,
         });
       }
       if (contact.url !== '') {
         displayContent.push({
           name: this.params.l10n.url,
-          content: `<a href="${contact.url}" target="blank">${contact.url}</a>`
+          content: `<a href="${contact.url}" target="blank">${contact.url}</a>`,
         });
       }
       const addressChunks =
@@ -445,7 +445,7 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       return {
         payload: payload,
-        display: display
+        display: display,
       };
     };
 
@@ -486,7 +486,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         event.dateStart[1] - 1,
         event.dateStart[2],
         event.timeStart[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
-        event.timeStart[1] - event.timezone[1]
+        event.timeStart[1] - event.timezone[1],
       ));
 
       let dateEnd = new Date(Date.UTC(
@@ -494,7 +494,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         event.dateEnd[1] - 1,
         event.dateEnd[2],
         event.timeEnd[0] - event.timezone[0] + ((event.daylightSavings) ? 1 : 0),
-        event.timeEnd[1] - event.timezone[1]
+        event.timeEnd[1] - event.timezone[1],
       ));
 
       if (dateEnd < dateStart) {
@@ -525,7 +525,7 @@ export default class KewArCode extends H5P.EventDispatcher {
       const displayContent = [
         { name: this.params.l10n.title, content: event.title },
         { name: this.params.l10n.dateStart, content: dateStart.toString() },
-        { name: this.params.l10n.dateEnd, content: dateEnd.toString() }
+        { name: this.params.l10n.dateEnd, content: dateEnd.toString() },
       ];
       if (event.location) {
         displayContent.push({ name: this.params.l10n.location, content: event.location });
@@ -537,7 +537,7 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       return {
         payload: payload,
-        display: display
+        display: display,
       };
     };
 
