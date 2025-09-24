@@ -2,7 +2,7 @@
   "title": "KewAr Code",
   "description": "H5P content type for displaying QR codes",
   "majorVersion": 1,
-  "minorVersion": 5,
+  "minorVersion": 6,
   "patchVersion": 0,
   "runnable": 1,
   "author": "Oliver Tacke",
