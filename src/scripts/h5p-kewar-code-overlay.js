@@ -1,5 +1,6 @@
 import FocusTrap from '@services/focus-trap.js';
 import Util from '@services/util.js';
+import './h5p-kewar-code-overlay.scss';
 
 /** @constant {number} SLACK Slack for width. */
 const SLACK = 5;
@@ -56,18 +57,12 @@ export default class Overlay {
     this.boxOuter.appendChild(this.boxInner);
 
     // Close button (made 2nd element by flex-direction for a11y)
-    this.buttonClose = document.createElement('div');
+    this.buttonClose = document.createElement('button');
     this.buttonClose.classList.add('h5p-kewar-code-overlay-box-button-close');
-    this.buttonClose.setAttribute('role', 'button');
     this.buttonClose.setAttribute('tabindex', 0);
     this.buttonClose.setAttribute('aria-label', this.params.a11y.closeCodeInformation);
     this.buttonClose.addEventListener('click', () => {
       this.handleClosed();
-    });
-    this.buttonClose.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        this.handleClosed();
-      }
     });
     this.boxInner.appendChild(this.buttonClose);
 
@@ -201,6 +196,7 @@ export default class Overlay {
      * CSS gives prority to let name fields have full witdh initially and uses
      * the longest name field for future reference, so all fields keep the same
      * width.
+     * TODO: This can probably be simplified by using CSS grid
      */
     const rowWidest = [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-name'))
       .reduce((accu, field) => {
@@ -212,7 +208,7 @@ export default class Overlay {
     }
 
     const rowMaxWidth = rowWidest + SLACK;
-     
+
     const rowWidth = 100 * rowMaxWidth / this.content.offsetWidth;
 
     [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-name'))
@@ -228,7 +224,7 @@ export default class Overlay {
     [].slice.call(this.content.querySelectorAll('.h5p-kewar-code-display-row-content'))
       .forEach((name) => {
         name.style.flexGrow = 1;
-         
+
         name.style.width = `${100 - rowWidth}%`;
       });
   }

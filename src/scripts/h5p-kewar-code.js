@@ -8,9 +8,6 @@ const TYPE_NUMBER = 0; // 0 = auto sizing; otherwise 1-40,
 /** @constant {string} ERROR_CORRECTION Error correction. */
 const ERROR_CORRECTION = 'L'; // L (7 %), M (15 %), Q (25 %), H (30 %).
 
-/** @constant {number} SVG_IMAGE_SIZE_PX Size of downloadable image. */
-const SVG_IMAGE_SIZE_PX = 4096;
-
 export default class KewArCode extends H5P.EventDispatcher {
   /**
    * @class
@@ -66,6 +63,7 @@ export default class KewArCode extends H5P.EventDispatcher {
         behaviour: {
           codeColor: '#000000',
           backgroundColor: '#ffffff',
+          maxSize: '100%',
           alignment: 'center',
         },
         l10n: {
@@ -127,35 +125,6 @@ export default class KewArCode extends H5P.EventDispatcher {
       this.params[section] = Util.htmlDecodeDeep(this.params[section]);
       this.params[section] = Util.stripHTMLDeep(this.params[section]);
     }
-
-    this.on('resize', () => {
-      if (!this.qrcodeContainer) {
-        return;
-      }
-
-      // Adjust container size if overlay is too large
-      const heightOverlay = (this.overlay) ? this.overlay.getBoxHeight() : 0;
-      const heightSVG = (this.codeImage) ?  this.codeImage.getBoundingClientRect().width : 0;
-
-      if (heightOverlay > heightSVG) {
-        this.codeImage.style.height = `${heightSVG}px`;
-        this.codeImage.style.maxHeight = '';
-        this.qrcodeContainer.style.height = `${heightOverlay}px`;
-      }
-      else {
-        this.codeImage.style.height = '';
-        this.codeImage.style.maxHeight = this.params.behaviour.maxSize || '';
-        this.qrcodeContainer.style.height = '';
-      }
-
-      // Safari needs extra resize
-      if (!this.isInitialized) {
-        setTimeout(() => {
-          this.isInitialized = true;
-          this.trigger('resize');
-        }, 0);
-      }
-    });
 
     /**
      * Attach library to wrapper.
@@ -243,10 +212,10 @@ export default class KewArCode extends H5P.EventDispatcher {
         );
       }
       else if (this.params.codeType === 'h5p') {
-        const url = window.location.href;
+        const url = this.getURL();
 
         if (url.indexOf('?') === -1) {
-          payload = `${window.location.href}?kewar=${this.contentId}`;
+          payload = `${url}?kewar=${this.contentId}`;
         }
         else if (this.calledFromKewAr()) {
           payload = url;
@@ -294,28 +263,28 @@ export default class KewArCode extends H5P.EventDispatcher {
 
       this.qrcodeContainer.addEventListener('click', () => {
         this.overlay.show();
+
         setTimeout(() => {
           this.trigger('resize');
         }, 0);
       });
+
       this.qrcodeContainer.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           this.overlay.show(undefined, true);
           this.qrcodeContainer.removeAttribute('tabindex');
+
           setTimeout(() => {
             this.trigger('resize');
           }, 0);
         }
       });
 
-      // Build SVG image from inline SVG
-      this.codeImage = this.buildSVGImage(code.createSvgTag());
-      if (this.params.behaviour.maxSize) {
-        this.codeImage.style.maxWidth = this.params.behaviour.maxSize;
-        this.codeImage.maxHeight = this.params.behaviour.maxSize;
-      }
-      this.qrcodeContainer.appendChild(this.codeImage);
+      this.qrcodeContainer.style.setProperty('--svg-color', this.params.behaviour.codeColor);
+      this.qrcodeContainer.style.setProperty('--svg-background-color', this.params.behaviour.backgroundColor);
+      this.qrcodeContainer.style.setProperty('--svg-max-size', this.params.behaviour.maxSize);
 
+      this.qrcodeContainer.innerHTML = this.buildSVG(code.createSvgTag());
       this.mainContainer.appendChild(this.qrcodeContainer);
 
       $wrapper.get(0).classList.add('h5p-kewar-code');
@@ -324,32 +293,16 @@ export default class KewArCode extends H5P.EventDispatcher {
     };
 
     /**
-     * Create SVG image and use img tag to make it downloadable.
-     * @param {string} inlineSVG Inline SVG.
-     * @returns {HTMLElement} SVG image.
+     * Build SVG (with CSS variables for colors).
+     * @param {string} inlineSVG Inline SVG code.
+     * @returns {string} Modified SVG code.
      */
-    this.buildSVGImage = function (inlineSVG) {
-      // Set size for downloadable image
-      inlineSVG = inlineSVG.replace(/width="[0-9]*px"/, `width="${SVG_IMAGE_SIZE_PX}px"`);
-      inlineSVG = inlineSVG.replace(/height="[0-9]*px"/, `height="${SVG_IMAGE_SIZE_PX}px"`);
-
-      const codeSVG = document.createElement('div');
-      codeSVG.innerHTML = inlineSVG;
-
-      // Apply custom colors
-      const codePath = codeSVG.querySelector('path');
-      codePath.setAttribute('fill', this.params.behaviour.codeColor);
-
-      const codeRect = codeSVG.querySelector('rect');
-      codeRect.setAttribute('fill', this.params.behaviour.backgroundColor);
-
-      const imgData = `data:image/svg+xml;base64,${window.btoa(codeSVG.innerHTML)}`;
-      const imageSVG = document.createElement('img');
-      imageSVG.src = imgData;
-
-      imageSVG.alt = '';
-
-      return imageSVG;
+    this.buildSVG = function (inlineSVG) {
+      return inlineSVG
+        .replace(/width="[0-9]*px"/, 'width="100%"')
+        .replace(/height="[0-9]*px"/, 'height="100%"')
+        .replace(/fill="white"/, 'fill="var(--svg-background-color)"')
+        .replace(/fill="black"/, 'fill="var(--svg-color)"');
     };
 
     /**
@@ -606,7 +559,7 @@ export default class KewArCode extends H5P.EventDispatcher {
      * @returns {boolean} True, if KewAr called itself.
      */
     this.calledFromKewAr = function () {
-      return new RegExp(`[?&]kewar=${this.contentId}`).test(window.location.href);
+      return new RegExp(`[?&]kewar=${this.contentId}`).test(this.getURL());
     };
 
     /**
@@ -652,5 +605,13 @@ export default class KewArCode extends H5P.EventDispatcher {
       });
     };
 
+    this.getURL = () => {
+      let url = window.location.href;
+      if (url.startsWith('about:')) {
+        url = window.parent.location.href;
+      }
+
+      return url;
+    };
   }
 }

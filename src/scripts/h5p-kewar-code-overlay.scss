@@ -1,0 +1,129 @@
+.h5p-kewar-code-overlay {
+  --close-button-size: var(--h5p-theme-spacing-l);
+
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  max-height: 100%;
+  min-height: 100%;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  width: 100%;
+  z-index: 100;
+
+  &.h5p-kewar-code-no-display {
+    display: none;
+  }
+
+  &.h5p-kewar-code-no-opacity {
+    opacity: 0;
+  }
+
+  .h5p-kewar-code-overlay-box-outer {
+    background-color: var(--h5p-theme-ui-base);
+    border-radius: var(--h5p-theme-border-radius-small);
+    box-shadow: 0 0 var(--h5p-theme-spacing-s) 0 rgba(0, 0, 0, 0.5);
+    color: var(--h5p-theme-text-primary);
+    overflow-y: auto;
+    padding: var(--h5p-theme-spacing-s);
+    width: max(var(--h5p-theme-spacing-l), 80%);
+  }
+
+  .h5p-kewar-code-overlay-box-inner {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .h5p-kewar-code-overlay-box-button-close {
+      background-color: var(--h5p-theme-ui-base);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      height: var(--close-button-size);
+      padding: calc(0.25 * var(--h5p-theme-spacing-s));
+      position: absolute;
+      transition: background-color 0.2s ease-in-out;
+      width: var(--close-button-size);
+
+      &:hover {
+        background-color: var(--h5p-theme-alternative-base);
+      }
+
+      &:focus-visible {
+        outline: 2px ridge var(--h5p-theme-contrast-cta-white);
+        outline-offset: 2px;
+      }
+
+      &::before {
+        color: var(--h5p-theme-text-primary);
+        content: '\e910';
+        font-family: "h5p-theme", sans-serif;
+        font-size: var(--h5p-theme-font-size-s);
+        font-weight: bold;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .h5p-kewar-code-overlay-box-content {
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .h5p-kewar-code-display {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        width: calc(100% - var(--close-button-size) - var(--h5p-theme-spacing-xxs));
+
+        .h5p-kewar-code-display-title {
+          font-size: var(--h5p-theme-font-size-xl);
+          font-weight: bold;
+          margin-bottom: var(--h5p-theme-spacing-s);
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .h5p-kewar-code-display-row {
+          display: flex;
+          flex-direction: row;
+          gap: var(--h5p-theme-spacing-s);
+
+          .h5p-kewar-code-display-row-name {
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-weight: bold;
+          }
+
+          .h5p-kewar-code-display-row-content {
+            flex-grow: 0;
+            flex-shrink: 1;
+            outline: revert; /* Workaround for before https://github.com/h5p/h5p-multi-choice/commit/736f95cae85bb8c6d9734b48eff1bb34f6769319 */
+          }
+        }
+      }
+    }
+  }
+}
+
+@container h5p-kewar-code (width < 480px) {
+  .h5p-kewar-code .h5p-kewar-code-overlay-box-outer {
+    border-radius: 0;
+    flex-grow: 1;
+  }
+
+  .h5p-kewar-code-overlay-box-inner {
+    flex-grow: 1;
+  }
+}
